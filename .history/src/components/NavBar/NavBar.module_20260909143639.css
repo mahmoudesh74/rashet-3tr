@@ -1,0 +1,83 @@
+.navbar {
+  width: 100%;
+  background-color:  #EFE4DBE5;
+  border-bottom: 1px solid #E7DFCF;
+  height:100px
+}
+
+.container {
+ 
+height:100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 16px 24px;
+}
+.logoImage{
+  width: auto;
+  height: 300px;
+  object-fit: contain;
+  scale: crop;
+
+}
+
+
+
+.links {
+  display: none;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .links {
+    display: flex;
+  }
+}
+
+.link {
+  font-size: 20px;
+  color: #696767;
+  text-decoration: none;
+  padding-bottom: 4px;
+font-family: "cairo";
+font-Weight: 400;
+}
+
+.link:hover {
+  color: #905B30;
+}
+
+.linkActive {
+  color: #905B30;
+  font-weight: 400;
+  border-bottom: 3px solid #905B30;
+}
+
+.icons {
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+  width:32px;
+  height:32px;
+  border-radius: 50%;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #3A3A38;
+  padding: 0;
+  display: flex;
+  transition: color 0.2s ease;
+}
+
+.iconButton:hover {
+  color: #B98A4A;
+}

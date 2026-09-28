@@ -1,0 +1,207 @@
+
+
+.perfumeSectionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.perfumeSectionHead h2 {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: "Cairo";
+  color: #905B30;
+  position: relative;
+  padding-bottom: 12px;
+  margin: 0;
+}
+
+.perfume-section__head h2::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 46px;
+  height: 3px;
+
+  border-radius: 2px;
+}
+
+.see-all {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.see-all svg {
+  width: 16px;
+  height: 16px;
+  transform: scaleX(-1);
+}
+
+/* Fixed 4-column grid. Item 5, 9, 13... wraps to a new row by itself. */
+.perfume-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.perfume-card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 16px;
+  position: relative;
+  box-shadow: 0 4px 18px rgba(60, 45, 20, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.fav-btn {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+}
+
+.fav-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--gold-dark);
+  fill: none;
+}
+
+.fav-btn.is-active svg {
+  fill: var(--gold-dark);
+}
+
+.perfume-card__image {
+  height: 220px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #f3ede1, #eadfc9);
+}
+
+.perfume-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.perfume-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.perfume-card__rating svg {
+  width: 13px;
+  height: 13px;
+  fill: var(--gold);
+}
+
+.perfume-card__name {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.perfume-card__category {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+
+.perfume-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.price-old,
+.price-new {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.price-old {
+  font-size: 13px;
+  color: var(--price-old);
+  text-decoration: line-through;
+}
+
+.price-new {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.add-btn {
+  margin-top: auto;
+  width: 100%;
+  background: var(--gold-dark);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 11px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-btn:hover {
+  background: var(--gold);
+}
+
+.add-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive: 2 columns on tablets, 1 column on phones.
+   A 5th card still simply wraps to its own row in every breakpoint. */
+@media (max-width: 1100px) {
+  .perfume-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .perfume-section {
+    padding: 32px 20px;
+  }
+  .perfume-grid {
+    grid-template-columns: 1fr;
+  }
+}

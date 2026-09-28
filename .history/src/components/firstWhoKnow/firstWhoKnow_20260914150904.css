@@ -1,0 +1,69 @@
+.firstWhoKnow {
+  width: 100%;
+  height: 340px;
+  display: flex;
+}
+.firstWhoKnowContent {
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(144, 91, 48, 0) 0%, #905B30 79.6%);
+}
+.firstWhoKnowContent h2 {
+  font-size: 32px;
+  font-weight: 600;
+  font-family: "Cairo";
+  color: #FFFFFF;
+}
+.firstWhoKnowContent p {
+      font-size: 24px;
+  font-weight: 500;
+  font-family: "Cairo";
+  color: #FFFFFF;
+}
+
+.newsletter-section__form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.newsletter-section__input {
+  flex: 1;
+  height: 48px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fdf6ec;
+ 
+  font-family: "Cairo", sans-serif;
+  font-size: 14px;
+  outline: none;
+}
+
+.newsletter-section__input::placeholder {
+  color: #d8c4ab;
+}
+
+.newsletter-section__btn {
+  height: 48px;
+
+  border-radius: 24px;
+  border: none;
+  background: #905B30;
+  color: #fdf6ec;
+  font-family: "Cairo", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.newsletter-section__btn:hover {
+  background: #a86f3f;
+}

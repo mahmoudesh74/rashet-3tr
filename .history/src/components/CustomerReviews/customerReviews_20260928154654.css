@@ -1,0 +1,225 @@
+.cr-section {
+  padding: 60px 0;
+  direction: rtl;
+  font-family: "Cairo";
+  color: #000000;
+}
+
+/* ---------- Heading ---------- */
+.cr-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 70px;
+}
+
+.cr-heading h2 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #905B30;
+}
+
+.cr-heading-line {
+  width: 56px;
+  height: 3px;
+  border-radius: 2px;
+  background: #905B30;
+}
+
+/* ---------- Layout ---------- */
+.cr-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* ---------- Summary ---------- */
+.cr-summary {
+  width: 300px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.cr-average {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.cr-average-value {
+  font-size: 48px;
+  font-weight: 800;
+  color: #1e1b18;
+  line-height: 1;
+}
+
+.cr-average-of {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.cr-total {
+  font-size: 14px;
+  color: #7a6a5a;
+  margin-bottom: 18px;
+}
+
+.cr-bars {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cr-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #7a6a5a;
+}
+
+.cr-bar-label {
+  width: 44px;
+  flex-shrink: 0;
+}
+
+.cr-bar-track {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  background: #ede4d3;
+  overflow: hidden;
+}
+
+.cr-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: #905B30;
+}
+
+.cr-bar-count {
+  width: 22px;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+/* ---------- Cards ---------- */
+.cr-cards {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-top: 32px;
+}
+
+.cr-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid #f0e9df;
+  border-radius: 16px;
+  padding: 44px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+}
+
+.cr-avatar {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 3px solid #FFFFFF;
+  background: #e8e1dc;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cr-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cr-avatar span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #905B30;
+}
+
+.cr-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e1b18;
+}
+
+.cr-date {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.cr-stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin: 4px 0 8px;
+}
+
+.cr-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e1b18;
+}
+
+.cr-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.9;
+  color: #7a6a5a;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .cr-section {
+    padding: 40px 0;
+  }
+  .cr-layout {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cr-summary {
+    width: 100%;
+    max-width: 360px;
+    align-self: center;
+  }
+  .cr-cards {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cr-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* لما القسم يتعرض جوه التاب */
+.cr-section--inline {
+  padding: 10px 0 0;
+}

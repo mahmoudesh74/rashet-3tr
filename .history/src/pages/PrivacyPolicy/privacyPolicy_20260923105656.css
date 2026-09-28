@@ -1,0 +1,23 @@
+.privacyPolicyPage{
+    margin-top: 120px;
+    padding-right: 50px;
+}
+.privacyPolicyTitle{
+    display: flex;
+    color: #905B30;
+    gap: 5px;
+}
+.privacyPolicyTitle p{
+    color: #53433D;
+}
+.privacyPolicyHeader{
+    display: flex;
+    gap:5px;
+}
+.privacyPolicyHeader h1{
+font-size: 48px;
+font-weight: 700;
+font-family: "Cairo"
+;
+color: #905B30;
+}

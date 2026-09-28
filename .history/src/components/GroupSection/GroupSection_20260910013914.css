@@ -1,0 +1,35 @@
+.GroupSection{
+    width: 100%;
+  margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    padding:30px;
+   
+}
+
+
+
+.GroupSectionHeader{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.GroupSectionTitle h2{
+font-family: "cairo";
+font-size: 28px;
+font-weight: 600;
+color: #905B30;
+
+}
+.GroupSectionTitle p{
+    font-family: "cairo";
+    font-size: 16px;
+    font-weight: 400;
+    color:#8A7A6A;
+}
+.GroupSectionButton{
+gap: 20px;
+display: flex;
+    
+}

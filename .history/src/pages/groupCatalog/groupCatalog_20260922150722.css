@@ -1,0 +1,245 @@
+.perfume-section{
+    margin-top: 120px;
+}
+
+/* ---------- شريط البحث والترتيب ---------- */
+.catalog-toolbar {
+   
+    padding-top: 100px26;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.catalog-sort {
+    direction: ltr;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Cairo";
+  font-size: 15px;
+  color: #7a6a5a;
+}
+
+.catalog-sort__btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  font-family: "Cairo";
+  font-size: 15px;
+  font-weight: 600;
+  color: #3a2413;
+  cursor: pointer;
+}
+
+.catalog-sort__btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.catalog-search-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.catalog-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 320px;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 22px;
+  background: #FFFFFF;
+  border: 1px solid #ede4d3;
+}
+
+.catalog-search svg {
+  width: 18px;
+  height: 18px;
+  color: #b7ae9f;
+  flex-shrink: 0;
+}
+
+.catalog-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: "Cairo";
+  font-size: 14px;
+  color: #3a2413;
+}
+
+.catalog-search input::placeholder {
+  color: #b7ae9f;
+}
+
+.catalog-filter-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid #ede4d3;
+  background: #FFFFFF;
+  color: #905B30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.catalog-filter-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------- تابات التصنيفات ---------- */
+.catalog-tabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 80px 32px;
+  flex-wrap: wrap;
+}
+
+.catalog-tab {
+  padding: 10px 20px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: #FFFFFF;
+  color: #7a6a5a;
+  font-family: "Cairo";
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.catalog-tab:hover {
+  border-color: #905B30;
+  color: #905B30;
+}
+
+.catalog-tab.is-active {
+  background: #905B30;
+  border-color: #905B30;
+  color: #FFFFFF;
+}
+
+/* ---------- باديچ "جديد" ---------- */
+.catalog-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 2;
+  background: #E8E1DC;
+  color: #1E1B18;
+  font-family: "Cairo";
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+/* ---------- تقييم النجوم ---------- */
+.catalog-stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.star {
+  width: 14px;
+  height: 14px;
+}
+
+.star--filled {
+  fill: #f5a623;
+}
+
+.star--empty {
+  fill: #e4d5c8;
+}
+
+/* ---------- الباجينيشن ---------- */
+.catalog-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 40px 0 10px;
+}
+
+.catalog-page-nav {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #ede4d3;
+  background: #FFFFFF;
+  color: #905B30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.catalog-page-nav svg {
+  width: 16px;
+  height: 16px;
+}
+
+.catalog-page-nav:hover:not(:disabled) {
+  background: #f5efe6;
+}
+
+.catalog-page-nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.catalog-page-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: #7a6a5a;
+  font-family: "Cairo";
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.catalog-page-num:hover {
+  background: #f5efe6;
+}
+
+.catalog-page-num.is-active {
+  background: #905B30;
+  color: #FFFFFF;
+}
+
+/* ---------- ريسبونسيف ---------- */
+@media (max-width: 900px) {
+  .catalog-toolbar,
+  .catalog-tabs {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .catalog-search {
+    width: 100%;
+  }
+  .catalog-search-group {
+    width: 100%;
+  }
+}

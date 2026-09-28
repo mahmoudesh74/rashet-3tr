@@ -1,0 +1,11 @@
+.HeaderSection {
+  width: 100%;
+  height: 750px;
+  margin-bottom: 100px;
+  background:
+   
+    url("../../assets/rashet-3tr.png");
+
+  background-size: cover;
+  background-position: center;
+}

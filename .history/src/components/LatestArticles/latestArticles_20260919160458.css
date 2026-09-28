@@ -1,0 +1,49 @@
+.latestArticlesHead{
+     display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 80px 40px 80px;
+}
+.latestArticlesTitle{
+        flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+.latestArticlesHead h2{
+      font-size: 28px;
+  font-weight: 700;
+  font-family: "Cairo";
+  color: #905B30;
+  position: relative;
+  padding-bottom: 12px;
+  margin: 0;
+}
+.latestArticlesLine{
+      height: 3px;
+  width: 67px;
+  background-color: #905B30;
+  border-radius: 8px;
+ 
+}
+.latestArticlesButton {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.latestArticlesButton p {
+  font-family: "cairo";
+  font-size: 28px;
+  font-weight: 600;
+  color: #975233;
+}
+.latestArticlesLine{
+    height: 3px;
+  width: 67px;
+  background-color: #905B30;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

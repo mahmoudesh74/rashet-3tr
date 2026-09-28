@@ -1,0 +1,15 @@
+.latestArticlesHead{
+     display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 80px 40px 80px;
+}
+.latestArticlesHead h2{
+      font-size: 28px;
+  font-weight: 700;
+  font-family: "Cairo";
+  color: #905B30;
+  position: relative;
+  padding-bottom: 12px;
+  margin: 0;
+}

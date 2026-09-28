@@ -1,0 +1,97 @@
+.Footer{
+    width: 100%;
+    height: 440px;
+    background: linear-gradient(7.52deg, #905B30 2.66%, rgba(178, 147, 120, 0.5) 28.7%, rgba(212, 203, 192, 0) 50%),
+linear-gradient(0deg, rgba(251, 248, 245, 0.2), rgba(251, 248, 245, 0.2));
+
+}
+.row{
+    width: 100%;
+    display: flex;
+    padding:  10px 40px 10px 40px ;
+}
+.LogoContainer{
+display: flex;
+    width: 25%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.LogoContainer img{
+    width: 400px;
+    height:200px ;
+}
+.LogoContainer p {
+    max-width: 200px;
+}
+.LinksContainer{
+ width: 25%;   
+ gap: 15px;
+ display: flex;
+ flex-direction: column;
+padding-top: 40px;
+ justify-content: center;
+}
+.LinksContainer h3{
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Cairo";
+    color: #905B30;
+}
+.LinksContainer a{
+    font-size: 16px;
+    font-weight: 400;
+    color: #3a2413;
+    font-family: "Cairo";
+    text-decoration: none;
+}
+.ownLinks{
+  width: 25%;   
+ gap: 15px;
+ display: flex;
+ flex-direction: column;
+padding-top: 40px;
+
+}
+.ownLinks h3{
+      font-size: 20px;
+    font-weight: 400;
+    font-family: "Cairo";
+    color: #905B30;
+}
+.ownLinks a{
+       font-size: 16px;
+    font-weight: 400;
+    color: #3a2413;
+    font-family: "Cairo";
+    text-decoration: none;
+}
+.contactWithUs{
+      width: 25%;   
+ gap: 15px;
+ display: flex;
+ flex-direction: column;
+padding-top: 40px;
+}
+.contactWithUs h3{
+          font-size: 20px;
+    font-weight: 400;
+    font-family: "Cairo";
+    color: #905B30;
+}
+.location{
+    display: flex;
+    align-items: center;
+   
+}
+.locationIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: #C5A0591A;
+    border-radius: 4px;
+
+
+}

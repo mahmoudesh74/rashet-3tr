@@ -1,0 +1,8 @@
+.HomePageHader {
+  width: 100%;
+  height: 750px;
+  background: url("../../assets/rashet-3tr.png");
+
+  background-size: cover;
+  background-position: center;
+}

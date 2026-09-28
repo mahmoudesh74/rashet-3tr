@@ -1,0 +1,287 @@
+.contactUsPage {
+  width: 100%;
+  background-color: #FBF8F5;
+ padding-top: 100px;
+}
+
+/* ===== Hero ===== */
+.contactHero {
+  width: 100%;
+  text-align: center;
+  padding: 60px 100px 40px;
+}
+
+.contactHero h1 {
+  font-family: "Cairo";
+  font-weight: 700;
+  font-size: 40px;
+  color: #905B30;
+  padding-bottom: 12px;
+}
+
+.contactHero p {
+  font-family: "Cairo";
+  font-weight: 500;
+  font-size: 18px;
+  color: #8A7A6A;
+}
+
+/* ===== Contact card (form + info panel) ===== */
+.contactCard {
+  display: flex;
+width: 95%;
+  margin: 0 auto 60px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 4px 20px 0px #8b5e3c1a;
+  border: 1px solid #d5c3b84d;
+}
+
+.contactForm {
+ width: 70%;
+  background: #FFFFFF;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.formRow {
+  display: flex;
+  gap: 20px;
+}
+
+.formField {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formField label {
+  font-family: "Cairo";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #3a2413;
+}
+
+.formField input,
+.formField textarea {
+  font-family: "Cairo";
+  font-size: 14px;
+  color: #3a2413;
+  border: 1px solid #d5c3b8;
+  border-radius: 8px;
+  padding: 12px 14px;
+  outline: none;
+  background: #fff;
+  resize: none;
+}
+
+.formField input:focus,
+.formField textarea:focus,
+.inputWithIcon:focus-within,
+.phoneField:focus-within {
+  border-color: #905B30;
+}
+
+.inputWithIcon {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d5c3b8;
+  border-radius: 8px;
+  padding: 0 14px;
+  background: #fff;
+}
+
+.inputWithIcon input {
+  border: none;
+  flex: 1;
+  padding: 12px 8px;
+}
+
+.inputWithIcon img {
+  width: 18px;
+  height: 18px;
+}
+
+.phoneField {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d5c3b8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.phoneField .countryCode {
+  background: #EFE4DB;
+  direction: ltr;
+  padding: 12px 14px;
+  font-family: "Cairo";
+  font-size: 16px;
+  font-weight: 400;
+  color: #634939;
+  border-left: none;
+}
+
+.phoneField input {
+  border: none;
+  flex: 1;
+  padding: 12px 14px;
+}
+
+.topicsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-right: 50px;
+}
+.formFieldTitle{
+  padding-right: 50px;
+  font-weight: 600;
+  font-size: 16px ;
+  font-family: "Cairo";
+  color: #011C2A;
+}
+
+.topicOption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 14px;
+  color: #51443c;
+  cursor: pointer;
+}
+
+.topicOption input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #905B30;
+  cursor: pointer;
+}
+
+.submitButton {
+  align-self: flex-start;
+  background: #905B30;
+  color: #FBF8F5;
+  font-family: "Cairo";
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 44px 10px 44px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submitButton:hover {
+  background: #7a4b27;
+}
+
+/* Right info panel */
+.contactInfoPanel {
+width: 30%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #56371d 0%, #905B30 100%);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  color: #FFFFFF;
+}
+
+.contactInfoPanel h2 {
+  font-family: "Cairo";
+  font-weight: 700;
+  font-size: 24px;
+  padding-bottom: 8px;
+}
+
+.contactInfoPanel > p {
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 14px;
+  color: #f0e6de;
+  padding-bottom: 32px;
+}
+
+.contactInfoList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.contactInfoListIcon{
+  width: 32px ;
+  height: 32px;
+  border-radius: 4px;
+  background-color: #FBF8F580;
+  /* border: 1px solid #e5e7eb; */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.contactInfoList li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contactInfoList li span {
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.contactInfoList li img {
+  width: 18px;
+  height: 18px;
+}
+
+.contactInfoImg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 180px;
+  border-radius: 50% 50% 0 0;
+  opacity: 0.9;
+}
+
+.contactSocials {
+  margin-top: auto;
+  display: flex;
+  gap: 14px;
+  padding-top: 32px;
+  z-index: 1;
+}
+
+.contactSocials a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactSocials img {
+  width: 18px;
+  height: 18px;
+}
+
+
+@media (max-width: 900px) {
+  .contactCard {
+    flex-direction: column;
+  }
+  .contactFooter {
+    flex-direction: column;
+  }
+  .formRow {
+    flex-direction: column;
+  }
+}

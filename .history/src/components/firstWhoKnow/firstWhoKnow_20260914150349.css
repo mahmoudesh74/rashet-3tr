@@ -1,0 +1,26 @@
+.firstWhoKnow {
+  width: 100%;
+  height: 340px;
+  display: flex;
+}
+.firstWhoKnowContent {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(144, 91, 48, 0) 0%, #905B30 79.6%);
+}
+.firstWhoKnowContent h2 {
+  font-size: 32px;
+  font-weight: 600;
+  font-family: "Cairo";
+  color: #FFFFFF;
+}
+.firstWhoKnowContent p {
+      font-size: 24px;
+  font-weight: 500;
+  font-family: "Cairo";
+  color: #FFFFFF;
+}

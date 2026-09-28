@@ -1,0 +1,207 @@
+.latestArticles {
+  direction: rtl;
+  position: relative;
+  background: #FBF8F5;
+}
+
+/* ---------- الهيدر (زي ما كان عندك بالظبط) ---------- */
+.latestArticlesHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 80px 40px 80px;
+}
+
+.latestArticlesTitle {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.latestArticlesHead h2 {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: "Cairo";
+  color: #905B30;
+  position: relative;
+  padding-bottom: 12px;
+  margin: 0;
+}
+
+.latestArticlesButton {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.latestArticlesButton p {
+  font-family: "Cairo";
+  font-size: 28px;
+  font-weight: 600;
+  color: #975233;
+}
+
+.latestArticlesLine {
+  height: 3px;
+  width: 67px;
+  background-color: #905B30;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ---------- جسم القسم (الكروت + أزرار التنقل) ---------- */
+.latestArticlesBody {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 80px 60px;
+}
+
+.latestArticlesGrid {
+  padding: 0 10px 0 10px;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+/* ---------- كارت المقال الواحد ---------- */
+.latestArticlesCard {
+  height: 780px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.latestArticlesImage {
+  width: 100%;
+  height: 390px;
+  overflow: hidden;
+}
+
+.latestArticlesImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.latestArticlesContent {
+  padding: 40px 25px ;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: right;
+}
+
+.latestArticlesContent h3 {
+  font-family: "Cairo";
+  font-size: 20px;
+  font-weight: 700;
+  color: #905B30;
+  margin: 0 0 14px;
+}
+
+.latestArticlesContent p {
+  max-width: 500px;
+  font-family: "Cairo";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.9;
+  color: #6a6a6a;
+  margin: 0 0 24px;
+}
+
+.latestArticlesReadMore {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border: 1px solid #905B30;
+  border-radius: 24px;
+  background: transparent;
+  color: #905B30;
+  font-family: "Cairo";
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.latestArticlesReadMore img {
+  width: 16px;
+  height: 16px;
+}
+
+/* .latestArticlesReadMore:hover {
+  background: #905B30;
+  color: #FFFFFF;
+}
+
+.latestArticlesReadMore:hover img {
+  filter: brightness(0) invert(1);
+} */
+
+/* ---------- أزرار التنقل الدائرية ---------- */
+.latestArticlesNavBtn {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: #905B30;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.latestArticlesNavBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.latestArticlesNavBtn:hover {
+  background: #a86f3f;
+}
+
+.latestArticlesNavBtn--prev {
+  margin-left: -24px; /* نصه برّه حدود القسم زي التصميم */
+  order: 2;
+}
+
+.latestArticlesNavBtn--next {
+  margin-right: -24px;
+  order: 0;
+}
+
+.latestArticlesGrid {
+  order: 1;
+}
+
+/* ---------- ريسبونسيف ---------- */
+@media (max-width: 1100px) {
+  .latestArticlesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .latestArticlesHead,
+  .latestArticlesBody {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .latestArticlesNavBtn {
+    display: none; /* على الموبايل أسهل تسايب سكرول بدل الأسهم */
+  }
+}

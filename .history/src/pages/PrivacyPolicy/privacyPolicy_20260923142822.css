@@ -1,0 +1,367 @@
+.privacyPolicyPage {
+  margin-top: 100px;
+  background-color: #FBF8F5;
+  width: 100%;
+}
+.pageHeaderContent {
+  position: relative;
+  overflow: hidden;
+  padding-right: 100px;
+  padding-top: 20px;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+
+  background:
+    linear-gradient(0deg, #e4d5c8, #e4d5c8),
+    linear-gradient(90deg, #905B30 0%, #e4d5c8 58.24%);
+
+  border: 1px solid #d5c3b84d;
+}
+.headerShieldImg {
+  position: absolute;
+  left: 30px;
+  bottom: 0;
+  width: 260px;
+  height: auto;
+}
+.privacyPolicyTitle {
+  display: flex;
+  color: #905B30;
+  gap: 5px;
+}
+.privacyPolicyTitle p {
+  color: #53433d;
+}
+.privacyPolicyHeader {
+  gap: 5px;
+}
+.privacyPolicyHeader h1 {
+  font-size: 48px;
+  font-weight: 700;
+  font-family: "Cairo";
+  color: #905B30;
+}
+.privacyPolicyHeaderImg {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  gap: 5px;
+}
+.privacyPolicyHeaderDes p {
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 18px;
+  color: #56371d;
+  max-width: 600px;
+}
+.introSection {
+  padding-top: 20px;
+  padding-right: 100px;
+}
+.introSection h2 {
+  font-family: "Tajawal";
+  font-weight: 700;
+  font-size: 36px;
+  color: #56371d;
+
+  padding-bottom: 10px;
+}
+.introSection p {
+  font-family: "Tajawal";
+  font-weight: 400;
+  font-size: 18px;
+  color: #56371d;
+  max-width: 1300px;
+  line-height: 29.25px;
+}
+.dataCollected {
+  width: 100%;
+  display: flex;
+  padding-right: 100px;
+  padding-top: 50px;
+}
+.Database {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+.Database h2 {
+  font-family: "Tajawal";
+  font-weight: 700;
+  font-size: 28px;
+  color: #56371d;
+}
+
+.accordionSection {
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.accordionItem {
+  border: 1px solid #d5c3b84d;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 30%;
+  box-shadow: 0px 4px 20px 0px #8b5e3c0d;
+}
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #e4d5c8;
+  cursor: pointer;
+}
+.accordionArrow {
+  color: #905B30;
+  font-size: 12px;
+}
+.accordionTitle {
+  font-family: "Tajawal";
+  font-weight: 700;
+  font-size: 18px;
+  color: #56371d;
+  flex: 1;
+}
+.accordionNumber {
+  font-family: "Tajawal";
+  font-weight: 400;
+  font-size: 36px;
+  color: #905B30;
+}
+.accordionBody {
+  padding: 16px;
+  background: #fff;
+}
+.accordionBody p {
+  font-family: "Tajawal";
+  font-size: 16px;
+  color: #56371d;
+}
+
+/* Usage section */
+.usageSection {
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-top: 50px;
+}
+.usageSection h2 {
+  font-family: "Tajawal";
+  font-weight: 700;
+  font-size: 28px;
+  color: #56371d;
+  padding-bottom: 20px;
+}
+.usageCards {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 20px 0px #8b5e3c05;
+}
+.usageCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+}
+.usageCard:last-child {
+  border-bottom: none;
+}
+.usageCardIcon {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 12px;
+  font-size: 24px;
+  background-color: #f5ece7;
+  width: 40px;
+  height: 40px;
+}
+.usageCardText h3 {
+  font-family: "Cairo";
+  font-weight: 700;
+  font-size: 20px;
+  color: #56371d;
+  padding-bottom: 4px;
+}
+.usageCardText p {
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 16px;
+  color: #51443c;
+}
+
+/* Sharing section */
+.sharingSection {
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-top: 50px;
+}
+.sharingSection h2 {
+  font-family: "Cairo";
+  font-weight: 700;
+  font-size: 28px;
+  color: #3a2413;
+  padding-bottom: 10px;
+}
+.sharingDesc {
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 18px;
+  color: #51443c;
+  padding-bottom: 20px;
+}
+.sharingSectionCards {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.sharingCards {
+  width: 60%;
+  align-items: center;
+  justify-content: center;
+  direction: ltr;
+  display: flex;
+  gap: 20px;
+}
+.sharingCard {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #d5c3b84d;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+.sharingCard:hover {
+  background-color: #905B30;
+}
+.sharingCard:hover h3,
+.sharingCard:hover p {
+  color: #FFFFFF;
+}
+.sharingCardIcon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.sharingCard h3 {
+  font-family: "Tajawal";
+  font-weight: 700;
+  font-size: 18px;
+  color: #56371d;
+  padding-bottom: 6px;
+}
+.sharingCard p {
+  font-family: "Tajawal";
+  font-weight: 400;
+  font-size: 14px;
+  color: #56371d;
+}
+
+/* Rights section */
+.rightsSection {
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.rightsSectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 30px;
+}
+.rightsSection h2 {
+  font-family: "Tajawal";
+  font-weight: 700;
+  font-size: 28px;
+  color: #56371d;
+  padding-bottom: 10px;
+}
+.rightsDesc {
+  font-family: "Tajawal";
+  font-weight: 400;
+  font-size: 16px;
+  color: #56371d;
+  padding-bottom: 20px;
+}
+.rightsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.rightsList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.checkIcon {
+  color: #2e7d32;
+  font-weight: 700;
+}
+.rightsList li span:last-child {
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 16px;
+  color: #56371d;
+}
+.Help {
+  background-image: linear-gradient(90deg, rgba(86, 55, 29, 0.828) 0%, rgba(144, 91, 48, 0.792) 100%), url("../../assets/helpImg.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+
+  width: 100%;
+  height: 440px;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  
+}
+.HelpContent h2{
+    font-family: "Cairo";
+  font-weight: 600;
+  font-size: 32px;
+  color: #FFFFFF;
+  padding-bottom: 20px;
+}
+.HelpContent p{
+    font-family: "Cairo";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+  max-width: 760px;
+text-align: center;
+  padding-bottom: 20px;
+
+}
+.contactUsButton{
+  background: linear-gradient(0deg, #905B30, #905B30),
+linear-gradient(180deg, #BA987C 0%, #A57956 27.68%, #905B30 125.82%);
+
+}
+.HelpContent{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

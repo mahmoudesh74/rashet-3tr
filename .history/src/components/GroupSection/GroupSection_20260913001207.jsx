@@ -1,0 +1,93 @@
+import { useState, useEffect } from "react";
+import arrowLeft from "../../assets/arrowLeft.svg";
+import arrowRight from "../../assets/arrow-right-02.svg";
+import groupImg1 from "../../assets/groupImg1.png";
+import groupImg2 from "../../assets/groupImg2.png";
+import groupImg3 from "../../assets/groupImg3.png";
+import groupImg4 from "../../assets/groupImg4.png";
+import groupImg5 from "../../assets/groupImg5.png";
+import groupImg6 from "../../assets/groupImg6.png";
+import "./GroupSection.css";
+
+const groups = [
+  { id: 1, image: groupImg4, title: "لك و لها", desc: "نفحة رجولة ورشة انوثة" },
+  { id: 2, image: groupImg3, title: "عطور رجالية", desc: "تليق فيك" },
+  { id: 3, image: groupImg2, title: "عطور نسائية", desc: "تزيدك انوثة" },
+  { id: 4, image: groupImg5, title: "مجموعة الصيف", desc: "تحسست بالانتعاش" },
+  { id: 5, image: groupImg6, title: "مجموعة الفخامة", desc: "تروي حكاية فخامتك" },
+  { id: 6, image: groupImg1, title: "المجموعة الكاملة", desc: "عطورك المفضلة في مكان واحد" },
+];
+
+const AUTOPLAY_DELAY = 2000;
+// أماكن ثابتة بترتيب العرض على الشاشة: شمال، نص، يمين
+const SLOTS = [-1, 0, 1];
+
+export default function GroupSection() {
+  const [current, setCurrent] = useState(0);
+  const total = groups.length;
+
+  const goNext = () => setCurrent((prev) => (prev + 1) % total);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev - 1 + total) % total);
+    }, AUTOPLAY_DELAY);
+    return () => clearInterval(interval);
+  }, [total]);
+
+  // بيرجع العنصر اللي المفروض يظهر في مكان (pos) بالنسبة للعنصر الحالي
+  const getGroupAt = (pos) => groups[(current + pos + total) % total];
+
+  return (
+    <div className="GroupSection">
+      <div className="GroupSectionHeader">
+        <div className="GroupSectionTitle">
+          <h2>تسوق حسب المجموعة</h2>
+          <p>وفر أكثر مع مجموعات تناسب جميع الأذواق</p>
+        </div>
+        <div className="GroupSectionButton" onClick={goNext} style={{ cursor: "pointer" }}>
+          <p>عرض الكل</p>
+          <div>
+            <img src={arrowLeft} alt="arrowLeft" />
+          </div>
+        </div>
+      </div>
+
+      <div className="GroupSectionContent">
+        <div className="gs-track">
+          {SLOTS.map((pos) => {
+            const group = getGroupAt(pos);
+            const isCenter = pos === 0;
+
+            return (
+              <div
+                key={pos} // ثابت دايمًا - مش بيتغير حسب البيانات
+                className={`gs-slide ${isCenter ? "gs-slide-center" : ""}`}
+                style={{
+                  transform: `translateX(-50%) translateX(${pos * 420}px)`,
+                  opacity: isCenter ? 1 : 0.75,
+                  zIndex: isCenter ? 3 : 1,
+                }}
+              >
+                <div
+                  key={group.id} // ده اللي بيعمل fade للمحتوى لما يتغير
+                  className="gs-card gs-card-fade"
+                  style={{
+                    backgroundImage: `linear-gradient(270deg, rgba(0,0,0,0.6) 41.35%, rgba(0,0,0,0) 100%), url(${group.image})`,
+                  }}
+                >
+                  <h2>{group.title}</h2>
+                  <p>{group.desc}</p>
+                  <button className="GroupSectionItemButton">
+                    <p>تسوق الان</p>
+                    <img src={arrowRight} alt="arrowRight" />
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}

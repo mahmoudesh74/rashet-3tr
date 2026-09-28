@@ -1,0 +1,21 @@
+.BestSellerHeader{
+    display: flex;
+  
+    justify-content: space-between;
+    padding: 80px;
+    background-color: #EFE4DB;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    height:757px;
+}
+.pagination{
+    display: flex;
+  
+    justify-content: center;
+}
+.pagination1{
+    width:48px;
+    height: 48px;
+    border: 2px solid #905B30;
+    border-radius: 50%;
+}

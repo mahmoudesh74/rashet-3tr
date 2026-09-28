@@ -1,0 +1,31 @@
+.AboutSection{
+
+     display: flex;
+    flex-direction: column;
+  
+    justify-content: center;
+padding-right: 100px;
+  width: 100%;
+  height: 617px;
+  background:
+     linear-gradient(259.37deg, rgba(144, 91, 48, 0.75) -0.76%, rgba(212, 203, 192, 0) 81.71%),
+    url(../../assets/about.png);
+  background-size: cover;
+  background-position: center;
+}
+.AboutSectionContent {
+   width: 51%;
+   height: 50%;
+}
+.AboutSectionContent h2{
+    font-size: 44px;
+    font-family: "Cairo";
+    font-weight: 700;
+    color: #FFFFFF;
+}
+.AboutSectionContent p{
+    font-size: 24px;
+    font-family: "Cairo";
+    font-weight: 600;
+    color: #FFFFFF;
+}

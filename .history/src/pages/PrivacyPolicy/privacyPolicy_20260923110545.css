@@ -1,0 +1,36 @@
+.privacyPolicyPage {
+  margin-top: 120px;
+  padding-right: 50px;
+  width: 100%;
+}
+.pageHeaderContent{
+    padding: 0;
+    margin: 0;
+    width:100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+   
+    background: linear-gradient(0deg, #E4D5C8, #E4D5C8),
+linear-gradient(90deg, #905B30 0%, #E4D5C8 58.24%);
+border: 1px solid #D5C3B84D;
+}
+.privacyPolicyTitle {
+  display: flex;
+  color: #905B30;
+  gap: 5px;
+}
+.privacyPolicyTitle p {
+  color: #53433d;
+}
+.privacyPolicyHeader {
+  display: flex;
+  gap: 5px;
+  padding-right: 50px;
+}
+.privacyPolicyHeader h1 {
+  font-size: 48px;
+  font-weight: 700;
+  font-family: "Cairo";
+  color: #905B30;
+}

@@ -1,0 +1,53 @@
+.BestSellerHeader{
+    display: flex;
+  
+    justify-content: space-between;
+    padding: 80px;
+    background-color: #EFE4DB;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    height:757px;
+}
+.BestSellerTitle h2{
+    font-family: "Cairo";
+    font-size: 28px;
+    font-weight: 700;
+    color: #905B30;
+}
+
+.BestSellerLine{
+    height: 3px;
+    width:67px;
+     background-color: #905B30; 
+     border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.pagination{
+    display: flex;
+    gap: 20px;
+  
+    justify-content: center;
+}
+.pagination1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:48px;
+    height: 48px;
+  
+    background-color: #905B30;
+    border-radius: 50%;
+}
+.pagination2{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    width:48px;
+    height: 48px;
+    border: 2px solid #905B30;
+    
+    border-radius: 50%;
+}

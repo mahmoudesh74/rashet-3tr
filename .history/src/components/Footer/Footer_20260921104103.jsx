@@ -1,0 +1,32 @@
+import "./Footer.css";
+export default function Footer() {
+  return (
+    <footer className="Footer">
+      {" "}
+      <div className="container">
+        {" "}
+        <div className="row">
+          {" "}
+          <div className="col-3">
+            {" "}
+            <h3>عن رشيت</h3> <p>اكتشف عالم العطور المميز مع رشيت.</p>{" "}
+          </div>{" "}
+          <div className="col-3">
+            {" "}
+            <h3>روابط مهمة</h3> <p>الرئيسية</p> <p>العطور</p> <p>من نحن</p>{" "}
+          </div>{" "}
+          <div className="col-3">
+            {" "}
+            <h3>خدمة العملاء</h3> <p>تواصل معنا</p> <p>الأسئلة الشائعة</p>{" "}
+            <p>سياسة الاستبدال</p>{" "}
+          </div>{" "}
+          <div className="col-3">
+            {" "}
+            <h3>تواصل معنا</h3> <p>Facebook</p> <p>Instagram</p>{" "}
+            <p>WhatsApp</p>{" "}
+          </div>{" "}
+        </div>{" "}
+      </div>{" "}
+    </footer>
+  );
+}

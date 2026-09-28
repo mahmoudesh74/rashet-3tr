@@ -1,0 +1,21 @@
+import arrowLeft from "../../assets/arrowLeft.svg"
+import "./latestArticles.css"
+export default function LatestArticles() {
+  return (
+    <>
+  <div className="latestArticlesHead">
+        <div className="latestArticlesTitle" >
+          <h2>احدث المقالات</h2>
+          <span className="latestArticlesLine"></span>
+        </div>
+
+        <div className="latestArticlesButton" style={{ cursor: "pointer" }}>
+          <p>عرض الكل</p>
+          <div>
+            <img src={arrowLeft} alt="arrowLeft" />
+          </div>
+        </div>
+      </div>
+      </>
+  )
+}

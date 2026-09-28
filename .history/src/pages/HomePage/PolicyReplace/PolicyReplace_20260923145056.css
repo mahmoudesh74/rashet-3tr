@@ -1,0 +1,80 @@
+.stepsSection {
+  width: 100%;
+  padding: 60px 100px;
+  text-align: center;
+  direction: rtl;
+}
+
+.stepsSection h2 {
+  font-family: "Cairo";
+  font-weight: 700;
+  font-size: 32px;
+  color: #56371d;
+  padding-bottom: 60px;
+}
+
+.stepsTrack {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.stepsLine {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background-color: #e4d5c8;
+  z-index: 0;
+}
+
+.stepItem {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  padding: 0 16px;
+}
+
+.stepCircle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cairo";
+  font-weight: 700;
+  font-size: 20px;
+  background-color: #FBF8F5;
+  border: 2px solid #d5c3b8;
+  color: #905B30;
+  margin-bottom: 24px;
+}
+
+.stepCircle.active {
+  background-color: #905B30;
+  border-color: #905B30;
+  color: #FFFFFF;
+}
+
+.stepItem h3 {
+  font-family: "Cairo";
+  font-weight: 700;
+  font-size: 18px;
+  color: #56371d;
+  padding-bottom: 10px;
+}
+
+.stepItem p {
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 15px;
+  color: #7a6a5f;
+  max-width: 260px;
+  line-height: 22px;
+}

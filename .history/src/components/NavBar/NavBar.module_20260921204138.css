@@ -1,0 +1,168 @@
+.navbar {
+  width: 100%;
+  background-color:  #EFE4DBE5;
+  height: 100px;
+
+  position: absolute; /* بيتحط فوق الفيديو بس، ومبيفضلش ثابت وقت السكرول */
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100; /* يفضل فوق الفيديو وأي سكشن تاني */
+}
+
+.container {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+.logoImage {
+  width: auto;
+  height: 300px;
+  object-fit: contain;
+  scale: crop;
+}
+
+.links {
+  align-items: center;
+  gap: 38px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .links {
+    display: flex;
+  }
+}
+
+.link {
+  font-size: 20px;
+  color: #696767;
+  text-decoration: none;
+  padding-bottom: 4px;
+  font-family: "cairo";
+  font-weight: 400;
+}
+
+.link:hover {
+  color: #905B30;
+}
+
+.linkActive {
+  color: #905B30;
+  font-weight: 400;
+  border-bottom: 3px solid #905B30;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+.search {
+  display: flex;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  justify-content: center;
+  cursor: pointer;
+}
+.profile {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  justify-content: center;
+}
+
+.cart {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    #ba987c 0%,
+    #a57956 27.68%,
+    #905B30 125.82%
+  );
+}
+
+.cartCount {
+  position: absolute;
+  top: -10px;
+  left: -3px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  color: #905B30;
+  font-size: 10px;
+  font-weight: 700;
+  font-family: "cairo";
+  box-shadow: 0 2px 6px #0000004d;
+}
+
+@media (max-width: 1024px) {
+  .navbar,
+  .container {
+    height: 90px;
+  }
+  .logoImage {
+    height: 220px;
+  }
+  .links {
+    gap: 22px;
+  }
+  .link {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar,
+  .container {
+    height: 70px;
+  }
+  .logoImage {
+    height: 160px;
+  }
+  .icons {
+    gap: 14px;
+  }
+  .search,
+  .profile,
+  .cart {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar,
+  .container {
+    height: 60px;
+  }
+  .logoImage {
+    height: 120px;
+  }
+}

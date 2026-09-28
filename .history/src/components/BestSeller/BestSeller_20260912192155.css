@@ -1,0 +1,249 @@
+.BestSellerHeader{
+    display: flex;
+
+    justify-content: space-between;
+    padding: 30px 80px 30px 80px;
+  
+
+    width: 100%;
+}
+.BestSeller{
+    display: flex;
+justify-content: flex-start;
+align-items: center;
+
+    flex-direction: column;
+     background-color: #EFE4DB;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    width: 100%;
+    height:757px;
+
+}
+.BestSellerTitle{
+     display: flex;
+flex-direction: column;
+    align-items: center;
+    gap: 14px;
+
+}
+.BestSellerTitle h2{
+    font-family: "Cairo";
+    font-size: 28px;
+    font-weight: 700;
+    color: #905B30;
+}
+
+.BestSellerLine{
+    height: 3px;
+    width:67px;
+     background-color: #905B30;
+     border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.pagination{
+    display: flex;
+    gap: 20px;
+
+    justify-content: center;
+}
+.pagination1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:48px;
+    height: 48px;
+    cursor: pointer;
+    background-color: #905B30;
+    border-radius: 50%;
+    transition: transform .2s ease, background-color .2s ease;
+}
+.pagination1:hover{
+    background-color: #905B30;
+    transform: scale(1.06);
+}
+.pagination2{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    width:48px;
+    height: 48px;
+    border: 2px solid #905B30;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: transform .2s ease, background-color .2s ease;
+}
+.pagination2:hover{
+    background-color: #905B30;
+    transform: scale(1.06);
+}
+.BestSellerContent{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+
+.bs-track{
+    position: relative;
+    width: 100%;
+    height: 90%;
+}
+
+.bs-slide{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 450px;
+
+transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.2s ease-in-out;
+
+}
+
+.bs-slide-center{
+    width: 450px;
+}
+
+
+
+.bs-card{
+
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    width: 450px;
+    height: 518px;
+border: 6px solid #FFFFFF;
+    box-shadow: 0 24px 40px -22px rgba(43, 36, 28, 0.25);
+}
+
+.bs-slide-center .bs-card{
+border: 6px solid #FFFFFF;
+
+    width: 450px;
+    height: 577px;
+    box-shadow: 0 30px 50px -20px rgba(43, 36, 28, 0.35);
+}
+
+.bs-card-media{
+    position: absolute;
+    inset: 0;
+}
+
+.bs-card-media img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.bs-fav{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(251, 247, 239, 0.92);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #2B241C;
+    z-index: 2;
+}
+
+.bs-card-body{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 46px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: "Cairo", sans-serif;
+    text-align: right;
+    background: linear-gradient(to top, rgba(20, 15, 10, 0.88) 0%, rgba(20, 15, 10, 0.55) 55%, rgba(20, 15, 10, 0) 100%);
+}
+
+.bs-kicker{
+    font-size: 13px;
+    color: #E7C594;
+    font-weight: 500;
+}
+
+.bs-card-body h3{
+    font-size: 17px;
+    font-weight: 700;
+    margin: 2px 0 0;
+    color: #FBF7EF;
+    line-height: 1.4;
+}
+
+.bs-cat{
+    color: rgba(251, 247, 239, 0.75);
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.bs-price-row{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.bs-price-old{
+    color: rgba(251, 247, 239, 0.6);
+    text-decoration: line-through;
+    font-size: 13px;
+}
+
+.bs-price-new{
+    color: #F0C987;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.bs-add-btn{
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 11px 14px;
+    background: #FBF7EF;
+    color: #2B241C;
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+}
+
+.bs-add-btn:hover{
+    background: #905B30;
+    color: #F5EEE2;
+}
+
+@media (max-width: 880px){
+    .bs-slide{ width: 260px; }
+    .bs-slide-center{ width: 260px; }
+    .bs-card{ width: 260px; height: 337px; }
+    .bs-slide-center .bs-card{ width: 260px; height: 375px; }
+    .BestSellerHeader{ padding: 40px 24px; }
+}

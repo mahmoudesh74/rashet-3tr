@@ -1,0 +1,144 @@
+.GroupSection {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.GroupSectionHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.GroupSectionTitle h2 {
+  font-family: "cairo";
+  font-size: 28px;
+  font-weight: 600;
+  color: #905B30;
+}
+.GroupSectionTitle p {
+  font-family: "cairo";
+  font-size: 16px;
+  font-weight: 400;
+  color: #8a7a6a;
+}
+.GroupSectionButton {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.GroupSectionButton p {
+  font-family: "cairo";
+  font-size: 28px;
+  font-weight: 600;
+  color: #975233;
+}
+.GroupSectionContent {
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+  gap: 30px;
+  justify-content: space-between;
+  height: 278px;
+}
+.GroupSectionItem1 {
+    display: flex;
+    flex-direction: column;
+   padding-right: 20px;
+    justify-content: center;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(270deg, rgba(0, 0, 0, 0.6) 41.35%, rgba(0, 0, 0, 0) 100%),
+    url(../../assets/groupImg1.png);
+  background-size: cover;
+  background-position: center;
+}
+.GroupSectionItem1 h2{
+    font-family: "Cairo";
+    font-size: 28px;
+    font-family: 600;
+    color: #FFFFFF;
+}
+.GroupSectionItem1 P{
+    font-family: "Cairo";
+    font-size: 16px;
+    font-family: 400;
+    color: #FFFFFF;
+}
+.GroupSectionItem2 {
+    display: flex;
+    flex-direction: column;
+   padding-right: 20px;
+    justify-content: center;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(270deg, rgba(0, 0, 0, 0.6) 41.35%, rgba(0, 0, 0, 0) 100%),
+    url(../../assets/groupImg1.png);
+  background-size: cover;
+  background-position: center;
+}
+.GroupSectionItem2 h2{
+    font-family: "Cairo";
+    font-size: 28px;
+    font-family: 600;
+    color: #FFFFFF;
+}
+.GroupSectionItem2 P{
+    font-family: "Cairo";
+    font-size: 16px;
+    font-family: 400;
+    color: #FFFFFF;
+}
+.GroupSectionItemButton{
+    width:112px;
+    height: 34px;
+    font-family: "Cairo";
+    font-size: 18PX;
+    font-weight: 500;
+    gap: 6PX;
+    margin-top: 30px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#905B30;
+    color: #FFFFFF;
+    border-radius: 8px;
+
+   
+
+}
+.GroupSectionItem2 {
+     display: flex;
+    flex-direction: column;
+   padding-right: 20px;
+    justify-content: center;
+  width: 100%;
+  border-radius: 8px;
+  height: 100%;
+  background: linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 0.6) 41.35%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url(../../assets/groupImg2.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.GroupSectionItem3 {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(270deg, rgba(0, 0, 0, 0.6) 41.35%, rgba(0, 0, 0, 0) 100%),
+    url(../../assets/groupImg3.png);
+  background-size: cover;
+  background-position: center;
+}

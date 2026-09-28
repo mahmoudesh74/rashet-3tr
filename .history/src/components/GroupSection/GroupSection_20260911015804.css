@@ -1,0 +1,399 @@
+
+.GroupSection {
+  width: 100%;
+  margin-top: 100px;
+  padding: 30px;
+  overflow: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.GroupSectionHeader {
+  width: 100%;
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.GroupSectionTitle h2 {
+  margin: 0;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+
+  color: #905B30;
+}
+
+.GroupSectionTitle p {
+  margin: 0;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  color: #8a7a6a;
+}
+
+/* =========================
+   SHOW ALL BUTTON
+========================= */
+
+.GroupSectionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+
+  cursor: pointer;
+}
+
+.GroupSectionButton p {
+  margin: 0;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+
+  color: #975233;
+}
+
+.GroupSectionArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.GroupSectionArrow img {
+  width: 24px;
+  height: 24px;
+
+  object-fit: contain;
+}
+
+/* =========================
+   CAROUSEL
+========================= */
+
+.GroupSectionCarouselWrapper {
+  width: 100%;
+
+  margin-top: 50px;
+
+  overflow: hidden;
+}
+
+.GroupSectionCarouselTrack {
+  width: max-content;
+
+  display: flex;
+  flex-wrap: nowrap;
+
+  /* مهم جداً عشان نتحكم في اتجاه الحركة */
+  direction: rtl;
+
+  will-change: transform;
+
+  animation: GroupInfiniteSlider 12s linear infinite;
+}
+
+/*
+  كل مجموعة Cards تعتبر Set مستقل.
+
+  عندنا:
+  SET 1 | SET 2
+
+  ولما SET 1 يخرج بالكامل
+  SET 2 يكون مكانه بالضبط
+  وبالتالي مفيش jump.
+*/
+
+.GroupSectionCarouselSet {
+  display: flex;
+  flex-shrink: 0;
+
+  gap: 30px;
+
+  direction: rtl;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.GroupCard {
+  position: relative;
+
+  /*
+    Responsive:
+    على الشاشات الصغيرة الكارت يصغر
+    وعلى الديسكتوب يوصل لـ 360px
+  */
+  flex: 0 0 clamp(
+    220px,
+    calc((100vw - 120px) / 3),
+    360px
+  );
+
+  width: clamp(
+    220px,
+    calc((100vw - 120px) / 3),
+    360px
+  );
+
+  height: 278px;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+}
+
+/* =========================
+   DARK OVERLAY
+========================= */
+
+.GroupCard::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.4) 45%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  z-index: 0;
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.GroupCardContent {
+  position: relative;
+
+  z-index: 1;
+
+  width: 100%;
+
+  padding-right: 20px;
+
+  direction: rtl;
+}
+
+.GroupCard h2 {
+  margin: 0;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+
+  color: #FFFFFF;
+}
+
+.GroupCard p {
+  margin: 0;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  color: #FFFFFF;
+}
+
+/* =========================
+   SHOP BUTTON
+========================= */
+
+.GroupSectionItemButton {
+  width: 112px;
+  height: 34px;
+
+  margin-top: 30px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #905B30;
+
+  color: #FFFFFF;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.GroupSectionItemButton span {
+  margin: 0;
+}
+
+.GroupSectionItemButton img {
+  width: 18px;
+  height: 18px;
+
+  object-fit: contain;
+}
+
+/* =========================
+   INFINITE ANIMATION
+========================= */
+
+@keyframes GroupInfiniteSlider {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.GroupCard {
+  transition: transform 0.3s ease;
+}
+
+.GroupCard:hover {
+  transform: scale(1.02);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 800px) {
+  .GroupSection {
+    padding: 20px;
+    margin-top: 60px;
+  }
+
+  .GroupSectionHeader {
+    padding: 0;
+  }
+
+  .GroupSectionTitle h2 {
+    font-size: 24px;
+  }
+
+  .GroupSectionTitle p {
+    font-size: 14px;
+  }
+
+  .GroupSectionButton {
+    gap: 10px;
+  }
+
+  .GroupSectionButton p {
+    font-size: 20px;
+  }
+
+  .GroupSectionCarouselWrapper {
+    margin-top: 35px;
+  }
+
+  .GroupCard {
+    flex-basis: 280px;
+    width: 280px;
+    height: 260px;
+  }
+
+  .GroupCard h2 {
+    font-size: 24px;
+  }
+
+  .GroupCard p {
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+  .GroupSection {
+    padding: 15px;
+  }
+
+  .GroupSectionHeader {
+    align-items: flex-start;
+  }
+
+  .GroupSectionTitle h2 {
+    font-size: 20px;
+  }
+
+  .GroupSectionTitle p {
+    font-size: 12px;
+  }
+
+  .GroupSectionButton p {
+    font-size: 16px;
+  }
+
+  .GroupSectionArrow img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .GroupCard {
+    flex-basis: 260px;
+    width: 260px;
+    height: 240px;
+  }
+
+  .GroupCard h2 {
+    font-size: 22px;
+  }
+
+  .GroupCard p {
+    font-size: 13px;
+  }
+
+  .GroupSectionItemButton {
+    width: 105px;
+    height: 32px;
+
+    margin-top: 25px;
+
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .GroupSectionCarouselTrack {
+    animation: none;
+  }
+}
+

@@ -1,0 +1,149 @@
+.GroupSection {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.GroupSectionHeader {
+  padding: 0px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.GroupSectionTitle h2 {
+  font-family: "cairo";
+  font-size: 28px;
+  font-weight: 600;
+  color: #905B30;
+}
+.GroupSectionTitle p {
+  font-family: "cairo";
+  font-size: 16px;
+  font-weight: 400;
+  color: #8a7a6a;
+}
+.GroupSectionButton {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.GroupSectionButton p {
+  font-family: "cairo";
+  font-size: 28px;
+  font-weight: 600;
+  color: #975233;
+}
+
+.GroupSectionContent {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  height: 320px;
+  overflow-x: hidden;
+  overflow-y: visible;
+  margin-top: 50px;
+}
+
+.gs-track {
+  position: relative;
+  width: 100%;
+  height: 90%;
+}
+
+.gs-slide {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 380px;
+  transition: transform 1.2s cubic-bezier(0, .8, 0, 1), opacity 1s ease-in-out;
+}
+
+.gs-slide-center {
+  width: 420px;
+}
+
+.gs-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  height: 240px;
+  box-shadow: 0 24px 40px -22px rgba(43, 36, 28, 0.25);
+}
+
+.gs-slide-center .gs-card {
+  height: 278px;
+  box-shadow: 0 30px 50px -20px rgba(43, 36, 28, 0.35);
+}
+
+.gs-card-media {
+  position: absolute;
+  inset: 0;
+}
+
+.gs-card-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.gs-card-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: "Cairo", sans-serif;
+  text-align: right;
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.6) 41.35%, rgba(0, 0, 0, 0) 100%);
+}
+
+.gs-card-body h2 {
+  font-family: "Cairo";
+  font-size: 28px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.gs-card-body p {
+  font-family: "Cairo";
+  font-size: 16px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+.GroupSectionItemButton {
+  cursor: pointer;
+  width: 112px;
+  height: 34px;
+  font-family: "Cairo";
+  font-size: 18px;
+  font-weight: 500;
+  gap: 6px;
+  margin-top: 20px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #905B30;
+  color: #FFFFFF;
+  border-radius: 8px;
+}
+
+@media (max-width: 880px) {
+  .gs-slide { width: 260px; }
+  .gs-slide-center { width: 280px; }
+  .gs-card { height: 200px; }
+  .gs-slide-center .gs-card { height: 220px; }
+  .GroupSectionHeader { padding: 40px 24px; }
+}

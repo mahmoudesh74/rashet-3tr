@@ -1,0 +1,56 @@
+.AboutSection{
+
+     display: flex;
+    flex-direction: column;
+  
+    justify-content: center;
+padding-right: 100px;
+  width: 100%;
+  height: 617px;
+  background:
+     linear-gradient(259.37deg, rgba(144, 91, 48, 0.75) -0.76%, rgba(212, 203, 192, 0) 81.71%),
+    url(../../assets/about.png);
+  background-size: cover;
+  background-position: center;
+}
+.AboutSectionContent {
+     display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+   width: 51%;
+   height: 50%;
+}
+.AboutSectionContent h2{
+    font-size: 44px;
+    font-family: "Cairo";
+    font-weight: 700;
+    color: #FFFFFF;
+}
+.AboutTitleLine {
+  width: 143px; 
+  height: 3px;
+  background-color: #905B30; 
+  margin-top: 12px;
+  border-radius: 2px;
+    margin-bottom: 10px;
+
+}
+.AboutSectionContent p{
+    font-size: 24px;
+    font-family: "Cairo";
+    font-weight: 600;
+    color: #FFFFFF;
+}
+.AboutSectionButton{
+    font-family: "Cairo";
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-top: 30px;
+    border: none;
+    height: 52px;
+    width:128px;
+    color: #FFFFFF;
+    background-color: #905B30;
+    border-radius: 16px;
+}

@@ -1,0 +1,8 @@
+.HeaderSection {
+  background:
+   
+    url("../assets/header-bg.png");
+
+  background-size: cover;
+  background-position: center;
+}

@@ -1,0 +1,278 @@
+.GroupPage {
+  width: 100%;
+  margin-top: 100px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   Header
+========================= */
+
+.GroupPageHeader {
+  width: 100%;
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  direction: rtl;
+}
+
+.GroupPageTitle {
+  text-align: right;
+}
+
+.GroupPageTitle h2 {
+  margin: 0;
+
+  font-family: "Cairo";
+  font-size: 28px;
+  font-weight: 600;
+
+  color: #905B30;
+}
+
+.GroupPageTitle p {
+  margin: 5px 0 0;
+
+  font-family: "Cairo";
+  font-size: 16px;
+  font-weight: 400;
+
+  color: #8a7a6a;
+}
+
+/* =========================
+   View All Button
+========================= */
+
+.GroupPageButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+}
+
+.GroupPageButton a {
+  font-family: "Cairo";
+  font-size: 16px;
+  font-weight: 500;
+
+  color: #975233;
+  text-decoration: none;
+}
+
+.GroupPageButton img {
+  width: 20px;
+  height: 20px;
+}
+
+/* =========================
+   Cards Container
+========================= */
+
+.GroupPageContent {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.gs-track {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 16px;
+}
+
+/* =========================
+   Card
+========================= */
+
+.gs-card {
+  width: 100%;
+  height: 180px;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  border-radius: 8px;
+
+  background-size: cover;
+  background-position: center;
+
+  direction: rtl;
+  text-align: right;
+
+  overflow: hidden;
+}
+
+/* =========================
+   Card Title
+========================= */
+
+.gs-card h2 {
+  margin: 0 0 5px;
+
+  font-family: "Cairo";
+  font-size: 24px;
+  font-weight: 600;
+
+  color: #FFFFFF;
+}
+
+/* =========================
+   Card Description
+========================= */
+
+.gs-card > p {
+  margin: 0;
+
+  font-family: "Cairo";
+  font-size: 14px;
+  font-weight: 400;
+
+  color: #FFFFFF;
+}
+
+/* =========================
+   Shop Button
+========================= */
+
+.GroupPageItemButton {
+  width: 112px;
+  height: 34px;
+
+  margin-top: 20px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  cursor: pointer;
+
+  border: 1px solid #905B30;
+  border-radius: 8px;
+
+  background-color: #905B30;
+
+  color: #FFFFFF;
+
+  font-family: "Cairo";
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: all 0.3s ease;
+}
+
+.GroupPageItemButton p {
+  margin: 0;
+
+  color: inherit;
+}
+
+.GroupPageItemButton img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Hover */
+
+.GroupPageItemButton:hover {
+  background-color: transparent;
+
+  color: #905B30;
+}
+
+.GroupPageItemButton:hover img {
+  filter: brightness(0) saturate(100%);
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 880px) {
+  .GroupPage {
+    padding: 25px;
+  }
+
+  .gs-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gs-card {
+    height: 200px;
+  }
+
+  .gs-card h2 {
+    font-size: 22px;
+  }
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 600px) {
+  .GroupPage {
+    margin-top: 60px;
+    padding: 20px;
+  }
+
+  .GroupPageHeader {
+    padding: 0;
+  }
+
+  .GroupPageTitle h2 {
+    font-size: 22px;
+  }
+
+  .GroupPageTitle p {
+    font-size: 13px;
+  }
+
+  .GroupPageButton a {
+    font-size: 14px;
+  }
+
+  .GroupPageButton img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .GroupPageContent {
+    margin-top: 30px;
+  }
+
+  .gs-track {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .gs-card {
+    height: 200px;
+  }
+
+  .gs-card h2 {
+    font-size: 22px;
+  }
+
+  .gs-card > p {
+    font-size: 13px;
+  }
+}

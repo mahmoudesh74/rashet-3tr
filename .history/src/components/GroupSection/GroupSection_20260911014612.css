@@ -1,0 +1,301 @@
+
+/* =========================
+   Group Section
+========================= */
+
+.GroupSection {
+  width: 100%;
+  margin-top: 100px;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================
+   Header
+========================= */
+
+.GroupSectionHeader {
+  width: 100%;
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.GroupSectionTitle h2 {
+  margin: 0;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+
+  color: #905B30;
+}
+
+.GroupSectionTitle p {
+  margin: 0;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  color: #8a7a6a;
+}
+
+
+/* =========================
+   View All Button
+========================= */
+
+.GroupSectionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+
+  cursor: pointer;
+}
+
+.GroupSectionButton p {
+  margin: 0;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+
+  color: #975233;
+}
+
+.GroupSectionArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.GroupSectionArrow img {
+  width: 24px;
+  height: 24px;
+
+  object-fit: contain;
+}
+
+
+/* =========================
+   Carousel Wrapper
+========================= */
+
+.GroupSectionCarouselWrapper {
+  width: calc(360px * 3 + 30px * 2);
+  max-width: 100%;
+
+  margin: 50px auto 0;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   Carousel Track
+========================= */
+
+.GroupSectionCarouselTrack {
+  display: flex;
+  gap: 30px;
+
+  width: max-content;
+
+  will-change: transform;
+}
+
+
+/* =========================
+   Card
+========================= */
+
+.GroupCard {
+  position: relative;
+
+  flex: 0 0 360px;
+
+  width: 360px;
+  height: 278px;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================
+   Dark Gradient
+========================= */
+
+.GroupCard::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.4) 45%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  z-index: 0;
+}
+
+
+/* =========================
+   Card Content
+========================= */
+
+.GroupCardContent {
+  position: relative;
+
+  z-index: 1;
+
+  width: 100%;
+
+  padding-right: 20px;
+}
+
+.GroupCard h2 {
+  margin: 0;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+
+  color: #FFFFFF;
+}
+
+.GroupCard p {
+  margin: 0;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  color: #FFFFFF;
+}
+
+
+/* =========================
+   Shop Button
+========================= */
+
+.GroupSectionItemButton {
+  width: 112px;
+  height: 34px;
+
+  margin-top: 30px;
+  padding: 0;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #905B30;
+
+  color: #FFFFFF;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.GroupSectionItemButton span {
+  margin: 0;
+}
+
+.GroupSectionItemButton img {
+  width: 18px;
+  height: 18px;
+
+  object-fit: contain;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 1200px) {
+  .GroupSectionCarouselWrapper {
+    width: calc(360px * 2 + 30px);
+  }
+}
+
+@media (max-width: 800px) {
+  .GroupSection {
+    padding: 20px;
+    margin-top: 60px;
+  }
+
+  .GroupSectionHeader {
+    padding: 0;
+  }
+
+  .GroupSectionTitle h2 {
+    font-size: 24px;
+  }
+
+  .GroupSectionTitle p {
+    font-size: 14px;
+  }
+
+  .GroupSectionButton p {
+    font-size: 20px;
+  }
+
+  .GroupSectionCarouselWrapper {
+    width: 100%;
+    margin-top: 35px;
+  }
+
+  .GroupCard {
+    flex-basis: 320px;
+    width: 320px;
+  }
+}
+
+@media (max-width: 500px) {
+  .GroupSection {
+    padding: 15px;
+  }
+
+  .GroupCard {
+    flex-basis: 280px;
+    width: 280px;
+    height: 250px;
+  }
+
+  .GroupCard h2 {
+    font-size: 24px;
+  }
+
+  .GroupCard p {
+    font-size: 14px;
+  }
+}
+

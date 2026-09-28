@@ -1,0 +1,93 @@
+import "./AboutRashetEtr.css";
+import storyImgTop from "../../assets/about.png";
+import storyImgBottom from "../../assets/arrow-down.svg";
+import storyImgAccent from "../../assets/arrow-right-02.svg";
+import arrowLeft from "../../assets/arrowLeft-p-r.svg";
+import bottleImg from "../../assets/arrow-down.svg";
+import summerIcon from "../../assets/arrow-down.svg";
+import luxuryIcon from "../../assets/arrow-down.svg";
+import menIcon from "../../assets/arrow-down.svg";
+import eveningIcon from "../../assets/arrow-down.svg";
+
+const categories = [
+  { id: 1, icon: summerIcon, label: "الصيفية" },
+  { id: 2, icon: luxuryIcon, label: "الفاخرة" },
+  { id: 3, icon: menIcon, label: "الرجالية" },
+  { id: 4, icon: eveningIcon, label: "المسائية" },
+];
+
+export default function AboutRashetEtr() {
+  return (
+    <div className="aboutPage">
+      {/* الهيرو */}
+      <div
+        className="aboutHero"
+        
+      >
+       
+        <div className="aboutHeroContent">
+          <h1>
+            رشة عطر...
+            <br />
+            تفاصيل صغيرة تصنع حضورًا لا يُنسى
+          </h1>
+          <p>
+            نؤمن أن العطر ليس مجرد رائحة،<br /> بل هو بصمة شخصية تسبقك وتبقى بعد
+            رحيلك.
+          </p>
+          <button className="aboutHeroBtn">
+            <span>اكتشف عطورنا</span>
+            <img src={arrowLeft} alt="" />
+          </button>
+        </div>
+      </div>
+
+      {/* قصتنا */}
+      <div className="storySection">
+        <div className="storyImages">
+          <img src={storyImgTop} alt="" className="storyImgTop" />
+          <img src={storyImgBottom} alt="" className="storyImgBottom" />
+          <img src={storyImgAccent} alt="" className="storyImgAccent" />
+        </div>
+
+        <div className="storyText">
+          <div className="storyLabel">
+            <span className="storyLine" />
+            قصتنا
+            <span className="storyLine" />
+          </div>
+          <h2>رحلة شغف بدأت من حب العطور</h2>
+          <p>
+            بدأت رشة عطر من شغفنا الحقيقي بعالم العطور، ومن رغبتنا في تقديم
+            تجربة مختلفة تجمع بين الجودة والأصالة، واختيار الواسع الذي يلبي
+            جميع الأذواق. نحتار كل عطر بعناية ليصبح جزءًا من ذكرياتك اليومية.
+          </p>
+        </div>
+      </div>
+
+      {/* لكل شخص عطر يشبهه */}
+      <div className="categoryBanner">
+        <div className="categoryBannerText">
+          <h2>لكل شخص عطر يشبهه.</h2>
+          <p>اكتشف المجموعة التي تناسبك</p>
+
+          <div className="categoryIcons">
+            {categories.map((item) => (
+              <div className="categoryIconItem" key={item.id}>
+                <img src={item.icon} alt="" />
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <button className="categoryBannerBtn">
+            <span>تسوق الآن</span>
+            <img src={arrowLeft} alt="" />
+          </button>
+        </div>
+
+        <img src={bottleImg} alt="" className="categoryBannerImg" />
+      </div>
+    </div>
+  );
+}

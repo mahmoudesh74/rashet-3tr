@@ -1,0 +1,89 @@
+import "./GroupPage.css";
+
+import arrowRight from "../../assets/arrow-right-02.svg";
+import groupImg1 from "../../assets/groupImg1.png";
+import groupImg2 from "../../assets/groupImg2.png";
+import groupImg3 from "../../assets/groupImg3.png";
+import groupImg4 from "../../assets/groupImg4.png";
+import groupImg5 from "../../assets/groupImg5.png";
+import groupImg6 from "../../assets/groupImg6.png";
+import { useNavigate } from "react-router-dom";
+const groups = [
+  {
+    id: 1,
+    image: groupImg1,
+    title: "المجموعه الكامله",
+    desc: "عطورك المفضلة في مكان واحد",
+  },
+  {
+    id: 2,
+    image: groupImg2,
+    title: "عطور نسائيه",
+    desc: "تزيدك انوثة",
+  },
+  {
+    id: 3,
+    image: groupImg3,
+    title: "عطور رجالية",
+    desc: "تليق فيك",
+  },
+  { id: 4, image: groupImg5, title: "لك ولها", desc: "نفحه رجوله ورشه انوثه" },
+
+  {
+    id: 5,
+    image: groupImg4,
+    title: "مجموعه الفخامه",
+    desc: "تروي حكايه فخامتك",
+  },
+
+  { id: 6, image: groupImg6, title: "مجموعه الصيف", desc: "تحسسك بالانتعاش" },
+];
+export default function GroupPage() {
+    const navigate =useNavigate();
+  return (
+    <div className="GroupPage">
+        <div className="GroupPageTitle">
+            <p>الرئيسية  / المجموعات</p>
+
+        </div>
+        <div className="GroupPageHeader">
+          <h1>
+            المجموعات
+          </h1>
+          <p>اكتشفي مجموعاتنا المختارة بعناية لتناسب ذوقك ومناسباتك المختلفة</p>
+        </div>
+ <div className="GroupPageContent">
+    
+  <div className="gs-track">
+    {groups.map((group) => (
+      <div
+        className="gs-card"
+        key={group.id}
+        style={{
+          backgroundImage: `
+            linear-gradient(
+              270deg,
+              rgba(0,0,0,0.6) 41.35%,
+              rgba(0,0,0,0) 100%
+            ),
+            url(${group.image})
+          `,
+        }}
+      >
+        <h2>{group.title}</h2>
+
+        <p>{group.desc}</p>
+
+        <button className="GroupPageItemButton" onClick={navigate("/GroupCatalog")}>
+
+          <p>تسوق الآن</p>
+          <img src={arrowRight} alt="arrowRight" />
+        </button>
+      </div>
+    ))}
+  </div>
+</div>
+    </div>
+  
+  );
+}

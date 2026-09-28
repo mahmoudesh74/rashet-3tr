@@ -1,0 +1,208 @@
+import "./privacyPolicy.css";
+import CloseIcon from "../../assets/close-Icon.svg";
+import privacy from "../../assets/privacy.png";
+import database from "../../assets/database.svg";
+import arrowDown from "../../assets/arrow-down.svg"
+import carIcon from "../../assets/carIcon.svg"
+import ImproveIcon from "../../assets/improveIcon.svg"
+import markettingIcon from "../../assets/markettingiCON.svg"
+import companyCharge from "../../assets/companyCharge.svg"
+import payment from "../../assets/payment.svg"
+import techIcon from "../../assets/techIcon.svg"
+import saftyIcon from "../../assets/saftyIcon.svg"
+import Help from "../../components/HelpSection/Help"
+import { useState } from "react";
+
+const dataCollectedItems = [
+  {
+    id: 1,
+    title: "البيانات الشخصية",
+    content: "الاسم، رقم الجوال، البريد الإلكتروني، العنوان.",
+    colors:"#FFFFFF"
+  },
+  {
+    id: 2,
+    title: "بيانات الدفع",
+    content: "معلومات بطاقة الدفع (يتم معالجتها عبر بوابات دفع آمنة).",
+    colors:"#E4D5C8"
+  },
+];
+
+const usageItems = [
+  {
+    id: 1,
+    icon: carIcon,
+    title: "معالجة وتوصيل الطلبات",
+    desc: "لضمان وصول المنتج المفضلة إلى عنوانك بدقة وفي الوقت المحدد.",
+  },
+  {
+    id: 2,
+    icon: ImproveIcon,
+    title: "تحسين خدمة العملاء",
+    desc: "الرد السريع على استفساراتك وحل أي مشكلات قد تواجهك بكفاءة.",
+  },
+  {
+    id: 3,
+    icon: markettingIcon,
+    title: "التسويق المخصص",
+    desc: "إرسال العروض الحصرية والإصدارات الجديدة التي تناسب ذوقك (يمكنك إلغاء الاشتراك في أي وقت).",
+  },
+];
+
+const sharingItems = [
+  {
+    id: 1,
+    icon: techIcon,
+    title: "مزودو التقنية",
+    desc: "خدمات الاستضافة وخدمات التحليل.",
+  },
+  {
+    id: 2,
+    icon: payment,
+    title: "مزودو الدفع",
+    desc: "بوابات الدفع الآمنة لمعالجة المعاملات.",
+  },
+  {
+    id: 3,
+    icon: companyCharge,
+    title: "شركات الشحن",
+    desc: "لتسهيل وإتمام توصيل الطلبات.",
+  },
+];
+
+const rightsItems = [
+  "الوصول إلى بياناتك الشخصية وتعديلها في أي وقت من خلال حسابك.",
+  "طلب حذف حسابك وكافة البيانات المرتبطة به.",
+  "إلغاء الاشتراك من النشرات البريدية والرسائل التسويقية.",
+  "الحصول على نسخة من بياناتك المحفوظة لدينا.",
+];
+
+export default function PrivacyPolicyPage() {
+  const [openId, setOpenId] = useState(null);
+
+  return (
+    <div className="privacyPolicyPage">
+      <div className="pageHeaderContent">
+        <div className="privacyPolicyTitle">
+          <p>الرئيسية / </p> سياسة الخصوصية
+        </div>
+        <div className="privacyPolicyHeader">
+          <div className="privacyPolicyHeaderImg">
+            <img src={CloseIcon} alt="" />
+            <h1>سياسة الخصوصية</h1>
+          </div>
+          <div className="privacyPolicyHeaderDes">
+            <p>
+              نحن في رشة عطر نقدر ثقتكم بنا. توضح هذه السياسة كيف نجمع بياناتك
+              ونستخدمها ونحميها بأعلى معايير الأمان المتبعة في المملكة العربية
+              السعودية.
+            </p>
+          </div>
+        </div>
+        
+      </div>
+
+      <div className="introSection">
+        <h2>مقدمه</h2>
+        <p>
+          تطبق هذه السياسة على جميع الخدمات التي يقدمها متجرنا الإلكتروني، وتوضح
+          أنواع المعلومات التي نجمعها، وكيفية معالجتها، والتدابير التي نتخذها
+          لضمان أمنها.آخر تحديث: 24 أكتوبر 2024. تم إعداد هذه السياسة لتتوافق مع
+          نظام حماية البيانات الشخصية في المملكة العربية السعودية. <br /> عند استخدامك
+          لموقع وتطبيق "رشة عطر"، فإنك توافق على ممارسات جمع البيانات الموضحة
+          هنا.
+        </p>
+      </div>
+
+      <div className="dataCollected">
+        <div className="Database">
+          <img src={database} alt="" />
+          <h2>ما البيانات التي نجمعها؟</h2>
+        </div>
+      </div>
+
+      <div className="accordionSection">
+        {dataCollectedItems.map((item) => (
+          <div
+            className="accordionItem"
+            key={item.id}
+            onMouseEnter={() => setOpenId(item.id)}
+            onMouseLeave={() => setOpenId(null)}
+          >
+            <div
+              className="accordionHeader"
+              style={{ backgroundColor: item.colors }}
+            >
+              <span className="accordionNumber">
+                {String(item.id).padStart(2, "0")}
+              </span>
+              <span className="accordionArrow">
+                <img src={arrowDown} alt="" />
+              </span>
+            </div>
+            {openId === item.id && (
+              <div className="accordionBody">
+                <span className="accordionTitle">{item.title}</span>
+                <p>{item.content}</p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div className="usageSection">
+        <h2>كيف نستخدم بياناتك؟</h2>
+        <div className="usageCards">
+          {usageItems.map((item) => (
+            <div className="usageCard" key={item.id}>
+              <div className="usageCardIcon"><img src={item.icon} alt="" /></div>
+              <div className="usageCardText">
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="sharingSection">
+        <h2>مشاركة البيانات</h2>
+        <p className="sharingDesc">
+          نحن لا نبيع بياناتك أبدًا. نشارك الحد الأدنى المطلوب مع شركائنا
+          الموثوقين فقط لتقديم الخدمة:
+        </p>
+        <div className="sharingSectionCards">
+          <div className="sharingCards">
+          {sharingItems.map((item) => (
+            <div className="sharingCard" key={item.id}>
+              <div className="sharingCardIcon"><img src={item.icon} alt="" /></div>
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+        </div>
+      </div>
+
+      <div className="rightsSection">
+        <div className="rightsSectionHeader" >
+          <img src={saftyIcon} alt="saftyIcon" />
+        <h2>الأمان وحقوقك</h2>
+        </div>
+        <p className="rightsDesc">
+          تخضع جميع بياناتك للتشفير عالي المستوى وتُخزن في خوادم آمنة، بصفتك
+          مستخدمًا يحق لك دائمًا:
+        </p>
+        <ul className="rightsList">
+          {rightsItems.map((right, index) => (
+            <li key={index}>
+              <span className="checkIcon">✓</span>
+              <span>{right}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    <Help/>
+    </div>
+  );
+}

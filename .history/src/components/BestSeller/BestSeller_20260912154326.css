@@ -1,0 +1,43 @@
+.BestSellerHeader{
+    display: flex;
+  
+    justify-content: space-between;
+    padding: 80px;
+    background-color: #EFE4DB;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    height:757px;
+}
+.BestSellerLine{
+    height: 3px;
+    width:67px;
+     background-color: #905B30; 
+    display: flex;
+    justify-content: center;
+}
+.pagination{
+    display: flex;
+    gap: 20px;
+  
+    justify-content: center;
+}
+.pagination1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:48px;
+    height: 48px;
+  
+    background-color: #905B30;
+    border-radius: 50%;
+}
+.pagination2{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    width:48px;
+    height: 48px;
+    border: 2px solid #905B30;
+    
+    border-radius: 50%;
+}

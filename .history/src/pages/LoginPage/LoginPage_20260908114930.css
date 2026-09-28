@@ -1,0 +1,275 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.login-page {
+  font-family: "Cairo";
+  background: #8A7A6A;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.login-page {
+  --cream: ;
+  --ink: #1F1B16;
+  --sub: #6B6258;
+  --brand: #A8642F;
+  --brand-dark: #8B5024;
+  --border: #E4DCCB;
+  --white: #FFFFFF;
+}
+
+.login-card {
+  background:#FFFFFF;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 20px;
+  padding: 48px 44px;
+  box-shadow: 0 20px 60px rgba(31, 27, 22, 0.08);
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--ink);
+  text-align: center;
+  margin: 0;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: var(--sub);
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+.google-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  border: 1.5px solid var(--brand);
+  border-radius: 10px;
+  background:#FFFFFF;
+  color: var(--brand-dark);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.google-btn:hover {
+  background: #FBF6EE;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 28px 0;
+  color: var(--sub);
+  font-size: 14px;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background:#e5e7eb;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.text-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid#e5e7eb;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  background:#FFFFFF;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.text-input:focus {
+  border-color: var(--brand);
+}
+
+.text-input::placeholder {
+  color: #B7AE9F;
+}
+
+.password-wrap {
+  position: relative;
+}
+
+.password-wrap .text-input {
+  padding-left: 44px;
+}
+
+.toggle-eye {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--sub);
+  display: flex;
+  padding: 0;
+}
+
+.toggle-eye svg {
+  width: 20px;
+  height: 20px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  font-size: 14px;
+}
+
+.remember-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.remember-checkbox {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--brand);
+  cursor: pointer;
+}
+
+.forgot-link {
+  color: var(--brand-dark);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: var(--brand);
+  color:#FFFFFF;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.submit-btn:hover {
+  background: var(--brand-dark);
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 14px;
+  color: var(--sub);
+}
+
+.footer-text a {
+  color: var(--brand-dark);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .login-page {
+    padding: 24px 16px;
+    align-items: flex-start;
+  }
+
+  .login-card {
+    padding: 32px 24px;
+    border-radius: 16px;
+    max-width: 100%;
+  }
+
+  .login-title {
+    font-size: 24px;
+  }
+
+  .login-subtitle {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .google-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .text-input {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .password-wrap .text-input {
+    padding-left: 40px;
+  }
+
+  .form-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .submit-btn {
+    padding: 13px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .login-card {
+    padding: 24px 18px;
+  }
+
+  .login-title {
+    font-size: 21px;
+  }
+}

@@ -1,0 +1,60 @@
+.privacyPolicyPage {
+  margin-top: 100px;
+ 
+  width: 100%;
+}
+.pageHeaderContent{
+  position: relative;
+  overflow: hidden;
+    padding-right:100px ;
+    padding-top: 20px;
+    width:100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+   
+    background: linear-gradient(0deg, #E4D5C8, #E4D5C8),
+linear-gradient(90deg, #905B30 0%, #E4D5C8 58.24%);
+border: 1px solid #D5C3B84D;
+}
+.headerShieldImg {
+  position: absolute;
+  left: 30px;
+  bottom: 0;
+  width: 260px; /* عدّل الحجم زي ما يناسبك */
+  height: auto;
+}
+.privacyPolicyTitle {
+  display: flex;
+  color: #905B30;
+  gap: 5px;
+}
+.privacyPolicyTitle p {
+  color: #53433d;
+}
+.privacyPolicyHeader {
+ 
+  gap: 5px;
+
+}
+.privacyPolicyHeader h1 {
+  font-size: 48px;
+  font-weight: 700;
+  font-family: "Cairo";
+  color: #905B30;
+}
+.privacyPolicyHeaderImg{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    gap: 5px;
+
+}
+.privacyPolicyHeaderDes p{
+
+font-family: "Cairo";
+font-weight: 400;
+font-size: 18px;
+color: #56371D;
+max-width: 600px;
+}

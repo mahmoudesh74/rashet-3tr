@@ -1,0 +1,140 @@
+.GroupSection {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.GroupSectionHeader {
+  padding: 0px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.GroupSectionTitle h2 {
+  font-family: "Cairo";
+  font-size: 28px;
+  font-weight: 600;
+  color: #905B30;
+  margin: 0;
+}
+
+.GroupSectionTitle p {
+  font-family: "Cairo";
+  font-size: 16px;
+  font-weight: 400;
+  color: #8a7a6a;
+  margin: 0;
+}
+
+.GroupSectionButton {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.GroupSectionButton p {
+  font-family: "Cairo";
+  font-size: 28px;
+  font-weight: 600;
+  color: #975233;
+  margin: 0;
+}
+
+/* ===== الكاروسيل ===== */
+
+.GroupSectionCarouselWrapper {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.GroupSectionCarouselTrack {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: scrollLeft 30s linear infinite;
+}
+
+.GroupSectionCarouselTrack:hover {
+  animation-play-state: paused;
+}
+
+.GroupCard {
+  position: relative;
+  flex: 0 0 360px;
+  height: 278px;
+  border-radius: 8px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.GroupCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0.6) 41.35%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.GroupCard h2,
+.GroupCard p,
+.GroupCard button {
+  position: relative;
+  z-index: 1;
+}
+
+.GroupCard h2 {
+  font-family: "Cairo";
+  font-size: 28px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.GroupCard p {
+  font-family: "Cairo";
+  font-size: 16px;
+  font-weight: 400;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.GroupSectionItemButton {
+  cursor: pointer;
+  width: 112px;
+  height: 34px;
+  font-family: "Cairo";
+  font-size: 18px;
+  font-weight: 500;
+  gap: 6px;
+  margin-top: 30px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #905B30;
+  color: #FFFFFF;
+  border-radius: 8px;
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

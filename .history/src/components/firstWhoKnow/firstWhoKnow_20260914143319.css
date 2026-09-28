@@ -1,0 +1,11 @@
+.firstWhoKnow{
+    width:100%;
+    height: 340px;
+    display: flex;
+
+
+}
+.firstWhoKnowContent{
+    width: 60%;
+    height: 100%;
+}

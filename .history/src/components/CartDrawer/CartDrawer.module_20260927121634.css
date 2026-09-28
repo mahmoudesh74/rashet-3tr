@@ -1,0 +1,258 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+  z-index: 999;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 380px;
+  max-width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  z-index: 1000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  direction: ltr;
+  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.08);
+  animation: cartSlideIn 0.3s ease;
+}
+
+@keyframes cartSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ---------- Header ---------- */
+.header {
+  display: flex;
+  direction: rtl;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee5dc;
+  flex-shrink: 0;
+}
+
+.header h2 {
+  margin: 0;
+  font-family: "Cairo";
+  font-size: 22px;
+  font-weight: 500;
+  color: #1e1b18;
+}
+
+.count {
+  font-family: "Cairo";
+  font-size: 14px;
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+.close {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: #905B30;
+  font-size: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ---------- Items ---------- */
+.itemsList {
+  flex: 1;
+  overflow-y: auto;
+  direction: rtl;
+  padding-top: 10px;
+}
+
+.emptyText {
+  text-align: center;
+  font-family: "Cairo";
+  color: #9ca3af;
+  margin-top: 40px;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid #f5efe6;
+}
+
+.itemImageWrap {
+  width: 84px;
+  height: 84px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f5efe6;
+  flex-shrink: 0;
+}
+
+.itemImageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.itemInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.itemTop {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.itemName {
+  margin: 0;
+  font-family: "Cairo";
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e1b18;
+}
+
+.itemSize {
+  font-family: "Cairo";
+  font-size: 13px;
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+.itemBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.itemPrice {
+  font-family: "Cairo";
+  font-size: 16px;
+  font-weight: 700;
+  color: #905B30;
+}
+
+.currency {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.qtyControl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ede4d3;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+
+.qtyControl button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: transparent;
+  color: #905B30;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qtyControl span {
+  font-family: "Cairo";
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  min-width: 14px;
+  text-align: center;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  flex-shrink: 0;
+  padding-top: 16px;
+  border-top: 1px solid #eee5dc;
+  direction: rtl;
+}
+
+.totalRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.totalLabel {
+  font-family: "Cairo";
+  font-size: 15px;
+  font-weight: 400;
+  color: #7a6a5a;
+}
+
+.totalValue {
+  font-family: "Cairo";
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e1b18;
+}
+
+.checkoutBtn,
+.viewCartBtn {
+  width: 100%;
+  height: 48px;
+  border-radius: 10px;
+  font-family: "Cairo";
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.checkoutBtn {
+  border: 1px solid #905B30;
+  background: #905B30;
+  color: #FFFFFF;
+}
+
+.checkoutBtn:hover {
+  background: #7c4d27;
+}
+
+.viewCartBtn {
+  border: 1px solid #905B30;
+  background: #FFFFFF;
+  color: #905B30;
+  margin-bottom: 0;
+}
+
+.viewCartBtn:hover {
+  background: #faf5ef;
+}
+
+@media (max-width: 600px) {
+  .drawer {
+    width: 90%;
+    padding: 18px;
+  }
+}

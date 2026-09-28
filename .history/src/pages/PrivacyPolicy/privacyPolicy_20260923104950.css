@@ -1,0 +1,12 @@
+.privacyPolicyPage{
+    margin-top: 120px;
+    padding-right: 50px;
+}
+.privacyPolicyTitle{
+    display: flex;
+    color: #905B30;
+    gap: 5px;
+}
+.privacyPolicyTitle p{
+    color: #53433D;
+}

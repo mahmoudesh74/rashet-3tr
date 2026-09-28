@@ -1,0 +1,125 @@
+.firstWhoKnow {
+  width: 100%;
+  height: 340px;
+  display: flex;
+background: linear-gradient(90deg, rgba(144, 91, 48, 0) 0%, #905B30 79.6%);
+
+  
+
+  
+}
+.firstWhoKnowContent {
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 60%;
+  height: 100%;
+  position: relative;
+  z-index: 1; 
+  background: linear-gradient(90deg, #56371D 0%, rgba(86, 55, 29, 0) 70.85%);
+}
+.firstWhoKnowContent h2 {
+  font-size: 32px;
+  font-weight: 600;
+  font-family: "Cairo";
+  color: #FFFFFF;
+}
+.firstWhoKnowContentText p {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: "Cairo";
+  color: #FFFFFF;
+}
+.firstWhoKnowContentText {
+  width: 750px;
+  margin-bottom: 30px;
+}
+
+/* ---------- الصورة (الـ Mask) ---------- */
+.firstWhoKnowImg {
+  width: 40%;
+  height: 100%;
+  position: relative;
+  overflow: hidden; 
+  margin-right: -1px; 
+}
+
+.firstWhoKnowImg__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center;
+  display: block;
+}
+
+
+.firstWhoKnowImg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    270deg,
+    #56371d 0%,
+    rgba(86, 55, 29, 0) 28.85%
+  );
+  pointer-events: none; 
+}
+
+.newsletter-section__form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.newsletter-section__input-wrap {
+  position: relative;
+  flex: 1;
+}
+
+.mailIcon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.newsletter-section__input {
+  width: 400px;
+  height: 48px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fdf6ec;
+  font-family: "Cairo", sans-serif;
+  font-size: 14px;
+  outline: none;
+  padding: 0 44px 0 16px;
+}
+
+.newsletter-section__input::placeholder {
+  color: #d8c4ab;
+}
+
+.newsletter-section__btn {
+  height: 48px;
+  width: 100px;
+  border-radius: 16px;
+  border: none;
+  background: #905B30;
+  color: #fdf6ec;
+  font-family: "Cairo", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.newsletter-section__btn:hover {
+  background: #a86f3f;
+}

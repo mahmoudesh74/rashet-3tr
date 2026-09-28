@@ -1,0 +1,30 @@
+.HomePageHader {
+  position: relative;
+  width: 100%;
+  height: 750px;
+  z-index: 0; /* يعمل stacking context واضح للهيدر كله */
+}
+
+.VideoWrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0; /* بدل -1 */
+}
+
+.HeaderBgVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.HeaderWrapperContent {
+  position: relative;
+  z-index: 1; /* فوق الفيديو */
+}

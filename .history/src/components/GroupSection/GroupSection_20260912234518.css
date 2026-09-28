@@ -1,0 +1,117 @@
+.GroupSection {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.GroupSectionHeader {
+  padding: 0px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.GroupSectionTitle h2 {
+  font-family: "cairo";
+  font-size: 28px;
+  font-weight: 600;
+  color: #905B30;
+}
+.GroupSectionTitle p {
+  font-family: "cairo";
+  font-size: 16px;
+  font-weight: 400;
+  color: #8a7a6a;
+}
+.GroupSectionButton {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.GroupSectionButton p {
+  font-family: "cairo";
+  font-size: 28px;
+  font-weight: 600;
+  color: #975233;
+}
+
+.GroupSectionContent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  width: 100%;
+  height: 278px;
+  overflow: hidden;
+}
+
+.gs-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gs-slide {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 380px;
+  height: 100%;
+  transition: transform 1.2s cubic-bezier(1, .4, 0, 1);
+}
+
+.gs-slide-center {
+  width: 420px;
+}
+
+.gs-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+}
+
+.gs-card h2 {
+  font-family: "Cairo";
+  font-size: 28px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.gs-card p {
+  font-family: "Cairo";
+  font-size: 16px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+.GroupSectionItemButton {
+  cursor: pointer;
+  width: 112px;
+  height: 34px;
+  font-family: "Cairo";
+  font-size: 18px;
+  font-weight: 500;
+  gap: 6px;
+  margin-top: 30px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #905B30;
+  color: #FFFFFF;
+  border-radius: 8px;
+}
+
+@media (max-width: 880px) {
+  .gs-slide { width: 260px; }
+  .gs-slide-center { width: 280px; }
+}

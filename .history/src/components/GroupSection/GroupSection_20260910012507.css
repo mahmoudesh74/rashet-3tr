@@ -1,0 +1,16 @@
+.GroupSection{
+    width: 100%;
+  margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+
+
+.GroupSectionHeader{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}

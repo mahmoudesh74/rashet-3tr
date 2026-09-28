@@ -1,0 +1,103 @@
+import { useState } from "react";
+import arrowLeft from "../../assets/arrowLeft.svg";
+import "./latestArticles.css";
+
+const ARTICLES = [
+  {
+    id: "how-to-choose-perfume",
+    image: "/assets/article-woman-perfume.jpg", // غيّرها لمسار الصورة عندك
+    title: "كيفية اختيار العطر المثالي: دليل كامل",
+    excerpt:
+      "إيجاد عطر مثالي يتجاوز الأمر رائحة طيبة، بل يتعلق باختيار رائحة تتناسب مع شخصيتك ونمط حياتك وكيمياء جسدك. هذا الدليل المدعوم من الخبراء يشرح أنواع العطور ونغمات الروائح، والنصائح لتحديد عطرك المميز للاستخدام اليومي أو للمناسبات الخاصة.",
+  },
+  {
+    id: "perfume-as-gift",
+    image: "/assets/article-perfume-shelf.jpg", // غيّرها لمسار الصورة عندك
+    title: "كيف تختار عطرًا ليكون هدية مثالية؟",
+    excerpt:
+      "تعرف على أهم النصائح لاختيار العطر كهدية يحتاج إلى عناية واهتمام بالتفاصيل، تعرف على أفضل النصائح لاختيار عطر يناسب شخصية من تهديه، ويمنحه تجربة عطرية راقية تترك انطباعًا لا يُنسى في كل مناسبة.",
+  },
+];
+
+export default function LatestArticles() {
+  const [startIndex, setStartIndex] = useState(0);
+  const visibleCount = 2;
+
+  // أعلى قيمة ممكن يوصلها startIndex (عشان مايعديش آخر عنصرين)
+  const maxIndex = Math.max(0, ARTICLES.length - visibleCount);
+
+  const canGoPrev = startIndex > 0;
+  const canGoNext = startIndex < maxIndex;
+
+  // clamp بيمنع startIndex إنه يطلع برّه الحدود في الاتجاهين
+  const clamp = (value) => Math.min(Math.max(value, 0), maxIndex);
+
+  const goPrev = () => setStartIndex((i) => clamp(i - 1));
+  const goNext = () => setStartIndex((i) => clamp(i + 1));
+
+  const visibleArticles = ARTICLES.slice(startIndex, startIndex + visibleCount);
+
+  return (
+    <div className="latestArticles">
+      <div className="latestArticlesHead">
+        <div className="latestArticlesTitle">
+          <h2>أحدث المقالات</h2>
+          <span className="latestArticlesLine"></span>
+        </div>
+
+        <div className="latestArticlesButton" style={{ cursor: "pointer" }}>
+          <p>عرض الكل</p>
+          <div>
+            <img src={arrowLeft} alt="arrowLeft" />
+          </div>
+        </div>
+      </div>
+
+      <div className="latestArticlesBody">
+        <button
+          type="button"
+          className="latestArticlesNavBtn latestArticlesNavBtn--prev"
+          onClick={goPrev}
+          disabled={!canGoPrev}
+          aria-label="السابق"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+
+        <div className="latestArticlesGrid">
+          {visibleArticles.map((article) => (
+            <article className="latestArticlesCard" key={article.id}>
+              <div className="latestArticlesImage">
+                <img src={article.image} alt={article.title} loading="lazy" />
+              </div>
+
+              <div className="latestArticlesContent">
+                <h3>{article.title}</h3>
+                <p>{article.excerpt}</p>
+
+                <button type="button" className="latestArticlesReadMore">
+                  <img src={arrowLeft} alt="" />
+                  اقرأ المزيد
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <button
+          type="button"
+          className="latestArticlesNavBtn latestArticlesNavBtn--next"
+          onClick={goNext}
+          disabled={!canGoNext}
+          aria-label="التالي"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  );
+}

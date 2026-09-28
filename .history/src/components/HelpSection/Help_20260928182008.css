@@ -1,0 +1,54 @@
+.Help {
+  background-image: linear-gradient(90deg, rgba(86, 55, 29, 0.828) 0%, rgba(144, 91, 48, 0.792) 100%), url("../../assets/helpImg.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+
+  width: 100%;
+  height: 440px;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  margin-bottom: 50px;
+  
+}
+.HelpContent h2{
+    font-family: "Cairo";
+  font-weight: 600;
+  font-size: 32px;
+  color: #FFFFFF;
+  padding-bottom: 20px;
+}
+.HelpContent p{
+    font-family: "Cairo";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+  max-width: 760px;
+text-align: center;
+  padding-bottom: 40px;
+
+}
+.contactUsButton{
+  background: linear-gradient(0deg, #905B30, #905B30),
+linear-gradient(180deg, #BA987C 0%, #A57956 27.68%, #905B30 125.82%);
+width: 142px;
+height: 50px;
+border-radius: 9999px;
+color: #FFFFFF;
+padding: 12.5px 32px 13.5px 32px;
+border: none;
+font-family: "Cairo";
+font-size: 16px;
+font-weight: 600;
+text-align: center;
+}
+.HelpContent{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

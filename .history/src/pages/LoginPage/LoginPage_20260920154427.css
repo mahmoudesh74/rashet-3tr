@@ -1,0 +1,273 @@
+* {
+  box-sizing: border-box;
+}
+
+/* ملحوظة: .login-page الخاصة بالخلفية اتشالت من هنا،
+   لأن Modal.css دلوقتي هو المسؤول عن الـ overlay والتوسيط */
+
+.login-card {
+  position: relative; /* عشان زرار الإغلاق يتموضع بالنسبة له */
+  background: #FFFFFF;
+  width: 100%;
+  border-radius: 20px;
+  padding: 48px 44px;
+}
+
+.login-close {
+  position: absolute;
+  top: 16px;
+  left: 16px; /* RTL: أقرب زاوية طبيعية للإغلاق */
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #f3ede1;
+  color: #6b6258;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.login-close:hover {
+  background: #e4dccb;
+}
+
+.login-title {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Cairo";
+  color: #3a2413;
+  text-align: center;
+  margin: 0;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: #6b6258;
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+.google-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  border: 1.5px solid #a8642f;
+  border-radius: 10px;
+  background: #FFFFFF;
+  color: #8b5024;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.google-btn:hover {
+  background: #fbf6ee;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 28px 0;
+  color: #6b6258;
+  font-size: 14px;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: #e4dccb;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #3a2413;
+  margin-bottom: 8px;
+}
+
+.text-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid #e4dccb;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #3a2413;
+  background: #FFFFFF;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.text-input:focus {
+  border-color: #a8642f;
+}
+
+.text-input::placeholder {
+  color: #b7ae9f;
+}
+
+.password-wrap {
+  position: relative;
+}
+
+.password-wrap .text-input {
+  padding-left: 44px;
+}
+
+.toggle-eye {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b6258;
+  display: flex;
+  padding: 0;
+}
+
+.toggle-eye svg {
+  width: 20px;
+  height: 20px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  font-size: 14px;
+}
+
+.remember-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #3a2413;
+  cursor: pointer;
+}
+
+.remember-checkbox {
+  width: 17px;
+  height: 17px;
+  accent-color: #a8642f;
+  cursor: pointer;
+}
+
+.forgot-link {
+  color: #8b5024;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #a8642f;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.submit-btn:hover {
+  background: #8b5024;
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 14px;
+  color: #6b6258;
+}
+
+.footer-text a {
+  color: #8b5024;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .login-card {
+    padding: 32px 24px;
+    border-radius: 16px;
+  }
+
+  .login-title {
+    font-size: 24px;
+  }
+
+  .login-subtitle {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .google-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .text-input {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .password-wrap .text-input {
+    padding-left: 40px;
+  }
+
+  .form-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .submit-btn {
+    padding: 13px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .login-card {
+    padding: 24px 18px;
+  }
+
+  .login-title {
+    font-size: 21px;
+  }
+}

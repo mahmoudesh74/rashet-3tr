@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Cormorant+Garamond:ital@0;1&display=swap');
+
+.bs-section {
+  --cream: #F5EEE2;
+  --ink: #2B241C;
+  --ink-soft: #6B6157;
+  --gold: #A9793F;
+  --gold-deep: #7C572B;
+  --line: rgba(43, 36, 28, 0.12);
+  --card: #FBF7EF;
+
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 72px 32px 96px;
+  font-family: 'Tajawal', sans-serif;
+  color: var(--ink);
+  box-sizing: border-box;
+}
+
+.bs-section *,
+.bs-section *::before,
+.bs-section *::after {
+  box-sizing: border-box;
+}
+
+.bs-section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 44px;
+}
+
+.bs-section-head h2 {
+  font-size: 34px;
+  font-weight: 800;
+  margin: 0;
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.bs-section-head h2::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 56px;
+  height: 3px;
+  background: var(--gold);
+}
+
+.bs-nav-arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.bs-nav-arrows button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.bs-nav-arrows button:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+}
+
+.bs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.bs-card {
+  background: var(--card);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.bs-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 40px -20px rgba(43, 36, 28, 0.28);
+}
+
+.bs-card-media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.bs-card-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.bs-card:hover .bs-card-media img {
+  transform: scale(1.05);
+}
+
+.bs-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(43, 36, 28, 0.85);
+  color: var(--cream);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  letter-spacing: .02em;
+}
+
+.bs-fav {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(251, 247, 239, 0.92);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.bs-card-body {
+  padding: 20px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.bs-card-body .bs-kicker {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--gold-deep);
+  font-size: 15px;
+  letter-spacing: .02em;
+}
+
+.bs-card-body h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 2px 0 0;
+  line-height: 1.4;
+}
+
+.bs-card-body .bs-cat {
+  color: var(--ink-soft);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.bs-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.bs-price-old {
+  color: var(--ink-soft);
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+.bs-price-new {
+  color: var(--gold-deep);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.bs-add-btn {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--ink);
+  color: var(--cream);
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.bs-add-btn:hover {
+  background: var(--gold-deep);
+}
+
+@media (max-width: 880px) {
+  .bs-grid {
+    grid-template-columns: 1fr;
+  }
+  .bs-section {
+    padding: 48px 20px 64px;
+  }
+  .bs-section-head h2 {
+    font-size: 26px;
+  }
+}

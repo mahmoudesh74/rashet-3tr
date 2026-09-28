@@ -1,0 +1,151 @@
+.Footer {
+  width: 100%;
+  height: 440px;
+  background: linear-gradient(7.52deg, #905B30 2.66%, rgba(178, 147, 120, 0.5) 28.7%, rgba(212, 203, 192, 0) 50%),
+    linear-gradient(0deg, rgba(251, 248, 245, 0.2), rgba(251, 248, 245, 0.2));
+}
+.row {
+  width: 100%;
+  display: flex;
+  padding: 10px 40px 10px 40px;
+}
+.LogoContainer {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.LogoContainer img {
+  width: 400px;
+  height: 200px;
+}
+.LogoContainer p {
+  max-width: 200px;
+}
+.LinksContainer {
+  width: 25%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  justify-content: center;
+}
+.LinksContainer h3 {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Cairo";
+  color: #905B30;
+}
+.LinksContainer a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #3a2413;
+  font-family: "Cairo";
+  text-decoration: none;
+}
+.ownLinks {
+  width: 25%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+}
+.ownLinks h3 {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Cairo";
+  color: #905B30;
+}
+.ownLinks a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #3a2413;
+  font-family: "Cairo";
+  text-decoration: none;
+}
+.contactWithUs {
+  width: 25%;
+  gap: 25px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+}
+.contactWithUs h3 {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Cairo";
+  color: #905B30;
+}
+.location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.locationIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #C5A0591A;
+  border-radius: 4px;
+}
+.phoneIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #C5A0591A;
+  border-radius: 4px;
+}
+
+
+.linkItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  width: fit-content;
+}
+
+.FooterLine {
+  height: 2px;
+  width: 20px;
+  background-color: #905B30;
+  border-radius: 8px;
+  margin-top: 4px;
+
+  opacity: 0; 
+  transform: scaleX(0);
+  transform-origin: right; 
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.linkItem:hover .FooterLine {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.makeby{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-top: 1px solid #8A7A6A80;
+    margin: 0px 40px 12px 40px;
+    padding-top: 10px;
+    gap: 5px;
+    color: #6B6764;
+
+}
+.makeby p{
+    font-size: 16px ;
+    font-weight: 400;
+    font-family: "Cairo";
+    color: #6B6764;
+}
+.payed{
+    height:82px;
+    width: 100%;
+    background-color: #EFE6DD80;
+    border: 1px solid #C5A0591A;
+}
