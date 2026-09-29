@@ -9,12 +9,6 @@ import heart from "../../assets/heart.svg";
 import favoriteHeart from "../../assets/favoriteHeart.svg";
 import rialSale from "../../assets/rialSale.svg"
 import rialSaoudy from "../../assets/saudi-riyal.svg"
-import success from "../../assets/success.svg"
-import lock from "../../assets/lock.svg"
-import visa from "../../assets/visa-logo.svg"
-import applePay from "../../assets/ApplePay.svg"
-import mada from "../../assets/Mada_Logo.svg"
-import { useNavigate } from "react-router-dom";
 const INITIAL_ITEMS = [
   {
     id: "tom-ford",
@@ -68,7 +62,6 @@ export default function ShoppingBasket() {
   const [couponInput, setCouponInput] = useState("");
   const [appliedCoupon, setAppliedCoupon] = useState(null);
   const [couponError, setCouponError] = useState("");
-  const navigate =useNavigate();
 
   const increaseQty = (id) => {
     setItems((prev) =>
@@ -147,10 +140,10 @@ export default function ShoppingBasket() {
                     </div>
                     <div className="cart-item-price">
                        <span className="cart-item-new-price">
-                        {item.price} <img src={rialSaoudy} alt="rialSaoudy" />
+                        {item.price} <img src={rialSaoudy} alt="" />
                       </span>
                       <span className="cart-item-old-price">
-                       <img src={rialSale} alt="rialSale" />
+                       <img src={rialSale} alt="" />
                       </span>
                      
                     </div>
@@ -235,7 +228,7 @@ export default function ShoppingBasket() {
 
             {appliedCoupon && (
               <p className="cart-coupon-success">
-                <img src={success} alt="" /> تم تطبيق الكوبون بنجاح
+                <span>ⓘ</span> تم تطبيق الكوبون بنجاح
               </p>
             )}
             {couponError && <p className="cart-coupon-error">{couponError}</p>}
@@ -243,45 +236,40 @@ export default function ShoppingBasket() {
 
           <div className="cart-summary-rows">
             <div className="cart-summary-row">
-              <span className="cart-summary-label">المجموع الفرعي</span>
-
               <span className="cart-summary-value">{subtotal} ر.س</span>
+              <span className="cart-summary-label">المجموع الفرعي</span>
             </div>
             <div className="cart-summary-row">
-              <span className="cart-summary-label">الخصم</span>
-
               <span className="cart-summary-value cart-summary-value--discount">
                 -{discount} ر.س
               </span>
+              <span className="cart-summary-label">الخصم</span>
             </div>
             <div className="cart-summary-row">
-              <span className="cart-summary-label">الشحن</span>
-
               <span className="cart-summary-value">{shipping} ر.س</span>
+              <span className="cart-summary-label">الشحن</span>
             </div>
           </div>
 
           <div className="cart-summary-total">
-            <span className="cart-summary-total-label">الإجمالي</span>
-
             <span className="cart-summary-total-value">{total} ر.س</span>
+            <span className="cart-summary-total-label">الإجمالي</span>
           </div>
 
           <button
             type="button"
             className="cart-checkout-btn"
             disabled={items.length === 0}
-            onClick={()=>navigate("/Checkout")}
           >
             إتمام الطلب
           </button>
 
-          <p className="cart-secure-text"><img src={lock} alt="" /> تسوق آمن ومشفر 100%</p>
+          <p className="cart-secure-text">🔒 تسوق آمن ومشفر 100%</p>
 
           <div className="cart-payment-badges">
-            <div className="cart-payment-badge"><img src={mada} alt="" /></div>
-            <div className="cart-payment-badge"><img src={visa} alt="" /></div>
-            <div className="cart-payment-badge"><img src={applePay} alt="" /></div>
+            <span className="cart-payment-badge">Apple Pay</span>
+            <span className="cart-payment-badge">VISA</span>
+            <span className="cart-payment-badge">mada</span>
           </div>
         </aside>
 

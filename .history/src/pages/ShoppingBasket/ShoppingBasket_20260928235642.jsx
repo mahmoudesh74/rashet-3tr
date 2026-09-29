@@ -10,11 +10,6 @@ import favoriteHeart from "../../assets/favoriteHeart.svg";
 import rialSale from "../../assets/rialSale.svg"
 import rialSaoudy from "../../assets/saudi-riyal.svg"
 import success from "../../assets/success.svg"
-import lock from "../../assets/lock.svg"
-import visa from "../../assets/visa-logo.svg"
-import applePay from "../../assets/ApplePay.svg"
-import mada from "../../assets/Mada_Logo.svg"
-import { useNavigate } from "react-router-dom";
 const INITIAL_ITEMS = [
   {
     id: "tom-ford",
@@ -68,7 +63,6 @@ export default function ShoppingBasket() {
   const [couponInput, setCouponInput] = useState("");
   const [appliedCoupon, setAppliedCoupon] = useState(null);
   const [couponError, setCouponError] = useState("");
-  const navigate =useNavigate();
 
   const increaseQty = (id) => {
     setItems((prev) =>
@@ -271,17 +265,16 @@ export default function ShoppingBasket() {
             type="button"
             className="cart-checkout-btn"
             disabled={items.length === 0}
-            onClick={()=>navigate("/Checkout")}
           >
             إتمام الطلب
           </button>
 
-          <p className="cart-secure-text"><img src={lock} alt="" /> تسوق آمن ومشفر 100%</p>
+          <p className="cart-secure-text">🔒 تسوق آمن ومشفر 100%</p>
 
           <div className="cart-payment-badges">
-            <div className="cart-payment-badge"><img src={mada} alt="" /></div>
-            <div className="cart-payment-badge"><img src={visa} alt="" /></div>
-            <div className="cart-payment-badge"><img src={applePay} alt="" /></div>
+            <span className="cart-payment-badge">Apple Pay</span>
+            <span className="cart-payment-badge">VISA</span>
+            <span className="cart-payment-badge">mada</span>
           </div>
         </aside>
 

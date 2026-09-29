@@ -13,8 +13,7 @@ import PerfumePage from "./pages/perfumePage/perfumePage"
 import ProductDetailsPage from "./pages/PerfumeDetails/PerfumeDetails"
 import ShoppingBasket from "./pages/ShoppingBasket/ShoppingBasket"
 import Checkout from "./pages/CheckoutPage/Checkout"
-import Payment from "./pages/Payment/Payment"
-import Review from "./pages/Review/Review"
+import "./pages/Payment/Payment"
 function App() {
   return (
     <>
@@ -33,8 +32,6 @@ function App() {
         <Route path="/ShoppingBasket" element={<ShoppingBasket />} />
         <Route path="/Checkout" element={<Checkout />} />
         <Route path="/Payment" element={<Payment />} />
-        <Route path="/Review" element={<Review />} />
-
 
 
 

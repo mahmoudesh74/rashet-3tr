@@ -47,10 +47,9 @@
 
 .cart-summary-title {
   margin: 0 0 20px;
-  font-size: 24px;
-  font-family: "Cairo";
+  font-size: 20px;
   font-weight: 700;
-  color: #905B30;
+  color: #1e1b18;
 }
 
 .cart-coupon {
@@ -89,8 +88,8 @@
   padding: 0 16px;
   border-radius: 10px;
   border: 1px solid #905b30;
-  background: #905b30;
-  color: #ffffff;
+  background: #ffffff;
+  color: #905b30;
   font-family: "Cairo";
   font-size: 13px;
   cursor: pointer;
@@ -194,8 +193,7 @@
   height: 50px;
   border-radius: 12px;
   border: none;
- background: linear-gradient(180deg, #BA987C 0%, #A57956 27.68%, #905B30 125.82%);
-
+  background: #905b30;
   color: #ffffff;
   font-family: "Cairo";
   font-size: 15px;
@@ -218,9 +216,8 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #905B30;
+  font-size: 12px;
+  color: #9ca3af;
   margin: 0 0 12px;
 }
 
@@ -232,14 +229,12 @@
 }
 
 .cart-payment-badge {
-    align-items: center;
-    justify-content: center;
-    display: flex;
   padding: 6px 12px;
   border-radius: 8px;
   border: 1px solid #ede4d3;
-  
-  
+  font-size: 11px;
+  font-weight: 600;
+  color: #7a6a5a;
 }
 
 /* ---------- Cart items list ---------- */
@@ -301,7 +296,6 @@
 }
 
 .cart-item-names h3 {
-    direction: ltr;
   margin: 0 0 4px;
   font-size: 22px;
   font-weight: 600;
