@@ -2,7 +2,8 @@ import { useRef, useState } from "react";
 import "./PerfumeDetails.css";
 
 import companyCharge from "../../assets/fastCharge.svg";
-
+import heart from "../../assets/Vector.png";
+import favoriteHeart from "../../assets/favoriteHeart.svg";
 import shopping from "../../assets/shopping-cart-02.svg";
 import star from "../../assets/rattingIcon.svg";
 import emptyStartIcon from "../../assets/emptyStarIcon.svg";

@@ -2,7 +2,8 @@ import { useRef, useState } from "react";
 import "./PerfumeDetails.css";
 
 import companyCharge from "../../assets/fastCharge.svg";
-
+import heart from "../../assets/Vector.png";
+import favoriteHeart from "../../assets/favoriteHeart.svg";
 import shopping from "../../assets/shopping-cart-02.svg";
 import star from "../../assets/rattingIcon.svg";
 import emptyStartIcon from "../../assets/emptyStarIcon.svg";
@@ -26,7 +27,7 @@ import PerfumeSection from "../../components/PerfumeSection/PerfumeSection";
 import CustomerReviews from "../../components/CustomerReviews/CustomerReviews";
 import FirstWhoKnow from "../../components/firstWhoKnow/firstWhoKnow";
 import AddToCartButton from "../../components/AddToCartButton/AddToCartButton";
-import FavoriteButton from "../../components/FavoriteButton/FavoriteButton";
+
 const PRODUCT = {
   brand: "توم فورد",
   name: "عود وود",
