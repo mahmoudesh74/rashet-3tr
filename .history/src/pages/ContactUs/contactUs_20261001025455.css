@@ -1,0 +1,421 @@
+/* =========================
+   Tablet
+========================= */
+@media (max-width: 900px) {
+
+  .contactUsPage {
+    padding-top: 70px;
+  }
+
+  .contactHero {
+    padding: 40px 30px 30px;
+  }
+
+  .contactHero h1 {
+    font-size: 32px;
+  }
+
+  .contactHero p {
+    font-size: 15px;
+  }
+
+  /* يفضلوا جنب بعض */
+  .contactCard {
+    width: 94%;
+    flex-direction: row;
+  }
+
+  .contactForm {
+    width: 68%;
+    padding: 30px 25px;
+    gap: 16px;
+  }
+
+  .contactInfoPanel {
+    width: 32%;
+    padding: 30px 20px;
+  }
+
+  .contactInfoPanel h2 {
+    font-size: 20px;
+  }
+
+  .contactInfoPanel > p {
+    font-size: 12px;
+    padding-bottom: 20px;
+  }
+
+  .contactInfoList {
+    gap: 16px;
+  }
+
+  .contactInfoList li {
+    gap: 8px;
+  }
+
+  .contactInfoList li span {
+    font-size: 12px;
+  }
+
+  .contactInfoListIcon {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+  }
+
+  .contactInfoList li img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .contactSocials {
+    gap: 8px;
+    padding-top: 20px;
+  }
+
+  .contactSocials a {
+    width: 30px;
+    height: 30px;
+  }
+
+  .contactSocials img {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* الفورم نفسه يفضل صفين جنب بعض */
+  .formRow {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .formField label {
+    font-size: 12px;
+  }
+
+  .formField input,
+  .formField textarea {
+    font-size: 12px;
+    padding: 9px 10px;
+  }
+
+  .inputWithIcon {
+    padding: 0 10px;
+  }
+
+  .inputWithIcon input {
+    padding: 9px 5px;
+  }
+
+  .phoneField .countryCode {
+    padding: 9px 8px;
+    font-size: 12px;
+  }
+
+  .phoneField input {
+    padding: 9px 8px;
+  }
+
+  .formFieldTitle {
+    padding-right: 25px;
+    font-size: 13px;
+  }
+
+  .topicsRow {
+    padding-right: 25px;
+    gap: 12px;
+  }
+
+  .topicOption {
+    font-size: 11px;
+    gap: 5px;
+  }
+
+  .topicOption input[type="checkbox"] {
+    width: 13px;
+    height: 13px;
+  }
+
+  .submitButton {
+    font-size: 13px;
+    padding: 8px 28px;
+    margin-top: 10px;
+  }
+}
+
+
+/* =========================
+   Mobile
+========================= */
+@media (max-width: 600px) {
+
+  .contactUsPage {
+    padding-top: 50px;
+  }
+
+  .contactHero {
+    padding: 30px 15px 20px;
+  }
+
+  .contactHero h1 {
+    font-size: 25px;
+    padding-bottom: 6px;
+  }
+
+  .contactHero p {
+    font-size: 11px;
+  }
+
+  .contactCard {
+    width: calc(100% - 16px);
+    margin-bottom: 30px;
+    border-radius: 10px;
+  }
+
+  /* الفورم */
+  .contactForm {
+    width: 68%;
+    padding: 20px 12px;
+    gap: 12px;
+  }
+
+  /* الـ Info */
+  .contactInfoPanel {
+    width: 32%;
+    padding: 20px 10px;
+    border-radius: 8px;
+  }
+
+  .contactInfoPanel h2 {
+    font-size: 15px;
+    padding-bottom: 4px;
+  }
+
+  .contactInfoPanel > p {
+    font-size: 9px;
+    line-height: 1.5;
+    padding-bottom: 15px;
+  }
+
+  .contactInfoList {
+    gap: 12px;
+    padding: 0;
+  }
+
+  .contactInfoList li {
+    gap: 5px;
+    min-width: 0;
+  }
+
+  .contactInfoListIcon {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    border-radius: 3px;
+  }
+
+  .contactInfoList li img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .contactInfoList li span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 8px;
+  }
+
+  .contactSocials {
+    gap: 5px;
+    padding-top: 15px;
+  }
+
+  .contactSocials a {
+    width: 23px;
+    height: 23px;
+  }
+
+  .contactSocials img {
+    width: 11px;
+    height: 11px;
+  }
+
+  .contactInfoImg,
+  .contactInfoImg1 {
+    width: 90px;
+  }
+
+
+  /* الفورم يفضل الصفوف جنب بعض */
+  .formRow {
+    flex-direction: row;
+    gap: 7px;
+  }
+
+  .formField {
+    min-width: 0;
+    gap: 4px;
+  }
+
+  .formField label {
+    font-size: 9px;
+    line-height: 13px;
+  }
+
+  .formField input,
+  .formField textarea {
+    width: 100%;
+    min-width: 0;
+    font-size: 9px;
+    padding: 7px 6px;
+    border-radius: 5px;
+  }
+
+  .inputWithIcon {
+    min-width: 0;
+    padding: 0 6px;
+    border-radius: 5px;
+  }
+
+  .inputWithIcon input {
+    min-width: 0;
+    padding: 7px 3px;
+    font-size: 9px;
+  }
+
+  .inputWithIcon img {
+    width: 11px;
+    height: 11px;
+  }
+
+  .phoneField {
+    min-width: 0;
+    border-radius: 5px;
+  }
+
+  .phoneField .countryCode {
+    padding: 7px 5px;
+    font-size: 8px;
+  }
+
+  .phoneField input {
+    min-width: 0;
+    padding: 7px 5px;
+    font-size: 9px;
+  }
+
+  .formFieldTitle {
+    padding-right: 10px;
+    font-size: 10px;
+  }
+
+  .topicsRow {
+    padding-right: 10px;
+    gap: 7px;
+  }
+
+  .topicOption {
+    font-size: 8px;
+    gap: 3px;
+  }
+
+  .topicOption input[type="checkbox"] {
+    width: 10px;
+    height: 10px;
+  }
+
+  .submitButton {
+    font-size: 9px;
+    padding: 6px 18px;
+    border-radius: 8px;
+    margin-top: 5px;
+  }
+
+  .formError {
+    font-size: 8px;
+  }
+
+  .formSuccess {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================
+   Small Mobile
+========================= */
+@media (max-width: 380px) {
+
+  .contactCard {
+    width: calc(100% - 10px);
+  }
+
+  .contactForm {
+    width: 68%;
+    padding: 15px 8px;
+  }
+
+  .contactInfoPanel {
+    width: 32%;
+    padding: 15px 7px;
+  }
+
+  .contactInfoPanel h2 {
+    font-size: 12px;
+  }
+
+  .contactInfoPanel > p {
+    font-size: 7px;
+  }
+
+  .contactInfoList li span {
+    font-size: 7px;
+  }
+
+  .contactInfoListIcon {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+  }
+
+  .contactInfoList li img {
+    width: 9px;
+    height: 9px;
+  }
+
+  .contactSocials a {
+    width: 20px;
+    height: 20px;
+  }
+
+  .contactSocials img {
+    width: 9px;
+    height: 9px;
+  }
+
+  .formField label {
+    font-size: 8px;
+  }
+
+  .formField input,
+  .formField textarea,
+  .phoneField input,
+  .inputWithIcon input {
+    font-size: 8px;
+  }
+
+  .formFieldTitle {
+    font-size: 9px;
+  }
+
+  .topicOption {
+    font-size: 7px;
+  }
+
+  .submitButton {
+    font-size: 8px;
+    padding: 5px 14px;
+  }
+}

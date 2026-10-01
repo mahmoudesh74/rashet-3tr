@@ -1,0 +1,478 @@
+.cr-section {
+  padding: 0 clamp(16px, 4vw, 40px);
+  direction: rtl;
+  font-family: "Cairo";
+  color: #000000;
+  margin-bottom: clamp(32px, 5vw, 50px);
+}
+
+/* ---------- Heading ---------- */
+.cr-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.cr-heading-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cr-heading h2 {
+  margin: 0;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  color: #905B30;
+}
+
+.cr-heading-line {
+  width: 56px;
+  height: 3px;
+  border-radius: 2px;
+  background: #905B30;
+}
+
+/* ---------- Layout ---------- */
+.cr-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(24px, 3.5vw, 40px);
+}
+
+/* ---------- Summary ---------- */
+.cr-summary {
+  width: clamp(240px, 26vw, 300px);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.cr-average {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.cr-average-value {
+  font-size: clamp(40px, 5vw, 48px);
+  font-weight: 800;
+  color: #1e1b18;
+  line-height: 1;
+}
+
+.cr-average-of {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.cr-total {
+  font-size: 14px;
+  color: #7a6a5a;
+  margin-bottom: 18px;
+}
+
+.cr-bars {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cr-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #7a6a5a;
+}
+
+.cr-bar-label {
+  width: 44px;
+  flex-shrink: 0;
+}
+
+.cr-bar-track {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  background: #ede4d3;
+  overflow: hidden;
+}
+
+.cr-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: #905B30;
+}
+
+.cr-bar-count {
+  width: 22px;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+/* ---------- Cards ---------- */
+.cr-cards {
+  flex: 1;
+  min-width: 0; 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-top: 32px; 
+}
+
+.cr-card {
+  position: relative;
+  min-height: 288px;
+  background: #FFFFFF;
+  border: 1px solid #f0e9df;
+  border-radius: 16px;
+  padding: 44px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+}
+
+.cr-avatar {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 3px solid #FFFFFF;
+  background: #e8e1dc;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cr-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cr-avatar span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #905B30;
+}
+
+.cr-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  font-family: "Cairo";
+  color: #3A2E26;
+}
+
+.cr-date {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Cairo";
+  color: #736B66;
+}
+
+.cr-stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin: 4px 0 8px;
+}
+
+.cr-title {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Cairo";
+  font-weight: 700;
+  color: #3a2413;
+}
+
+.cr-text {
+  margin: 0;
+  max-width: 170px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Cairo";
+  line-height: 22px;
+  color: #736B66;
+  overflow-wrap: anywhere;
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width: 1280px) {
+  .cr-cards {
+    gap: 16px;
+  }
+  .cr-card {
+    padding: 44px 14px 20px;
+  }
+}
+/* ================= Responsive ================= */
+
+/* Small laptops */
+@media (max-width: 1280px) {
+  .cr-layout {
+    gap: 20px;
+  }
+
+  .cr-cards {
+    gap: 12px;
+  }
+
+  .cr-card {
+    min-height: 250px;
+    padding: 40px 10px 18px;
+  }
+
+  .cr-name {
+    font-size: 14px;
+  }
+
+  .cr-date {
+    font-size: 10px;
+  }
+
+  .cr-title {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .cr-text {
+    max-width: 140px;
+    font-size: 11px;
+    line-height: 18px;
+  }
+
+  .cr-avatar {
+    width: 56px;
+    height: 56px;
+    top: -28px;
+  }
+}
+
+
+/* Tablets */
+@media (max-width: 1100px) {
+  .cr-section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  /*
+    مهم:
+    نخلي الـ summary فوق
+    والـ cards تفضل 3 جنب بعض
+  */
+  .cr-layout {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cr-summary {
+    width: 100%;
+    max-width: 320px;
+    align-self: center;
+  }
+
+  .cr-cards {
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    padding-top: 28px;
+  }
+
+  .cr-card {
+    min-height: 220px;
+    padding: 36px 8px 14px;
+    border-radius: 12px;
+  }
+
+  .cr-avatar {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+  }
+
+  .cr-avatar span {
+    font-size: 18px;
+  }
+
+  .cr-name {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .cr-date {
+    font-size: 9px;
+  }
+
+  .cr-stars {
+    gap: 1px;
+    margin: 2px 0 5px;
+  }
+
+  .cr-title {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .cr-text {
+    max-width: 120px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+  .cr-section {
+    padding: 20px 10px;
+  }
+
+  .cr-heading {
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .cr-heading h2 {
+    font-size: 22px;
+  }
+
+  .cr-heading-line {
+    width: 45px;
+    height: 2px;
+  }
+
+  
+  .cr-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    padding-top: 25px;
+  }
+
+  .cr-card {
+    min-height: 180px;
+    padding: 32px 5px 10px;
+    border-radius: 10px;
+    gap: 3px;
+  }
+
+  .cr-avatar {
+    width: 42px;
+    height: 42px;
+    top: -21px;
+    border-width: 2px;
+  }
+
+  .cr-avatar span {
+    font-size: 15px;
+  }
+
+  .cr-name {
+    font-size: 10px;
+    line-height: 15px;
+  }
+
+  .cr-date {
+    font-size: 7px;
+  }
+
+  .cr-stars {
+    margin: 2px 0 3px;
+    gap: 0;
+  }
+
+  .cr-title {
+    font-size: 8px;
+    line-height: 13px;
+  }
+
+  .cr-text {
+    max-width: 100%;
+    font-size: 7px;
+    line-height: 12px;
+  }
+}
+
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .cr-section {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .cr-cards {
+    gap: 4px;
+  }
+
+  .cr-card {
+    min-height: 165px;
+    padding: 30px 3px 8px;
+  }
+
+  .cr-avatar {
+    width: 38px;
+    height: 38px;
+    top: -19px;
+  }
+
+  .cr-name {
+    font-size: 9px;
+    line-height: 13px;
+  }
+
+  .cr-date {
+    font-size: 6px;
+  }
+
+  .cr-title {
+    font-size: 7px;
+    line-height: 11px;
+  }
+
+  .cr-text {
+    font-size: 6.5px;
+    line-height: 10px;
+  }
+}
+
+
+/* Keep this last */
+.cr-section--inline {
+  padding: 10px 0 0;
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .cr-card {
+    padding: 44px 12px 18px;
+  }
+  .cr-bar-row {
+    gap: 6px;
+  }
+  .cr-bar-label {
+    width: 38px;
+  }
+}
+
+.cr-section--inline {
+  padding: 10px 0 0;
+}

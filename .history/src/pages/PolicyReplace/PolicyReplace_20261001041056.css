@@ -1,0 +1,1286 @@
+.policyReplacePage {
+  width: 100%;
+  background-color: #fbf8f5;
+  padding-top: 120px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.pageHeaderContent {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 100px 80px 100px;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  background:
+    linear-gradient(90deg, #905b30 0%, #e4d5c8 58.24%),
+    url("../../assets/policyReplaceImg.png");
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #d5c3b84d;
+  box-sizing: border-box;
+}
+
+.policyReplaceTitle {
+  display: flex;
+  align-items: center;
+  color: #905b30;
+  gap: 5px;
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.policyReplaceTitle p {
+  color: #53433d;
+}
+
+.pageHeaderContent h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  font-family: "Cairo";
+  color: #905b30;
+  padding-top: 16px;
+  padding-bottom: 12px;
+}
+
+.pageHeaderDesc {
+  margin: 0;
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 18px;
+  color: #56371d;
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+.policyReplaceImg {
+  position: absolute;
+  left: 30px;
+  bottom: 0;
+  width: 260px;
+  max-width: 28%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   INFO CARDS
+========================================================= */
+
+.infoCards {
+  display: flex;
+  flex-direction: row;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px 0px #8b5e3c1a;
+  margin: -60px 100px 0;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.infoCard {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 28px 20px;
+  border-left: 1px solid #efe6de;
+  box-sizing: border-box;
+}
+
+.infoCard:last-child {
+  border-left: none;
+}
+
+.infoCardIcon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 6px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.infoCard h3 {
+  margin: 0;
+  font-family: "Cairo";
+  font-weight: 700;
+  font-size: 18px;
+  color: #56371d;
+  white-space: nowrap;
+}
+
+.infoCard p {
+  margin: 0;
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 14px;
+  color: #6f4428b2;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   STEPS
+========================================================= */
+
+.stepsSection {
+  width: 100%;
+  padding: 60px 100px;
+  text-align: center;
+  direction: rtl;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.stepsSection h2 {
+  margin: 0;
+  font-family: "Cairo";
+  font-weight: 700;
+  font-size: 30px;
+  color: #6f4428;
+  padding-bottom: 60px;
+}
+
+.stepsTrack {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+}
+
+.stepsLine {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background-color: #e4d5c8;
+  z-index: 0;
+}
+
+.stepItem {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  min-width: 0;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.stepCircle {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 18px;
+  background-color: #e5d2bd;
+  border: 1px solid #e5e7eb;
+  color: #905b30;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+}
+
+.stepCircle.active {
+  background-color: #905b30;
+  border-color: #905b30;
+  color: #ffffff;
+}
+
+.stepItem h3 {
+  margin: 0;
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 16px;
+  color: #6f4428;
+  padding-bottom: 10px;
+  white-space: nowrap;
+}
+
+.stepItem p {
+  margin: 0;
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 14px;
+  color: #6f4428b2;
+  max-width: 208px;
+  line-height: 22px;
+}
+
+
+/* =========================================================
+   POLICY TERMS
+========================================================= */
+
+.policyTermsSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 64px 80px;
+  direction: rtl;
+  background-color: #fbf8f5;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.policyTermsList {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.policyTermsList h2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  font-family: "Cairo";
+  font-weight: 700;
+  font-size: 28px;
+  color: #3a2413;
+  padding-bottom: 28px;
+  margin: 0;
+}
+
+.policyTermsBar {
+  width: 4px;
+  height: 28px;
+  flex-shrink: 0;
+  background: #905b30;
+  border-radius: 2px;
+}
+
+.policyTermsList ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.policyTermsList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 16px;
+  min-width: 0;
+}
+
+.policyTermsList li p {
+  margin: 0;
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 18px;
+  color: #51443c;
+  line-height: 26px;
+  flex: 1;
+  min-width: 0;
+}
+
+.termNumber {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  background: #8b5e3c;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cairo";
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.checklistCard {
+  width: 420px;
+  max-width: 42%;
+  box-shadow: 0px 1px 2px 0px #0000000d;
+  border: 1px solid #d5c3b8;
+  flex: 0 0 420px;
+  background: #efe4db;
+  border-radius: 8px;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.checklistCard h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Cairo";
+  font-weight: 700;
+  font-size: 18px;
+  color: #3a2413;
+  padding-bottom: 20px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.checklistHeaderIcon {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  border-radius: 50%;
+  border: 2px solid #905b30;
+  color: #905b30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.checklistCard ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+.checklistCard li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.checklistCard li span:last-child {
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 15px;
+  color: #51443c;
+  white-space: nowrap;
+}
+
+.checklistCard .checkIcon {
+  color: #2e7d32;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   DAMAGED PRODUCT
+========================================================= */
+
+.damagedProductSection {
+  width: 100%;
+  text-align: center;
+  padding: 60px 80px;
+  direction: rtl;
+  background-color: #efe4db;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.damagedProductSection h2 {
+  margin: 0;
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 30px;
+  color: #6f4428;
+  padding-bottom: 16px;
+}
+
+.damagedProductSection p {
+  margin: 0 auto;
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 16px;
+  color: #6f4428b2;
+  max-width: 700px;
+  line-height: 26px;
+  padding-bottom: 40px;
+}
+
+.flowRow {
+  direction: ltr;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+  width: 100%;
+  min-width: 0;
+}
+
+.flowStepWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.flowStep {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  border-radius: 24px;
+  padding: 10px 18px;
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 14px;
+  color: #6f4428;
+  white-space: nowrap;
+  flex-shrink: 1;
+}
+
+.flowIcon {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border: 1px solid #c8a27a4d;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  box-sizing: border-box;
+}
+
+.flowArrow {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+  .policyReplacePage {
+    padding-top: 100px;
+  }
+
+  .pageHeaderContent {
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-bottom: 65px;
+  }
+
+  .pageHeaderContent h1 {
+    font-size: 42px;
+  }
+
+  .pageHeaderDesc {
+    font-size: 16px;
+    max-width: 520px;
+  }
+
+  .policyReplaceImg {
+    width: 220px;
+    left: 25px;
+  }
+
+  .infoCards {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+
+  .infoCard {
+    padding: 24px 15px;
+  }
+
+  .infoCard h3 {
+    font-size: 16px;
+  }
+
+  .infoCard p {
+    font-size: 13px;
+  }
+
+  .stepsSection {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .stepItem {
+    padding: 0 10px;
+  }
+
+  .stepCircle {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+    font-size: 16px;
+  }
+
+  .stepItem h3 {
+    font-size: 14px;
+  }
+
+  .stepItem p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .policyTermsSection {
+    padding-left: 60px;
+    padding-right: 60px;
+    gap: 25px;
+  }
+
+  .checklistCard {
+    width: 360px;
+    flex-basis: 360px;
+    padding: 25px;
+  }
+
+  .policyTermsList h2 {
+    font-size: 24px;
+  }
+
+  .policyTermsList li p {
+    font-size: 16px;
+  }
+
+  .damagedProductSection {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .flowStep {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .flowIcon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+  }
+
+  .flowArrow {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+
+/* =========================================================
+   900px
+========================================================= */
+
+@media (max-width: 900px) {
+  .policyReplacePage {
+    padding-top: 85px;
+  }
+
+  .pageHeaderContent {
+    min-height: 240px;
+    padding: 15px 30px 50px;
+  }
+
+  .policyReplaceTitle {
+    font-size: 13px;
+  }
+
+  .pageHeaderContent h1 {
+    font-size: 34px;
+    padding-top: 12px;
+    padding-bottom: 8px;
+  }
+
+  .pageHeaderDesc {
+    font-size: 14px;
+    max-width: 420px;
+    line-height: 1.7;
+  }
+
+  .policyReplaceImg {
+    width: 170px;
+    max-width: 25%;
+    left: 15px;
+  }
+
+  /* INFO CARDS تفضل جنب بعض */
+  .infoCards {
+    margin: -40px 30px 0;
+  }
+
+  .infoCard {
+    padding: 20px 10px;
+    gap: 5px;
+  }
+
+  .infoCardIcon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .infoCard h3 {
+    font-size: 13px;
+  }
+
+  .infoCard p {
+    font-size: 10px;
+  }
+
+  /* STEPS تفضل 4 جنب بعض */
+  .stepsSection {
+    padding: 45px 30px;
+  }
+
+  .stepsSection h2 {
+    font-size: 25px;
+    padding-bottom: 45px;
+  }
+
+  .stepItem {
+    padding: 0 5px;
+  }
+
+  .stepCircle {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+
+  .stepItem h3 {
+    font-size: 12px;
+    padding-bottom: 6px;
+  }
+
+  .stepItem p {
+    font-size: 10px;
+    line-height: 17px;
+    max-width: 150px;
+  }
+
+  /* TERMS + CHECKLIST يفضلوا جنب بعض */
+  .policyTermsSection {
+    flex-direction: row;
+    padding: 45px 30px;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .policyTermsList h2 {
+    font-size: 21px;
+    padding-bottom: 20px;
+  }
+
+  .policyTermsBar {
+    width: 3px;
+    height: 22px;
+  }
+
+  .policyTermsList ul {
+    gap: 12px;
+  }
+
+  .policyTermsList li {
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+
+  .policyTermsList li p {
+    font-size: 12px;
+    line-height: 19px;
+  }
+
+  .termNumber {
+    width: 27px;
+    height: 27px;
+    border-radius: 9px;
+    font-size: 13px;
+  }
+
+  .checklistCard {
+    width: 290px;
+    max-width: 40%;
+    flex-basis: 290px;
+    padding: 20px;
+  }
+
+  .checklistCard h3 {
+    font-size: 14px;
+    gap: 7px;
+    padding-bottom: 15px;
+  }
+
+  .checklistHeaderIcon {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    font-size: 9px;
+  }
+
+  .checklistCard ul {
+    gap: 10px;
+  }
+
+  .checklistCard li {
+    gap: 6px;
+  }
+
+  .checklistCard li span:last-child {
+    font-size: 10px;
+  }
+
+  /* FLOW يفضل في صف واحد */
+  .damagedProductSection {
+    padding: 45px 30px;
+  }
+
+  .damagedProductSection h2 {
+    font-size: 25px;
+  }
+
+  .damagedProductSection p {
+    font-size: 13px;
+    padding-bottom: 30px;
+  }
+
+  .flowRow {
+    gap: 6px;
+  }
+
+  .flowStepWrapper {
+    gap: 8px;
+  }
+
+  .flowStep {
+    gap: 5px;
+    padding: 7px 8px;
+    font-size: 9px;
+  }
+
+  .flowIcon {
+    width: 29px;
+    height: 29px;
+    min-width: 29px;
+    padding: 5px;
+  }
+
+  .flowArrow {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+
+/* =========================================================
+   600px
+========================================================= */
+
+@media (max-width: 600px) {
+  .policyReplacePage {
+    padding-top: 70px;
+  }
+
+  .pageHeaderContent {
+    min-height: 190px;
+    padding: 12px 15px 35px;
+  }
+
+  .policyReplaceTitle {
+    font-size: 10px;
+    gap: 3px;
+  }
+
+  .pageHeaderContent h1 {
+    font-size: 26px;
+    padding-top: 8px;
+    padding-bottom: 5px;
+  }
+
+  .pageHeaderDesc {
+    font-size: 11px;
+    line-height: 1.6;
+    max-width: 300px;
+  }
+
+  .policyReplaceImg {
+    width: 125px;
+    max-width: 24%;
+    left: 5px;
+  }
+
+  /* INFO CARDS */
+  .infoCards {
+    margin: -30px 15px 0;
+    border-radius: 9px;
+  }
+
+  .infoCard {
+    padding: 14px 5px;
+    gap: 3px;
+  }
+
+  .infoCardIcon {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 2px;
+  }
+
+  .infoCard h3 {
+    font-size: 9px;
+  }
+
+  .infoCard p {
+    font-size: 7px;
+  }
+
+  /* STEPS */
+  .stepsSection {
+    padding: 35px 15px;
+  }
+
+  .stepsSection h2 {
+    font-size: 20px;
+    padding-bottom: 32px;
+  }
+
+  .stepsLine {
+    top: 24px;
+  }
+
+  .stepItem {
+    padding: 0 2px;
+  }
+
+  .stepCircle {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    font-size: 12px;
+    margin-bottom: 13px;
+  }
+
+  .stepItem h3 {
+    font-size: 9px;
+    padding-bottom: 4px;
+  }
+
+  .stepItem p {
+    font-size: 7px;
+    line-height: 13px;
+    max-width: 100px;
+  }
+
+  /* TERMS + CHECKLIST */
+  .policyTermsSection {
+    padding: 35px 15px;
+    gap: 10px;
+  }
+
+  .policyTermsList h2 {
+    font-size: 17px;
+    gap: 6px;
+    padding-bottom: 15px;
+  }
+
+  .policyTermsBar {
+    width: 3px;
+    height: 18px;
+  }
+
+  .policyTermsList ul {
+    gap: 8px;
+  }
+
+  .policyTermsList li {
+    gap: 6px;
+    padding-bottom: 7px;
+  }
+
+  .policyTermsList li p {
+    font-size: 9px;
+    line-height: 14px;
+  }
+
+  .termNumber {
+    width: 22px;
+    height: 22px;
+    border-radius: 7px;
+    font-size: 10px;
+  }
+
+  .checklistCard {
+    width: 210px;
+    max-width: 40%;
+    flex-basis: 210px;
+    padding: 13px;
+    border-radius: 6px;
+  }
+
+  .checklistCard h3 {
+    font-size: 10px;
+    gap: 5px;
+    padding-bottom: 10px;
+  }
+
+  .checklistHeaderIcon {
+    width: 15px;
+    height: 15px;
+    min-width: 15px;
+    font-size: 7px;
+    border-width: 1px;
+  }
+
+  .checklistCard ul {
+    gap: 7px;
+  }
+
+  .checklistCard li {
+    gap: 4px;
+  }
+
+  .checklistCard li span:last-child {
+    font-size: 7px;
+  }
+
+  /* DAMAGED */
+  .damagedProductSection {
+    padding: 35px 15px;
+  }
+
+  .damagedProductSection h2 {
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+
+  .damagedProductSection p {
+    font-size: 10px;
+    line-height: 17px;
+    padding-bottom: 25px;
+  }
+
+  .flowRow {
+    gap: 3px;
+  }
+
+  .flowStepWrapper {
+    gap: 4px;
+  }
+
+  .flowStep {
+    gap: 3px;
+    padding: 5px 4px;
+    font-size: 7px;
+  }
+
+  .flowIcon {
+    width: 23px;
+    height: 23px;
+    min-width: 23px;
+    padding: 4px;
+  }
+
+  .flowArrow {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+
+/* =========================================================
+   400px
+========================================================= */
+
+@media (max-width: 400px) {
+  .pageHeaderContent {
+    min-height: 165px;
+    padding: 10px 10px 28px;
+  }
+
+  .policyReplaceTitle {
+    font-size: 8px;
+  }
+
+  .pageHeaderContent h1 {
+    font-size: 21px;
+  }
+
+  .pageHeaderDesc {
+    font-size: 9px;
+    max-width: 230px;
+  }
+
+  .policyReplaceImg {
+    width: 100px;
+    left: 3px;
+  }
+
+  .infoCards {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .infoCard {
+    padding: 11px 3px;
+  }
+
+  .infoCardIcon {
+    width: 19px;
+    height: 19px;
+  }
+
+  .infoCard h3 {
+    font-size: 7px;
+  }
+
+  .infoCard p {
+    font-size: 6px;
+  }
+
+  .stepsSection {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .stepsSection h2 {
+    font-size: 17px;
+  }
+
+  .stepCircle {
+    width: 37px;
+    height: 37px;
+    min-width: 37px;
+    font-size: 10px;
+  }
+
+  .stepItem h3 {
+    font-size: 8px;
+  }
+
+  .stepItem p {
+    font-size: 6px;
+    line-height: 11px;
+  }
+
+  .policyTermsSection {
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 7px;
+  }
+
+  .policyTermsList h2 {
+    font-size: 14px;
+  }
+
+  .policyTermsList li p {
+    font-size: 7px;
+    line-height: 11px;
+  }
+
+  .termNumber {
+    width: 19px;
+    height: 19px;
+    font-size: 8px;
+  }
+
+  .checklistCard {
+    width: 165px;
+    max-width: 40%;
+    flex-basis: 165px;
+    padding: 10px;
+  }
+
+  .checklistCard h3 {
+    font-size: 8px;
+  }
+
+  .checklistCard li span:last-child {
+    font-size: 6px;
+  }
+
+  .damagedProductSection {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .damagedProductSection h2 {
+    font-size: 17px;
+  }
+
+  .damagedProductSection p {
+    font-size: 8px;
+    line-height: 13px;
+  }
+
+  .flowStep {
+    font-size: 6px;
+    padding: 4px 3px;
+  }
+
+  .flowIcon {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    padding: 3px;
+  }
+
+  .flowArrow {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+
+/* =========================================================
+   340px
+========================================================= */
+
+@media (max-width: 340px) {
+  .policyReplacePage {
+    padding-top: 60px;
+  }
+
+  .pageHeaderContent {
+    min-height: 145px;
+    padding: 8px 7px 22px;
+  }
+
+  .policyReplaceTitle {
+    font-size: 7px;
+  }
+
+  .pageHeaderContent h1 {
+    font-size: 18px;
+  }
+
+  .pageHeaderDesc {
+    font-size: 8px;
+    max-width: 200px;
+  }
+
+  .policyReplaceImg {
+    width: 85px;
+  }
+
+  .infoCards {
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+
+  .infoCard {
+    padding: 9px 2px;
+  }
+
+  .infoCardIcon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .infoCard h3 {
+    font-size: 6px;
+  }
+
+  .infoCard p {
+    font-size: 5px;
+  }
+
+  .stepsSection {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .stepCircle {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    font-size: 9px;
+  }
+
+  .stepItem h3 {
+    font-size: 7px;
+  }
+
+  .stepItem p {
+    font-size: 5px;
+    line-height: 9px;
+  }
+
+  .policyTermsSection {
+    padding-left: 7px;
+    padding-right: 7px;
+    gap: 5px;
+  }
+
+  .policyTermsList h2 {
+    font-size: 12px;
+  }
+
+  .policyTermsList li p {
+    font-size: 6px;
+    line-height: 9px;
+  }
+
+  .termNumber {
+    width: 17px;
+    height: 17px;
+    font-size: 7px;
+  }
+
+  .checklistCard {
+    width: 140px;
+    max-width: 40%;
+    flex-basis: 140px;
+    padding: 8px;
+  }
+
+  .checklistCard h3 {
+    font-size: 7px;
+  }
+
+  .checklistCard li span:last-child {
+    font-size: 5px;
+  }
+
+  .flowStep {
+    font-size: 5px;
+  }
+
+  .flowIcon {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    padding: 2px;
+  }
+
+  .flowArrow {
+    width: 6px;
+    height: 6px;
+  }
+}

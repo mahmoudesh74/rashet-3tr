@@ -1,0 +1,90 @@
+/* ===== Desktop: the original design ===== */
+.custom-btn {
+  --btn-h: 40px;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--btn-h);
+  width: 50%;
+  min-width: 160px;
+  max-width: 100%;
+  padding: 0;
+  padding-inline-start: calc(var(--btn-h) + 12px);
+  padding-inline-end: 16px;
+
+  border: 1px solid #E4D5C8;
+  border-radius: 30px;
+  background: transparent;
+  color: #8A7A6A;
+
+  font-family: "Cairo";
+  font-size: 16px;
+  font-weight: 400;
+
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.custom-btn-icon {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  width: var(--btn-h);
+  height: var(--btn-h);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #905B30;
+  transition: inset-inline-start 0.3s ease, background-color 0.3s ease;
+}
+
+.custom-btn-icon img {
+  width: 50%;
+  height: 50%;
+}
+
+.custom-btn > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: opacity 0.2s ease;
+}
+
+@media (hover: hover) {
+  .custom-btn:hover {
+    background-color: #905B30;
+    color: #F5EEE2;
+    border-color: #905B30;
+  }
+
+  .custom-btn:hover .custom-btn-icon {
+    inset-inline-start: calc(50% - var(--btn-h) / 2);
+    background-color: transparent;
+  }
+
+  .custom-btn:hover > span {
+    opacity: 0;
+  }
+}
+
+.custom-btn:focus-visible {
+  outline: 2px solid #905B30;
+  outline-offset: 2px;
+}
+
+
+@media (max-width: 1440px) {
+  .custom-btn {
+    --btn-h: max(22px, 2.78vw);
+
+    width: max-content;      
+    min-width: max(60px, 11.1vw);
+    max-width: 100%;     
+    padding-inline-start: calc(var(--btn-h) + max(5px, 0.83vw));
+    padding-inline-end: max(6px, 1.1vw);
+    font-size: max(7px, 1.11vw);
+  }
+}

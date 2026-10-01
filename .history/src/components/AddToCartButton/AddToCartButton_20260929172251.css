@@ -1,0 +1,76 @@
+
+.custom-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+
+  height: 40px;
+  width: 40%;
+
+  padding: 0;
+
+  border: 1px solid #E4D5C8;
+  border-radius: 30px;
+
+  background: transparent;
+  color: #8A7A6A;
+
+  font-family: "Cairo";
+  font-size: 16px;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+}
+
+.custom-btn-icon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #905B30;
+
+  transition: all 0.3s ease;
+}
+
+.custom-btn-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.custom-btn span {
+  white-space: nowrap;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.3s ease;
+}
+
+.custom-btn:hover {
+  justify-content: center;
+  background-color: #905B30;
+  color: #F5EEE2;
+  border-color: #905B30;
+}
+
+.custom-btn:hover span {
+  opacity: 0;
+  transform: scale(0.8);
+  position: absolute;
+}
+
+.custom-btn:hover .custom-btn-icon {
+  background-color: transparent;
+}
+

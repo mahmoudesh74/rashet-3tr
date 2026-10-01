@@ -1,0 +1,365 @@
+/* ===== Desktop: the original design ===== */
+.perfume-section {
+  margin-bottom: 100px;
+}
+
+.perfumeSectionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 80px;
+}
+
+.perfumeSectionHeaditem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.perfumeSectionHead h2 {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: "Cairo";
+  color: #905B30;
+  position: relative;
+  padding-bottom: 12px;
+  margin: 0;
+}
+
+.PerfumeHeaderLine {
+  height: 3px;
+  width: 67px;
+  background-color: #905B30;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.PerfumeSectionButton {
+  text-decoration: none;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.PerfumeSectionButton p {
+  font-family: "Cairo";
+  font-size: 28px;
+  font-weight: 600;
+  color: #975233;
+  white-space: nowrap;
+}
+
+.perfume-grid {
+  padding: 0 50px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.perfume-card {
+  height: 560px;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.fav-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+}
+
+.perfume-card__image {
+  height: 331px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: linear-gradient(150.65deg, rgba(144, 91, 48, 0.2) 17.96%, rgba(255, 255, 255, 0.2) 81.97%);
+}
+
+.perfume-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.perfumecontent {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.perfume-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #9CA3AF;
+  font-family: "Cairo";
+}
+
+.perfume-card__rating svg {
+  width: 13px;
+  height: 13px;
+}
+
+.perfume-card__name {
+  direction: ltr;
+  font-size: 22px;
+  font-weight: 600;
+  color: #7a6a5a;
+  font-family: "Cairo";
+  margin: 0 0 4px;
+}
+
+.perfume-card__category {
+  padding-right: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #555555;
+  font-family: "Noto Rashi Hebrew";
+}
+
+.perfume-card__price {
+  padding-right: 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.price-old,
+.price-new {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.price-old {
+  color: #646464;
+  text-decoration: line-through;
+  font-size: 18px;
+  font-family: "Cairo";
+  font-weight: 400;
+}
+
+.price-new {
+  font-family: "Cairo";
+  color: #905B30;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.perfume-add-btn {
+  margin-top: 12px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  height: 40px;
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+  border-right: none;
+  background: none;
+  opacity: 1;
+  border-top: 1px solid #E4D5C8;
+  border-bottom: 1px solid #E4D5C8;
+  border-left: 1px solid #E4D5C8;
+  border-radius: 30px;
+  color: #8A7A6A;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background .3s ease, color .3s ease, width .3s ease, justify-content .3s ease;
+}
+
+.perfume-add-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.perfume-add-btn span {
+  white-space: nowrap;
+  transition: opacity .2s ease, transform .3s ease;
+}
+
+.perfumecartImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  background-color: #905B30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform .3s ease;
+}
+
+
+@media (hover: hover) {
+  .perfume-add-btn:hover {
+    background: #905B30;
+    color: #F5EEE2;
+    justify-content: center;
+    border-color: #905B30;
+  }
+
+  .perfume-add-btn:hover span {
+    opacity: 0;
+    transform: scale(0.8);
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .perfume-add-btn:hover .perfumecartImg {
+    background-color: transparent;
+  }
+}
+
+
+@media (max-width: 1440px) {
+  .perfume-section {
+    margin-bottom: max(40px, 6.94vw);
+  }
+
+  /* header */
+  .perfumeSectionHead {
+    padding: max(14px, 2.78vw) max(12px, 5.55vw);
+  }
+
+  .perfumeSectionHead h2 {
+    font-size: max(16px, 1.94vw);
+    padding-bottom: max(6px, 0.83vw);
+  }
+
+  .PerfumeHeaderLine {
+    width: max(36px, 4.65vw);
+  }
+
+  .PerfumeSectionButton {
+    gap: max(8px, 1.39vw);
+  }
+
+  .PerfumeSectionButton p {
+    font-size: max(14px, 1.94vw);
+  }
+
+  /* grid */
+  .perfume-grid {
+    padding: 0 max(8px, 3.47vw);
+    gap: max(6px, 1.11vw);
+  }
+
+
+  .perfume-card {
+    height: auto;
+    aspect-ratio: 323 / 560;
+    border-radius: max(5px, 0.55vw);
+  }
+
+  .fav-btn {
+    top: max(6px, 1.04vw);
+    left: max(6px, 1.04vw);
+    width: max(12px, 1.39vw);
+    height: max(12px, 1.39vw);
+  }
+
+  .fav-btn svg,
+  .fav-btn img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .perfume-card__image {
+    height: auto;
+    aspect-ratio: 323 / 331;
+    margin-bottom: max(5px, 1.11vw);
+    border-radius: max(5px, 0.55vw);
+  }
+
+  /* content */
+  .perfumecontent {
+    padding: max(4px, 0.7vw);
+  }
+
+  .perfume-card__rating {
+    gap: max(2px, 0.28vw);
+    font-size: max(8px, 1.11vw);
+  }
+
+  .perfume-card__rating svg {
+    width: max(8px, 0.9vw);
+    height: max(8px, 0.9vw);
+  }
+
+  .perfume-card__name {
+    font-size: max(10px, 1.53vw);
+    margin-bottom: max(2px, 0.28vw);
+  }
+
+  .perfume-card__category {
+    padding-right: max(4px, 0.7vw);
+    font-size: max(8px, 1.11vw);
+  }
+
+  .perfume-card__price {
+    padding-right: max(4px, 0.7vw);
+    gap: max(4px, 0.55vw);
+    margin-bottom: max(5px, 0.97vw);
+  }
+
+  .price-old {
+    font-size: max(9px, 1.25vw);
+  }
+
+  .price-new {
+    font-size: max(11px, 1.8vw);
+  }
+
+  .perfume-add-btn {
+    width: max-content;
+    min-width: 50%;
+    max-width: 100%;
+    height: max(22px, 2.78vw);
+    margin-top: max(5px, 0.83vw);
+    margin-bottom: max(10px, 2.08vw);
+    gap: max(6px, 1.11vw);
+    padding-inline-end: max(6px, 0.8vw);
+    font-size: max(8px, 1.11vw);
+  }
+
+  .perfume-add-btn svg {
+    width: max(8px, 1.11vw);
+    height: max(8px, 1.11vw);
+  }
+
+  .perfumecartImg {
+    width: max(22px, 2.78vw);
+    height: max(22px, 2.78vw);
+  }
+}

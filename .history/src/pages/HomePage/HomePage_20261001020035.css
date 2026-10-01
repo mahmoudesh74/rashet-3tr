@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== Desktop: the original design ===== */
+.HomePageHader {
+  position: relative;
+  width: 100%;
+  height: 750px;
+}
+
+.HeaderBgVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* the video always fills the hero and gets cropped, never stretched */
+  z-index: -1;
+}
+
+.HeaderContent {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Smaller screens: the hero shrinks in proportion to the screen width
+   (750px at 1440px wide), with a minimum so the content and the white bar
+   inside <Header /> always have room. ===== */
+@media (max-width: 1440px) {
+  .HomePageHader {
+    height: max(340px, 52.08vw);
+  }
+}

@@ -1,0 +1,286 @@
+
+.review-header {
+  margin-bottom: 28px;
+}
+
+.review-header h1 {
+  margin: 0 0 6px;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: "Cairo";
+  line-height: 40px;
+  color: #3A2413;
+}
+
+.review-header p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Cairo";
+  color: #51443C;
+}
+
+.review-layout {
+  grid-template-columns: 1fr 400px;
+}
+
+.review-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* ---------- Cart ---------- */
+.review-cart-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 20px;
+  font-size: 16px;
+  font-family: "Cairo";
+  font-weight: 600;
+  color: #3A2413;
+}
+
+.review-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.review-item:last-child {
+  margin-bottom: 0;
+}
+
+.review-item-image {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #f5efe6;
+  border: 1px solid #D5C3B8;
+}
+
+.review-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.review-item-qty {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #905B30;
+  color: #ffffff;
+  font-family: "Cairo";
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-item-names {
+  flex: 1;
+  min-width: 0;
+}
+
+.review-item-names h3 {
+  direction: ltr;
+  text-align: right;
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Cairo";
+  color: #3A2413;
+}
+
+.review-item-names span {
+  font-size: 13px;
+  font-family: "Cairo";
+  color: #51443C;
+}
+
+.review-item-price {
+  font-family: "Cairo";
+  font-size: 15px;
+  font-weight: 500;
+  color: #905B30;
+  white-space: nowrap;
+}
+
+/* ---------- Info rows ---------- */
+.review-info {
+  padding: 8px 24px;
+}
+
+.review-info-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 0;
+  border-bottom: 1px solid #f0e9df;
+}
+
+.review-info-row:last-child {
+  border-bottom: none;
+}
+
+.review-info-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+ 
+
+}
+.review-info-img{
+  background-color: #EFE4DB;
+border-radius: 50%;
+  width:40px;
+  height: 40px;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.review-info-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.review-info-text strong {
+  font-family: "Cairo";
+  font-size: 20px;
+  font-weight: 600;
+  color: #905B30;
+}
+
+.review-info-text span {
+  font-family: "Cairo";
+  font-size: 16px;
+  font-weight: 500;
+  color: #8A7A6A;
+}
+
+.review-edit-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  font-family: "Cairo";
+  font-size: 14px;
+  font-weight: 600;
+  color: #905B30;
+  cursor: pointer;
+}
+
+.review-edit-btn:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .review-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .review-header h1 {
+    font-size: 26px;
+  }
+  .review-info-text strong {
+    font-size: 17px;
+  }
+}
+
+/* ---------- Success modal ---------- */
+.review-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(58, 36, 19, 0.55);
+}
+
+.review-modal {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  padding: 48px 24px 24px;
+  border-radius: 16px;
+  background: #FBF8F5;
+  border: 1px solid #f0e9df;
+  text-align: center;
+  direction: rtl;
+  font-family: "Cairo";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-modal h2 {
+  margin: 8px 0 0;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  color: #7c4d27;
+}
+
+.review-modal p {
+  margin: 0 0 12px;
+  font-size: 16px;
+  color: #51443C;
+}
+
+.review-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  font-size: 26px;
+  line-height: 1;
+  color: #3A2413;
+  cursor: pointer;
+}
+
+.review-modal-btn {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 12px;
+  background: #905B30;
+  color: #ffffff;
+  font-family: "Cairo";
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.review-modal-btn:hover {
+  background: #7c4d27;
+}
+
+@media (max-width: 600px) {
+  .review-modal h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}

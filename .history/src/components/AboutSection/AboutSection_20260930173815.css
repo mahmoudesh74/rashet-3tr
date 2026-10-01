@@ -1,0 +1,119 @@
+.AboutSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 617px;
+  padding: 60px 100px 60px 20px;
+  background:
+    linear-gradient(259.37deg, rgba(144, 91, 48, 0.75) -0.76%, rgba(212, 203, 192, 0) 81.71%),
+    url(../../assets/about.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.AboutSectionContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 51%;
+  max-width: 100%;
+}
+
+.AboutSectionHead {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.AboutSectionContent h2 {
+  margin: 0;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-family: "Cairo";
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.AboutTitleLine {
+  width: 143px;
+  max-width: 40%;
+  height: 3px;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  background-color: #905b30;
+}
+
+.AboutSectionContent p {
+  margin: 0;
+  font-size: clamp(16px, 1.7vw, 24px);
+  font-family: "Cairo";
+  font-weight: 600;
+  line-height: 1.7;
+  color: #ffffff;
+}
+
+.AboutSectionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 128px;
+  height: 52px;
+  margin-top: 30px;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 16px;
+  background-color: #905b30;
+  color: #ffffff;
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: clamp(16px, 1.5vw, 20px);
+  cursor: pointer;
+}
+
+/* ---------- Large tablets / small laptops ---------- */
+@media (max-width: 1200px) {
+  .AboutSection {
+    padding-right: 60px;
+  }
+  .AboutSectionContent {
+    width: 65%;
+  }
+}
+
+/* ---------- Tablets ---------- */
+@media (max-width: 900px) {
+  .AboutSection {
+    min-height: 520px;
+    padding: 48px 40px;
+  }
+  .AboutSectionContent {
+    width: 80%;
+  }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 600px) {
+  .AboutSection {
+    min-height: 460px;
+    padding: 40px 20px;
+    /* the side gradient fades out too early on a narrow screen, so use an even overlay for readable text */
+    background:
+      linear-gradient(rgba(144, 91, 48, 0.7), rgba(144, 91, 48, 0.7)),
+      url(../../assets/about.png);
+    background-size: cover;
+    background-position: center;
+  }
+  .AboutSectionContent {
+    width: 100%;
+  }
+  .AboutSectionContent p {
+    line-height: 1.6;
+  }
+  .AboutSectionButton {
+    height: 46px;
+    margin-top: 24px;
+    padding: 8px 20px;
+    border-radius: 12px;
+  }
+}

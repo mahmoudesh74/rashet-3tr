@@ -1,0 +1,484 @@
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+
+.contactUsPage {
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: #FBF8F5;
+
+  padding-top: 100px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.contactHero {
+  width: 100%;
+
+  text-align: center;
+
+  padding: 60px 100px 40px;
+
+  box-sizing: border-box;
+}
+
+.contactHero h1 {
+  margin: 0;
+
+  font-family: "Cairo", sans-serif;
+
+  font-weight: 700;
+  font-size: 40px;
+
+  line-height: 1.4;
+
+  color: #905B30;
+
+  padding-bottom: 12px;
+}
+
+.contactHero p {
+  margin: 0;
+
+  font-family: "Cairo", sans-serif;
+
+  font-weight: 500;
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  color: #8A7A6A;
+}
+
+
+/* =========================================================
+   CONTACT CARD
+========================================================= */
+
+.contactCard {
+  width: 95%;
+
+  margin: 0 auto 60px;
+
+  display: flex;
+
+  flex-direction: row;
+
+  align-items: stretch;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  box-shadow: 0 4px 20px #8b5e3c1a;
+
+  border: 1px solid #d5c3b84d;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.contactForm {
+  width: 70%;
+
+  background: #FFFFFF;
+
+  padding: 48px 40px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 22px;
+
+  box-sizing: border-box;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
+.formRow {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: row;
+
+  gap: 20px;
+
+  min-width: 0;
+}
+
+.formField {
+  flex: 1 1 0;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.formField label {
+  font-family: "Cairo", sans-serif;
+
+  font-weight: 500;
+  font-size: 14px;
+
+  line-height: 20px;
+
+  color: #3a2413;
+}
+
+
+/* =========================================================
+   INPUT + TEXTAREA
+========================================================= */
+
+.formField input,
+.formField textarea {
+  width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 14px;
+
+  color: #3a2413;
+
+  border: 1px solid #d5c3b8;
+
+  border-radius: 8px;
+
+  padding: 12px 14px;
+
+  outline: none;
+
+  background: #fff;
+
+  resize: none;
+}
+
+.formField textarea {
+  min-height: 120px;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.formField input:focus,
+.formField textarea:focus,
+.inputWithIcon:focus-within,
+.phoneField:focus-within {
+  border-color: #905B30;
+}
+
+
+/* =========================================================
+   INPUT WITH ICON
+========================================================= */
+
+.inputWithIcon {
+  width: 100%;
+
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d5c3b8;
+
+  border-radius: 8px;
+
+  padding: 0 14px;
+
+  background: #fff;
+}
+
+.inputWithIcon input {
+  width: 100%;
+
+  min-width: 0;
+
+  border: none;
+
+  outline: none;
+
+  flex: 1;
+
+  padding: 12px 8px;
+}
+
+.inputWithIcon img {
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+.phoneField {
+  width: 100%;
+
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d5c3b8;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  background: #fff;
+}
+
+.phoneField .countryCode {
+  flex-shrink: 0;
+
+  background: #EFE4DB;
+
+  direction: ltr;
+
+  padding: 12px 14px;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  color: #634939;
+
+  border-left: none;
+}
+
+.phoneField input {
+  width: 100%;
+
+  min-width: 0;
+
+  border: none;
+
+  outline: none;
+
+  flex: 1;
+
+  padding: 12px 14px;
+}
+
+
+/* =========================================================
+   TOPICS
+========================================================= */
+
+.topicsRow {
+  width: 100%;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 24px;
+
+  padding-right: 50px;
+
+  box-sizing: border-box;
+}
+
+.formFieldTitle {
+  padding-right: 50px;
+
+  margin: 0;
+
+  font-weight: 600;
+
+  font-size: 16px;
+
+  font-family: "Cairo", sans-serif;
+
+  color: #011C2A;
+}
+
+.topicOption {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-family: "Cairo", sans-serif;
+
+  font-weight: 400;
+
+  font-size: 14px;
+
+  color: #51443c;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.topicOption input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+
+  margin: 0;
+
+  flex-shrink: 0;
+
+  accent-color: #905B30;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.submitButton {
+  margin-top: 20px;
+
+  align-self: flex-start;
+
+  background: #905B30;
+
+  color: #FBF8F5;
+
+  font-family: "Cairo", sans-serif;
+
+  font-weight: 500;
+
+  font-size: 16px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  padding: 10px 44px;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+.submitButton:hover {
+  background: #7a4b27;
+}
+
+
+/* =========================================================
+   VALIDATION
+========================================================= */
+
+.formError {
+  margin: 0;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  color: #d32f2f;
+}
+
+.formField--error > input,
+.formField--error > textarea,
+.formField--error .inputWithIcon,
+.formField--error .phoneField,
+.formField--error > input:focus,
+.formField--error > textarea:focus,
+.formField--error .inputWithIcon:focus-within,
+.formField--error .phoneField:focus-within {
+  border-color: #d32f2f;
+}
+
+.formSuccess {
+  margin: 0;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  color: #2e7d4f;
+}
+
+
+/* =========================================================
+   RIGHT INFO PANEL
+========================================================= */
+
+.contactInfoPanel {
+  width: 30%;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #905B30;
+
+  padding: 40px 32px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  color: #FFFFFF;
+
+  border-radius: 12px;
+
+  min-width: 0;
+}
+
+.contactInfoPanel h2 {
+  margin: 0;
+
+  font-family: "Cairo", sans-serif;
+
+  font-weight: 

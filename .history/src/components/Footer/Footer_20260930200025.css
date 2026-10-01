@@ -1,0 +1,734 @@
+.Footer {
+  width: 100%;
+  height: auto;
+  background:
+    linear-gradient(
+      7.52deg,
+      #905B30 2.66%,
+      rgba(178, 147, 120, 0.5) 28.7%,
+      rgba(212, 203, 192, 0) 50%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(251, 248, 245, 0.2),
+      rgba(251, 248, 245, 0.2)
+    );
+  overflow: hidden;
+}
+
+/* ================= Main Row ================= */
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 10px 40px;
+  box-sizing: border-box;
+}
+
+/* ================= Logo ================= */
+
+.LogoContainer {
+  width: 25%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.LogoContainer img {
+  width: min(400px, 100%);
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+.LogoContainer p {
+  width: 100%;
+  max-width: 200px;
+
+  margin: 0;
+
+  font-family: "Cairo";
+  font-size: 18px;
+  font-weight: 400;
+  color: #56371D;
+  line-height: 30px;
+
+  text-align: center;
+}
+
+/* ================= Quick Links ================= */
+
+.LinksContainer {
+  width: 25%;
+  min-width: 0;
+
+  gap: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.LinksContainer h3 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Cairo";
+  color: #905B30;
+
+  white-space: nowrap;
+}
+
+.LinksContainer a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #3A2413;
+  font-family: "Cairo";
+  text-decoration: none;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ================= Own Links ================= */
+
+.ownLinks {
+  width: 25%;
+  min-width: 0;
+
+  gap: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.ownLinks h3 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Cairo";
+  color: #905B30;
+
+  white-space: nowrap;
+}
+
+.ownLinks a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #3A2413;
+  font-family: "Cairo";
+  text-decoration: none;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ================= Contact ================= */
+
+.contactWithUs {
+  width: 25%;
+  min-width: 0;
+
+  gap: 25px;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.contactWithUs h3 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Cairo";
+  color: #905B30;
+
+  white-space: nowrap;
+}
+
+/* ================= Contact Items ================= */
+
+.location {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  overflow: hidden;
+}
+
+.locationIcon,
+.phoneIcon {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  background-color: #C5A0591A;
+  border-radius: 4px;
+}
+
+/* النص داخل بيانات التواصل */
+
+.location span,
+.location p,
+.location a {
+  min-width: 0;
+  max-width: 100%;
+
+  margin: 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-family: "Cairo";
+}
+
+/* ================= Link Hover ================= */
+
+.linkItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: fit-content;
+}
+
+.FooterLine {
+  height: 2px;
+  width: 20px;
+
+  background-color: #905B30;
+  border-radius: 8px;
+
+  opacity: 0;
+
+  transform: scaleX(0);
+  transform-origin: right;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.linkItem:hover .FooterLine {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* ================= Payment ================= */
+
+.payed {
+  width: 100%;
+  max-width: 100%;
+  height: 82px;
+
+  box-sizing: border-box;
+
+  background-color: #EFE6DD80;
+
+  border: 1px solid #C5A0591A;
+  border-radius: 12px;
+
+  overflow: hidden;
+}
+
+.payed p {
+  margin: 0;
+  padding: 10px;
+
+  font-family: "Cairo";
+  font-size: 16px;
+  font-weight: 400;
+
+  color: #2D292680;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.payrow {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 10px;
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.payrow img {
+  max-width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  flex-shrink: 1;
+}
+
+/* ================= Make By ================= */
+
+.makeby {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-top: 1px solid #8A7A6A80;
+
+  padding: 10px 0;
+
+  gap: 5px;
+
+  color: #6B6764;
+}
+
+.makeby p {
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  font-family: "Cairo";
+
+  color: #6B6764;
+}
+
+/* ================================================= */
+/* LAPTOP */
+/* ================================================= */
+
+@media (max-width: 1200px) {
+
+  .row {
+    padding: 10px 25px;
+  }
+
+  /* Logo */
+
+  .LogoContainer img {
+    width: 240px;
+    max-height: 140px;
+  }
+
+  .LogoContainer p {
+    max-width: 170px;
+
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  /* Links */
+
+  .LinksContainer,
+  .ownLinks {
+    gap: 7px;
+  }
+
+  .LinksContainer h3,
+  .ownLinks h3,
+  .contactWithUs h3 {
+    font-size: 17px;
+  }
+
+  .LinksContainer a,
+  .ownLinks a {
+    font-size: 13px;
+  }
+
+  /* Contact */
+
+  .contactWithUs {
+    gap: 16px;
+  }
+
+  .location {
+    gap: 6px;
+  }
+
+  .locationIcon,
+  .phoneIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Payment */
+
+  .payed {
+    height: 70px;
+  }
+
+  .payed p {
+    padding: 7px;
+    font-size: 13px;
+  }
+
+  .payrow {
+    gap: 6px;
+    padding: 0 7px;
+  }
+}
+
+/* ================================================= */
+/* TABLET */
+/* ================================================= */
+
+@media (max-width: 900px) {
+
+  .row {
+    padding: 8px 15px;
+  }
+
+  /* Logo */
+
+  .LogoContainer img {
+    width: 170px;
+    max-height: 100px;
+  }
+
+  .LogoContainer p {
+    max-width: 140px;
+
+    font-size: 11px;
+    line-height: 19px;
+  }
+
+  /* Links */
+
+  .LinksContainer,
+  .ownLinks {
+    gap: 5px;
+  }
+
+  .LinksContainer h3,
+  .ownLinks h3,
+  .contactWithUs h3 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .LinksContainer a,
+  .ownLinks a {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  /* Contact */
+
+  .contactWithUs {
+    width: 25%;
+    gap: 10px;
+  }
+
+  .location {
+    gap: 4px;
+  }
+
+  .locationIcon,
+  .phoneIcon {
+    width: 23px;
+    height: 23px;
+  }
+
+  .location span,
+  .location p,
+  .location a {
+    font-size: 9px;
+    line-height: 12px;
+  }
+
+  /* Payment */
+
+  .payed {
+    height: 58px;
+    border-radius: 8px;
+  }
+
+  .payed p {
+    padding: 5px;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .payrow {
+    gap: 4px;
+    padding: 0 5px;
+  }
+
+  /* Make By */
+
+  .makeby {
+    padding: 7px 0;
+  }
+
+  .makeby p {
+    font-size: 11px;
+  }
+}
+
+/* ================================================= */
+/* MOBILE */
+/* ================================================= */
+
+@media (max-width: 600px) {
+
+  .row {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    padding: 6px 6px;
+  }
+
+  /* ================= Logo ================= */
+
+  .LogoContainer {
+    width: 25%;
+  }
+
+  .LogoContainer img {
+    width: 100%;
+    max-width: 100px;
+    max-height: 65px;
+  }
+
+  .LogoContainer p {
+    max-width: 85px;
+
+    font-size: 7px;
+    line-height: 12px;
+  }
+
+  /* ================= Links ================= */
+
+  .LinksContainer,
+  .ownLinks {
+    width: 25%;
+    gap: 3px;
+  }
+
+  .LinksContainer h3,
+  .ownLinks h3 {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .LinksContainer a,
+  .ownLinks a {
+    font-size: 7px;
+    line-height: 11px;
+  }
+
+  /* ================= Contact ================= */
+
+  .contactWithUs {
+    width: 25%;
+    min-width: 0;
+
+    gap: 7px;
+  }
+
+  .contactWithUs h3 {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .location {
+    width: 100%;
+    gap: 3px;
+  }
+
+  .locationIcon,
+  .phoneIcon {
+    width: 18px;
+    height: 18px;
+
+    min-width: 18px;
+
+    border-radius: 3px;
+  }
+
+  .location span,
+  .location p,
+  .location a {
+    font-size: 7px;
+    line-height: 10px;
+  }
+
+  /* ================= Payment ================= */
+
+  .payed {
+    width: 100%;
+    height: 45px;
+
+    border-radius: 6px;
+  }
+
+  .payed p {
+    padding: 3px;
+
+    font-size: 7px;
+    line-height: 9px;
+  }
+
+  .payrow {
+    gap: 3px;
+    padding: 0 3px;
+  }
+
+  /* ================= Make By ================= */
+
+  .makeby {
+    padding: 5px 0;
+    gap: 3px;
+  }
+
+  .makeby p {
+    font-size: 7px;
+  }
+
+  /* ================= Footer Line ================= */
+
+  .FooterLine {
+    width: 12px;
+    height: 1px;
+  }
+}
+
+/* ================================================= */
+/* VERY SMALL PHONES */
+/* ================================================= */
+
+@media (max-width: 380px) {
+
+  .row {
+    padding: 5px 3px;
+  }
+
+  /* Logo */
+
+  .LogoContainer img {
+    max-width: 75px;
+    max-height: 50px;
+  }
+
+  .LogoContainer p {
+    max-width: 70px;
+
+    font-size: 6px;
+    line-height: 10px;
+  }
+
+  /* Links */
+
+  .LinksContainer,
+  .ownLinks {
+    gap: 2px;
+  }
+
+  .LinksContainer h3,
+  .ownLinks h3 {
+    font-size: 8px;
+    line-height: 11px;
+  }
+
+  .LinksContainer a,
+  .ownLinks a {
+    font-size: 6px;
+    line-height: 9px;
+  }
+
+  /* Contact */
+
+  .contactWithUs {
+    gap: 5px;
+  }
+
+  .contactWithUs h3 {
+    font-size: 8px;
+    line-height: 11px;
+  }
+
+  .location {
+    gap: 2px;
+  }
+
+  .locationIcon,
+  .phoneIcon {
+    width: 15px;
+    height: 15px;
+
+    min-width: 15px;
+  }
+
+  .location span,
+  .location p,
+  .location a {
+    font-size: 6px;
+    line-height: 9px;
+  }
+
+  /* Payment */
+
+  .payed {
+    height: 38px;
+  }
+
+  .payed p {
+    font-size: 6px;
+    line-height: 8px;
+
+    padding: 2px;
+  }
+
+  .payrow {
+    gap: 2px;
+    padding: 0 2px;
+  }
+
+  /* Make By */
+
+  .makeby {
+    padding: 4px 0;
+  }
+
+  .makeby p {
+    font-size: 6px;
+  }
+}

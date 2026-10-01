@@ -1,0 +1,461 @@
+.firstWhoKnow {
+  width: 100%;
+  height: 340px;
+  min-height: 0;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    90deg,
+    rgba(144, 91, 48, 0) 0%,
+    #905B30 79.6%
+  );
+
+  margin-bottom: 30px;
+}
+
+
+/* ================= Content ================= */
+
+.firstWhoKnowContent {
+  padding-right: 40px;
+  padding-left: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  width: 60%;
+  min-height: 340px;
+
+  position: relative;
+  z-index: 2;
+
+  background: linear-gradient(
+    90deg,
+    #56371D 0%,
+    rgba(86, 55, 29, 0) 70.85%
+  );
+}
+
+.firstWhoKnowContent h2 {
+  margin: 0;
+
+  font-size: 32px;
+  font-weight: 600;
+
+  font-family: "Cairo";
+  color: #FFFFFF;
+}
+
+.firstWhoKnowContentText {
+  width: min(750px, 100%);
+  margin-bottom: 30px;
+}
+
+.firstWhoKnowContentText p {
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 500;
+
+  font-family: "Cairo";
+  color: #FFFFFF;
+
+  line-height: 1.7;
+}
+
+
+/* ================= Image ================= */
+
+.firstWhoKnowImg {
+  width: 40%;
+  min-height: 340px;
+
+  position: relative;
+  overflow: hidden;
+
+  margin-right: -1px;
+}
+
+.firstWhoKnowImg__img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+}
+
+.firstWhoKnowImg::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    270deg,
+    #56371d 0%,
+    rgba(86, 55, 29, 0) 28.85%
+  );
+
+  pointer-events: none;
+}
+
+
+/* ================= Newsletter ================= */
+
+.newsletter-section__form {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  width: 100%;
+  max-width: 515px;
+}
+
+.newsletter-section__input-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.mailIcon {
+  position: absolute;
+
+  top: 50%;
+  right: 16px;
+
+  transform: translateY(-50%);
+
+  width: 18px;
+  height: 18px;
+
+  pointer-events: none;
+}
+
+.newsletter-section__input {
+  width: 100%;
+  height: 48px;
+
+  box-sizing: border-box;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #fdf6ec;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 14px;
+
+  outline: none;
+
+  padding: 0 44px 0 16px;
+}
+
+.newsletter-section__input::placeholder {
+  color: #d8c4ab;
+}
+
+.newsletter-section__btn {
+  flex-shrink: 0;
+
+  height: 48px;
+  width: 100px;
+
+  border-radius: 16px;
+
+  border: none;
+
+  background: #905B30;
+  color: #fdf6ec;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.newsletter-section__btn:hover {
+  background: #a86f3f;
+}
+
+
+/* ================================================= */
+/*                    LAPTOP                         */
+/* ================================================= */
+
+@media (max-width: 1200px) {
+
+  .firstWhoKnow {
+    min-height: 320px;
+  }
+
+  .firstWhoKnowContent {
+    width: 60%;
+
+    padding-right: 30px;
+    padding-left: 20px;
+
+    min-height: 320px;
+  }
+
+  .firstWhoKnowImg {
+    width: 40%;
+    min-height: 320px;
+  }
+
+  .firstWhoKnowContent h2 {
+    font-size: 28px;
+  }
+
+  .firstWhoKnowContentText p {
+    font-size: 20px;
+  }
+
+  .firstWhoKnowContentText {
+    margin-bottom: 22px;
+  }
+
+  .newsletter-section__form {
+    max-width: 470px;
+  }
+}
+
+
+/* ================================================= */
+/*                    TABLET                         */
+/* ================================================= */
+
+@media (max-width: 900px) {
+
+  .firstWhoKnow {
+    min-height: 280px;
+  }
+
+  .firstWhoKnowContent {
+    width: 60%;
+
+    padding-right: 24px;
+    padding-left: 15px;
+
+    min-height: 280px;
+  }
+
+  .firstWhoKnowImg {
+    width: 40%;
+    min-height: 280px;
+  }
+
+  .firstWhoKnowContent h2 {
+    font-size: 24px;
+  }
+
+  .firstWhoKnowContentText {
+    width: 100%;
+    margin-bottom: 18px;
+  }
+
+  .firstWhoKnowContentText p {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .newsletter-section__form {
+    max-width: 400px;
+    gap: 8px;
+  }
+
+  .newsletter-section__input {
+    height: 44px;
+    font-size: 12px;
+    border-radius: 12px;
+  }
+
+  .newsletter-section__btn {
+    height: 44px;
+    width: 85px;
+    font-size: 13px;
+    border-radius: 12px;
+  }
+
+  .mailIcon {
+    right: 12px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+
+/* ================================================= */
+/*                    MOBILE                         */
+/* ================================================= */
+
+@media (max-width: 600px) {
+
+  .firstWhoKnow {
+    width: 100%;
+    min-height: 230px;
+
+    margin-bottom: 20px;
+  }
+
+  /*
+    نخلي الصورة موجودة،
+    والمحتوى ياخد مساحة أكبر
+  */
+
+  .firstWhoKnowContent {
+    width: 65%;
+
+    min-height: 230px;
+
+    padding-right: 14px;
+    padding-left: 8px;
+  }
+
+  .firstWhoKnowImg {
+    width: 35%;
+    min-height: 230px;
+  }
+
+
+  /* Heading */
+
+  .firstWhoKnowContent h2 {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+
+  /* Text */
+
+  .firstWhoKnowContentText {
+    width: 100%;
+
+    margin-bottom: 14px;
+  }
+
+  .firstWhoKnowContentText p {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+
+  /* Form */
+
+  .newsletter-section__form {
+    width: 100%;
+    max-width: 100%;
+
+    gap: 5px;
+  }
+
+  .newsletter-section__input {
+    height: 36px;
+
+    padding-right: 32px;
+    padding-left: 8px;
+
+    border-radius: 9px;
+
+    font-size: 9px;
+  }
+
+  .newsletter-section__btn {
+    width: 65px;
+    height: 36px;
+
+    border-radius: 9px;
+
+    font-size: 9px;
+  }
+
+  .mailIcon {
+    right: 9px;
+
+    width: 13px;
+    height: 13px;
+  }
+}
+
+
+/* ================================================= */
+/*                VERY SMALL PHONES                  */
+/* ================================================= */
+
+@media (max-width: 380px) {
+
+  .firstWhoKnow {
+    min-height: 200px;
+  }
+
+  .firstWhoKnowContent {
+    width: 67%;
+    min-height: 200px;
+
+    padding-right: 10px;
+    padding-left: 5px;
+  }
+
+  .firstWhoKnowImg {
+    width: 33%;
+    min-height: 200px;
+  }
+
+  .firstWhoKnowContent h2 {
+    font-size: 15px;
+  }
+
+  .firstWhoKnowContentText {
+    margin-bottom: 10px;
+  }
+
+  .firstWhoKnowContentText p {
+    font-size: 9px;
+    line-height: 1.6;
+  }
+
+  .newsletter-section__form {
+    gap: 4px;
+  }
+
+  .newsletter-section__input {
+    height: 32px;
+
+    padding-right: 27px;
+
+    font-size: 8px;
+
+    border-radius: 7px;
+  }
+
+  .newsletter-section__btn {
+    width: 55px;
+    height: 32px;
+
+    font-size: 8px;
+
+    border-radius: 7px;
+  }
+
+  .mailIcon {
+    right: 7px;
+
+    width: 11px;
+    height: 11px;
+  }
+}

@@ -1,0 +1,312 @@
+.BestSeller {
+  /* --s = scale of the slider. 1 on desktop, smaller on smaller screens.
+     The slider keeps its desktop design and is scaled as ONE piece, so the
+     distance between the slides shrinks together with the slides. */
+  --s: 1;
+  --bs-w: 450px;
+  --bs-h: 518px;
+  --bs-h-center: 577px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 40px;
+  background-color: #EFE4DB;
+  border-bottom-left-radius: clamp(40px, 8vw, 100px);
+  border-bottom-right-radius: clamp(40px, 8vw, 100px);
+}
+
+/* ---------- Header ---------- */
+.BestSellerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: clamp(20px, 2.1vw, 30px) clamp(14px, 5.55vw, 80px);
+  width: 100%;
+}
+
+.BestSellerTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.BestSellerTitle h2 {
+  margin: 0;
+  font-family: "Cairo";
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 700;
+  color: #905B30;
+}
+
+.BestSellerLine {
+  height: 3px;
+  width: clamp(50px, 4.65vw, 67px);
+  background-color: #905B30;
+  border-radius: 8px;
+}
+
+/* ---------- Pagination ---------- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: clamp(12px, 1.4vw, 20px);
+}
+
+.pagination1,
+.pagination2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(40px, 3.33vw, 48px);
+  height: clamp(40px, 3.33vw, 48px);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform .2s ease, background-color .2s ease;
+}
+
+.pagination1 {
+  background-color: #905B30;
+}
+
+.pagination2 {
+  border: 2px solid #905B30;
+}
+
+.pagination1:hover,
+.pagination2:hover {
+  background-color: #905B30;
+  transform: scale(1.06);
+}
+
+/* ---------- Slider (desktop sizes, scaled by --s) ---------- */
+.BestSellerContent {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: calc((var(--bs-h-center) + 23px) * var(--s));
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.bs-track {
+  position: relative;
+  flex-shrink: 0;
+  width: calc(100% / var(--s)); /* wider by 1/s, so after scaling it fills exactly 100% */
+  height: calc((var(--bs-h-center) + 23px) * 0.9);
+  transform: scale(var(--s));
+  transform-origin: top left;
+}
+
+.bs-slide,
+.bs-slide-center {
+  width: var(--bs-w);
+}
+
+.bs-slide {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transition: transform 1.2s cubic-bezier(0, .8, 0, 1), opacity 3s ease-in-out;
+}
+
+.bs-card {
+  position: relative;
+  width: var(--bs-w);
+  height: var(--bs-h);
+  border: 6px solid #FFFFFF;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 24px 40px -22px rgba(43, 36, 28, 0.25);
+}
+
+.bs-slide-center .bs-card {
+  height: var(--bs-h-center);
+  box-shadow: 0 30px 50px -20px rgba(43, 36, 28, 0.35);
+}
+
+.bs-card-media {
+  position: absolute;
+  inset: 0;
+}
+
+.bs-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bs-fav {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(251, 247, 239, 0.92);
+  color: #2B241C;
+  cursor: pointer;
+}
+
+/* ---------- Card body ---------- */
+.bs-card-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 46px 18px 20px;
+  text-align: right;
+  background: linear-gradient(to top, rgba(20, 15, 10, 0.88) 0%, rgba(20, 15, 10, 0.55) 55%, rgba(20, 15, 10, 0) 100%);
+}
+
+.bs-kicker {
+  font-family: "Cairo";
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.bs-card-body h3 {
+  margin: 2px 0 0;
+  direction: ltr;
+  font-family: "Cairo", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #FBF7EF;
+}
+
+.bs-cat {
+  margin-bottom: 6px;
+  font-family: "Cairo";
+  font-size: 16px;
+  font-weight: 400;
+  color: #E4D5C8;
+}
+
+.bs-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.bs-price-old {
+  font-family: "Cairo";
+  font-size: 18px;
+  font-weight: 400;
+  color: #646464;
+  text-decoration: line-through;
+}
+
+.bs-price-new {
+  font-family: "Cairo";
+  font-size: 26px;
+  font-weight: 700;
+  color: #905B30;
+}
+
+/* ---------- Add to cart button ---------- */
+.bs-add-btn {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  width: 40%;
+  min-width: 130px;
+  height: 40px;
+  margin-top: 12px;
+  overflow: hidden;
+  background: none;
+  border: 1px solid #E4D5C8;
+  border-right: none;
+  border-radius: 30px;
+  color: #8A7A6A;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background .3s ease, color .3s ease, width .3s ease, justify-content .3s ease;
+}
+
+.bs-add-btn span {
+  white-space: nowrap;
+  transition: opacity .2s ease, transform .3s ease;
+}
+
+.cartImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  background-color: #905B30;
+  transition: transform .3s ease;
+}
+
+@media (hover: hover) {
+  .bs-add-btn:hover {
+    background: #905B30;
+    color: #F5EEE2;
+    justify-content: center;
+    border-color: #905B30;
+  }
+
+  .bs-add-btn:hover span {
+    opacity: 0;
+    transform: scale(0.8);
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .bs-add-btn:hover .cartImg {
+    background-color: transparent;
+  }
+}
+
+/* ================= Responsive ================= */
+
+/* Fallback steps (older browsers) */
+@media (max-width: 1200px) {
+  .BestSeller { --s: 0.85; }
+}
+
+@media (max-width: 880px) {
+  .BestSeller { --s: 0.68; }
+}
+
+@media (max-width: 600px) {
+  .BestSeller { --s: 0.55; }
+}
+
+@media (max-width: 400px) {
+  .BestSeller { --s: 0.5; }
+}
+
+/* Modern browsers: a smooth scale that follows the screen width exactly
+   (1 at 1440px, never below 0.5 so the text stays readable) */
+@supports (width: calc(1px * tan(atan2(1, 1)))) {
+  @media (max-width: 1440px) {
+    .BestSeller {
+      --s: max(0.5, tan(atan2(100vw, 1440px)));
+    }
+  }
+}

@@ -1,0 +1,204 @@
+/* ===== Desktop: the original design ===== */
+.navbar {
+  width: 100%;
+  background-color: #FBF8F5E5;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.container {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 16px 80px;
+}
+
+.logoImage {
+  width: auto;
+  height: 300px;
+  object-fit: contain;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  position: relative;
+  font-size: 20px;
+  color: #696767;
+  text-decoration: none;
+  padding-bottom: 4px;
+  font-family: "Cairo";
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #905B30;
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.search,
+.profile {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+
+.cart {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    #ba987c 0%,
+    #a57956 27.68%,
+    #905B30 125.82%
+  );
+}
+
+.cartCount {
+  position: absolute;
+  top: -10px;
+  left: -3px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  color: #905B30;
+  font-size: 10px;
+  font-weight: 700;
+  font-family: "Cairo";
+  box-shadow: 0 2px 6px #0000004d;
+}
+
+/* ===== 769px - 1440px: SAME layout, everything (links included) shrinks
+   in proportion to the screen width. The values equal the desktop sizes at 1440px. ===== */
+@media (max-width: 1440px) {
+  .navbar,
+  .container {
+    height: max(60px, 6.94vw);
+  }
+
+  .container {
+    padding: max(6px, 1.1vw) max(10px, 5.5vw);
+  }
+
+  .logoImage {
+    height: max(80px, 20.8vw);
+  }
+
+  .links {
+    gap: max(6px, 2.64vw);
+  }
+
+  .link {
+    font-size: max(10px, 1.39vw);
+  }
+
+  .icons {
+    gap: max(6px, 1.39vw);
+  }
+
+  .search,
+  .profile,
+  .cart {
+    width: max(22px, 2.22vw);
+    height: max(22px, 2.22vw);
+  }
+
+  .cartCount {
+    width: max(14px, 1.25vw);
+    height: max(14px, 1.25vw);
+    font-size: max(9px, 0.7vw);
+    top: max(-10px, -0.7vw);
+  }
+}
+
+/* ===== Phones: the links stay visible but drop to a second row
+   (one row can't hold the logo, 7 links and the icons at this width) ===== */
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+  }
+
+  .container {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 4px;
+    padding: 8px 14px 10px;
+  }
+
+  .logoImage {
+    order: 1;
+    height: max(70px, 14vw);
+  }
+
+  .icons {
+    order: 2;
+  }
+
+  .links {
+    order: 3;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 16px;
+  }
+
+  .link {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .links {
+    gap: 4px 12px;
+  }
+
+  .link {
+    font-size: 12px;
+  }
+}

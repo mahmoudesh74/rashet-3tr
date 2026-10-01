@@ -1,0 +1,313 @@
+/* ===== Desktop: the original design ===== */
+.latestArticles {
+  direction: rtl;
+  position: relative;
+  background: #FBF8F5;
+}
+
+/* ---------- الهيدر ---------- */
+.latestArticlesHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 80px;
+}
+
+.latestArticlesTitle {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.latestArticlesHead h2 {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: "Cairo";
+  color: #905B30;
+  position: relative;
+  padding-bottom: 12px;
+  margin: 0;
+}
+
+.latestArticlesButton {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.latestArticlesButton p {
+  font-family: "Cairo";
+  font-size: 28px;
+  font-weight: 600;
+  color: #975233;
+  white-space: nowrap;
+}
+
+.latestArticlesLine {
+  height: 3px;
+  width: 67px;
+  background-color: #905B30;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ---------- جسم القسم (الكروت + أزرار التنقل) ---------- */
+.latestArticlesBody {
+  --nb: 48px; /* size of the round nav buttons */
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 80px 60px;
+  overflow: hidden;
+}
+
+.latestArticlesGrid {
+  padding: 0 10px;
+  flex: 1;
+  min-width: 0; /* lets the two columns shrink instead of pushing the page wider */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* always 2 cards side by side */
+  gap: 32px;
+  order: 1;
+}
+
+/* ---------- الأنيميشن ---------- */
+.latestArticlesGrid--next {
+  animation: slideFromLeft 1s ease;
+}
+
+.latestArticlesGrid--prev {
+  animation: slideFromRight 1s ease;
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ---------- كارت المقال الواحد ---------- */
+.latestArticlesCard {
+  height: 750px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.latestArticlesImage {
+  width: 100%;
+  height: 60%;
+  min-height: 0; /* the image gives up height first if the text needs room */
+  overflow: hidden;
+}
+
+.latestArticlesImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.latestArticlesContent {
+  flex-shrink: 0;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: right;
+}
+
+.latestArticlesContent h3 {
+  font-family: "Cairo";
+  font-size: 20px;
+  font-weight: 700;
+  color: #905B30;
+  margin: 0 0 14px;
+}
+
+.latestArticlesContent p {
+  max-width: 500px;
+  font-family: "Cairo";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.9;
+  color: #6a6a6a;
+  margin: 0 0 24px;
+}
+
+.latestArticlesReadMore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 25%;
+  height: 54px;
+  padding: 0 4px;
+  border: 1px solid #905B30;
+  border-radius: 8px;
+  background: transparent;
+  color: #905B30;
+  font-family: "Cairo";
+  font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+@media (hover: hover) {
+  .latestArticlesReadMore:hover {
+    background: #905B30;
+    color: #FFFFFF;
+  }
+}
+
+.latestArticlesReadMore img {
+  width: 16px;
+  height: 16px;
+}
+
+/* ---------- أزرار التنقل الدائرية ---------- */
+.latestArticlesNavBtn {
+  flex-shrink: 0;
+  width: var(--nb);
+  height: var(--nb);
+  border-radius: 50%;
+  border: none;
+  background: #905B30;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.latestArticlesNavBtn svg,
+.latestArticlesNavBtn img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (hover: hover) {
+  .latestArticlesNavBtn:hover {
+    background: #a86f3f;
+  }
+}
+
+.latestArticlesNavBtn:active {
+  transform: scale(0.9);
+}
+
+.latestArticlesNavBtn--prev {
+  margin-left: calc(var(--nb) / -2);
+  order: 2;
+}
+
+.latestArticlesNavBtn--next {
+  margin-right: calc(var(--nb) / -2);
+  order: 0;
+}
+
+/* ===== Smaller screens: SAME layout (2 cards side by side, nav buttons on the sides),
+   everything shrinks in proportion to the screen width. Values equal the desktop
+   sizes at 1440px wide; max(min, vw) keeps the text from getting unreadable. ===== */
+@media (max-width: 1440px) {
+  .latestArticlesHead {
+    padding: max(14px, 2.78vw) max(12px, 5.55vw);
+  }
+
+  .latestArticlesHead h2 {
+    font-size: max(16px, 1.94vw);
+    padding-bottom: max(6px, 0.83vw);
+  }
+
+  .latestArticlesLine {
+    width: max(36px, 4.65vw);
+  }
+
+  .latestArticlesButton {
+    gap: max(8px, 1.39vw);
+  }
+
+  .latestArticlesButton p {
+    font-size: max(14px, 1.94vw);
+  }
+
+  .latestArticlesBody {
+    --nb: max(28px, 3.33vw);
+    padding: 0 max(12px, 5.55vw) max(24px, 4.17vw);
+  }
+
+  .latestArticlesGrid {
+    padding: 0 max(4px, 0.7vw);
+    gap: max(8px, 2.22vw);
+  }
+
+  /* 590 x 750 is the card size of the 1440px design; the ratio keeps it at any width */
+  .latestArticlesCard {
+    height: auto;
+    aspect-ratio: 590 / 750;
+    border-radius: max(8px, 1.11vw);
+  }
+
+  .latestArticlesContent {
+    padding: max(10px, 2.78vw) max(8px, 1.74vw);
+  }
+
+  .latestArticlesContent h3 {
+    font-size: max(9px, 1.39vw);
+    margin-bottom: max(4px, 0.97vw);
+  }
+
+  .latestArticlesContent p {
+    font-size: max(9px, 1.39vw);
+    line-height: 1.7;
+    margin-bottom: max(8px, 1.67vw);
+  }
+
+  .latestArticlesReadMore {
+    width: auto;
+    min-width: 25%;
+    height: max(24px, 3.75vw);
+    padding: 0 max(6px, 1vw);
+    gap: max(4px, 0.7vw);
+    border-radius: max(5px, 0.55vw);
+    font-size: max(9px, 1.25vw);
+  }
+
+  .latestArticlesReadMore img {
+    width: max(8px, 1.11vw);
+    height: max(8px, 1.11vw);
+  }
+
+  .latestArticlesNavBtn svg,
+  .latestArticlesNavBtn img {
+    width: max(12px, 1.39vw);
+    height: max(12px, 1.39vw);
+  }
+}
