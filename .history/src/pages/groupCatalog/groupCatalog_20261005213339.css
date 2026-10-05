@@ -1,0 +1,1376 @@
+/* =========================================================
+   PERFUME SECTION
+========================================================= */
+
+.perfume-section {
+  margin-top: 120px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   CATALOG TOOLBAR
+========================================================= */
+
+.catalog-toolbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 80px 24px;
+
+  gap: 16px;
+  flex-wrap: nowrap;
+
+  box-sizing: border-box;
+}
+
+
+/* ---------- SORT ---------- */
+
+.catalog-sort {
+  direction: ltr;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 10px;
+
+  font-family: "Cairo";
+  font-size: 15px;
+  color: #7a6a5a;
+
+  flex-shrink: 0;
+}
+
+.catalog-sort__btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 6px;
+
+  background: none;
+  border: none;
+
+  font-family: "Cairo";
+  font-size: 15px;
+  font-weight: 600;
+
+  color: #3a2413;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.catalog-sort__btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+
+/* ---------- SEARCH ---------- */
+
+.catalog-search-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 0;
+  flex: 0 1 420px;
+}
+
+.catalog-search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 10px;
+
+  width: 320px;
+  min-width: 0;
+
+  height: 44px;
+
+  padding: 0 16px;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+  border: 1px solid #ede4d3;
+
+  box-sizing: border-box;
+}
+
+.catalog-search svg {
+  width: 18px;
+  height: 18px;
+
+  color: #b7ae9f;
+
+  flex-shrink: 0;
+}
+
+.catalog-search input {
+  flex: 1;
+  min-width: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-family: "Cairo";
+  font-size: 14px;
+
+  color: #3a2413;
+}
+
+.catalog-search input::placeholder {
+  color: #b7ae9f;
+}
+
+
+/* ---------- FILTER BUTTON ---------- */
+
+.catalog-filter-btn {
+  width: 44px;
+  height: 44px;
+
+  min-width: 44px;
+
+  border-radius: 12px;
+  border: 1px solid #ede4d3;
+
+  background: #ffffff;
+  color: #905b30;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+}
+
+.catalog-filter-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+
+/* =========================================================
+   CATEGORY TABS
+========================================================= */
+
+.catalog-tabs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 80px 32px;
+
+  flex-wrap: nowrap;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scrollbar-width: none;
+
+  box-sizing: border-box;
+}
+
+.catalog-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.catalog-tab {
+  flex-shrink: 0;
+
+  padding: 10px 20px;
+
+  border-radius: 50px;
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0px 1px 2px 0px #0000000d;
+
+  background: #ffffff;
+  color: #000000;
+
+  font-family: "Cairo";
+  font-size: 12px;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.catalog-tab:hover {
+  border-color: #905b30;
+  color: #905b30;
+}
+
+.catalog-tab.is-active {
+  background: #905b30;
+  border-color: #905b30;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   NEW BADGE
+========================================================= */
+
+.catalog-badge {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  z-index: 2;
+
+  background: #e8e1dc;
+  color: #1e1b18;
+
+  font-family: "Cairo";
+  font-size: 12px;
+  font-weight: 700;
+
+  padding: 4px 12px;
+
+  border-radius: 12px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   STAR RATING
+========================================================= */
+
+.catalog-stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 2px;
+
+  flex-shrink: 0;
+}
+
+.star {
+  width: 14px;
+  height: 14px;
+
+  flex-shrink: 0;
+}
+
+.star--filled {
+  fill: #f5a623;
+}
+
+.star--empty {
+  fill: #e4d5c8;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.catalog-pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 40px 10px 10px;
+
+  flex-wrap: nowrap;
+
+  overflow: hidden;
+}
+
+.catalog-page-nav {
+  width: 36px;
+  height: 36px;
+
+  min-width: 36px;
+
+  border-radius: 50%;
+
+  border: 1px solid #ede4d3;
+
+  background: #ffffff;
+  color: #905b30;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    opacity 0.2s ease;
+
+  flex-shrink: 0;
+}
+
+.catalog-page-nav svg {
+  width: 16px;
+  height: 16px;
+}
+
+.catalog-page-nav:hover:not(:disabled) {
+  background: #f5efe6;
+}
+
+.catalog-page-nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.catalog-page-num {
+  width: 36px;
+  height: 36px;
+
+  min-width: 36px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: transparent;
+  color: #7a6a5a;
+
+  font-family: "Cairo";
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+
+  flex-shrink: 0;
+}
+
+.catalog-page-num:hover {
+  background: #f5efe6;
+}
+
+.catalog-page-num.is-active {
+  background: #905b30;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   FILTER DRAWER
+========================================================= */
+
+.filter-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.18);
+
+  z-index: 999;
+}
+
+
+/* ---------- DRAWER ---------- */
+
+.filter-drawer {
+  position: fixed;
+
+  top: 0;
+  right: 0;
+
+  width: 380px;
+  max-width: 100%;
+
+  height: 100%;
+
+  background: #ffffff;
+
+  z-index: 1000;
+
+  padding: 20px;
+
+  overflow-y: auto;
+
+  direction: ltr;
+
+  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.08);
+
+  animation: filterSlideIn 0.3s ease;
+
+  box-sizing: border-box;
+}
+
+@keyframes filterSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================================
+   FILTER HEADER
+========================================================= */
+
+.filter-header {
+  display: flex;
+  flex-direction: row;
+
+  direction: rtl;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #eee5dc;
+}
+
+.filter-title {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.filter-title h2 {
+  margin: 0;
+
+  font-family: "Cairo";
+  font-size: 24px;
+  font-weight: 400;
+
+  color: #1e1b18;
+
+  white-space: nowrap;
+}
+
+.filter-title span {
+  background: #735a361a;
+  color: #905b30;
+
+  font-family: "Cairo";
+  font-weight: 400;
+  font-size: 12px;
+
+  padding: 2px 7px;
+
+  border-radius: 5px;
+
+  white-space: nowrap;
+}
+
+
+/* ---------- CLOSE ---------- */
+
+.filter-close {
+  width: 36px;
+  height: 36px;
+
+  min-width: 36px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #905b30;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   FILTER BOX
+========================================================= */
+
+.filter-box {
+  padding: 20px 0;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  box-shadow: 0px 1px 2px 0px #0000000d;
+}
+
+.filter-box-header {
+  display: flex;
+  flex-direction: row;
+
+  direction: rtl;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 18px;
+
+  font-family: "Cairo";
+  font-size: 14px;
+  font-weight: 400;
+
+  color: #000000;
+}
+
+
+/* =========================================================
+   FILTER OPTIONS
+========================================================= */
+
+.filter-option {
+  display: flex;
+  flex-direction: row;
+
+  direction: rtl;
+
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  margin-bottom: 5px;
+
+  cursor: pointer;
+
+  font-family: "Cairo";
+  font-weight: 400;
+
+  font-size: 14px;
+
+  color: #000000;
+}
+
+.filter-option > div {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+
+  gap: 8px;
+
+  min-width: 0;
+}
+
+.filter-count {
+  color: #9ca3af;
+
+  font-size: 12px;
+
+  font-family: "Cairo";
+  font-weight: 400;
+
+  flex-shrink: 0;
+}
+
+
+/* ---------- CHECKBOX ---------- */
+
+.filter-option input {
+  width: 16px;
+  height: 16px;
+
+  border: 1px solid #e4d5c8;
+
+  accent-color: #905b30;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   PRICE SLIDER
+========================================================= */
+
+.price-slider {
+  width: 100%;
+
+  direction: rtl;
+
+  margin: 25px 0 10px;
+}
+
+.price-slider input {
+  width: 100%;
+
+  background-color: #f3f4f6;
+
+  accent-color: #c5a059;
+
+  cursor: pointer;
+}
+
+.price-values {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: "Cairo";
+  font-weight: 400;
+
+  font-size: 12px;
+
+  color: #000000;
+}
+
+
+/* =========================================================
+   FILTER ACTIONS
+========================================================= */
+
+.filter-actions {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+.apply-filter,
+.clear-filter {
+  width: 100%;
+  height: 48px;
+
+  border-radius: 10px;
+
+  font-family: "Cairo";
+  font-size: 15px;
+
+  cursor: pointer;
+}
+
+.apply-filter {
+  border: 1px solid #905b30;
+
+  background: #905b30;
+
+  color: #ffffff;
+}
+
+.clear-filter {
+  border: 1px solid #905b30;
+
+  background: #ffffff;
+
+  color: #905b30;
+}
+
+.apply-filter:hover {
+  background: #7c4d27;
+}
+
+.clear-filter:hover {
+  background: #faf5ef;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   مفيش STACKING للـ TOOLBAR أو TABS
+========================================================= */
+
+
+/* =========================
+   1200px
+========================= */
+
+@media (max-width: 1200px) {
+
+  .perfume-section {
+    margin-top: 105px;
+  }
+
+  .catalog-toolbar {
+    padding-left: 50px;
+    padding-right: 50px;
+    gap: 12px;
+  }
+
+  .catalog-search-group {
+    flex-basis: 360px;
+  }
+
+  .catalog-search {
+    width: 280px;
+    height: 40px;
+  }
+
+  .catalog-filter-btn {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+
+  .catalog-tabs {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 26px;
+    gap: 8px;
+  }
+
+  .catalog-tab {
+    padding: 8px 16px;
+    font-size: 11px;
+  }
+
+  .catalog-sort {
+    font-size: 13px;
+  }
+
+  .catalog-sort__btn {
+    font-size: 13px;
+  }
+
+  .catalog-badge {
+    top: 12px;
+    right: 12px;
+    font-size: 10px;
+    padding: 3px 9px;
+  }
+
+  .star {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+
+/* =========================
+   900px
+========================= */
+
+@media (max-width: 900px) {
+
+  .perfume-section {
+    margin-top: 90px;
+  }
+
+  .catalog-toolbar {
+    padding-left: 25px;
+    padding-right: 25px;
+
+    gap: 10px;
+
+    /*
+      search + filter + sort
+      يفضلوا في صف واحد
+    */
+    flex-wrap: nowrap;
+  }
+
+  .catalog-search-group {
+    flex: 1 1 auto;
+    width: auto;
+
+    gap: 7px;
+  }
+
+  .catalog-search {
+    width: 100%;
+    height: 36px;
+
+    padding: 0 11px;
+
+    border-radius: 18px;
+
+    gap: 6px;
+  }
+
+  .catalog-search svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .catalog-search input {
+    font-size: 11px;
+  }
+
+  .catalog-filter-btn {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+
+    border-radius: 10px;
+  }
+
+  .catalog-filter-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .catalog-sort {
+    gap: 5px;
+    font-size: 11px;
+  }
+
+  .catalog-sort__btn {
+    gap: 4px;
+    font-size: 11px;
+  }
+
+  .catalog-sort__btn svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .catalog-tabs {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 22px;
+
+    gap: 6px;
+  }
+
+  .catalog-tab {
+    padding: 7px 13px;
+    font-size: 10px;
+  }
+
+  .catalog-pagination {
+    gap: 6px;
+    padding-top: 30px;
+  }
+
+  .catalog-page-nav,
+  .catalog-page-num {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+  }
+
+  .catalog-page-nav svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .catalog-page-num {
+    font-size: 13px;
+  }
+
+  .filter-drawer {
+    width: 340px;
+    padding: 18px;
+  }
+
+  .filter-title h2 {
+    font-size: 21px;
+  }
+}
+
+
+/* =========================
+   600px
+========================= */
+
+@media (max-width: 600px) {
+
+  .perfume-section {
+    margin-top: 75px;
+  }
+
+  .catalog-toolbar {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    gap: 6px;
+
+    /*
+      كل حاجة تفضل جنب بعض
+    */
+    flex-wrap: nowrap;
+  }
+
+  .catalog-search-group {
+    gap: 5px;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .catalog-search {
+    height: 32px;
+
+    padding: 0 9px;
+
+    border-radius: 16px;
+
+    gap: 5px;
+  }
+
+  .catalog-search svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .catalog-search input {
+    font-size: 9px;
+  }
+
+  .catalog-filter-btn {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+
+    border-radius: 8px;
+  }
+
+  .catalog-filter-btn svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .catalog-sort {
+    gap: 3px;
+
+    font-size: 9px;
+  }
+
+  .catalog-sort__btn {
+    gap: 3px;
+    font-size: 9px;
+  }
+
+  .catalog-sort__btn svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .catalog-tabs {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 18px;
+
+    gap: 5px;
+
+    overflow-x: auto;
+  }
+
+  .catalog-tab {
+    padding: 6px 11px;
+
+    font-size: 9px;
+
+    border-radius: 30px;
+  }
+
+  .catalog-badge {
+    top: 8px;
+    right: 8px;
+
+    font-size: 8px;
+
+    padding: 2px 6px;
+
+    border-radius: 8px;
+  }
+
+  .star {
+    width: 11px;
+    height: 11px;
+  }
+
+  .catalog-stars {
+    gap: 1px;
+  }
+
+  .catalog-pagination {
+    gap: 4px;
+    padding-top: 25px;
+    padding-bottom: 8px;
+  }
+
+  .catalog-page-nav,
+  .catalog-page-num {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+  }
+
+  .catalog-page-nav svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .catalog-page-num {
+    font-size: 11px;
+  }
+
+  .filter-drawer {
+    width: 88%;
+    padding: 15px;
+  }
+
+  .filter-header {
+    padding-bottom: 15px;
+  }
+
+  .filter-title {
+    gap: 6px;
+  }
+
+  .filter-title h2 {
+    font-size: 18px;
+  }
+
+  .filter-title span {
+    font-size: 10px;
+    padding: 2px 5px;
+  }
+
+  .filter-close {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    font-size: 21px;
+  }
+
+  .filter-box {
+    padding: 15px 0;
+  }
+
+  .filter-box-header {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .filter-option {
+    font-size: 12px;
+  }
+
+  .filter-count {
+    font-size: 10px;
+  }
+
+  .filter-option input {
+    width: 14px;
+    height: 14px;
+  }
+
+  .filter-actions {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .apply-filter,
+  .clear-filter {
+    height: 42px;
+    font-size: 13px;
+  }
+}
+
+
+/* =========================
+   400px
+========================= */
+
+@media (max-width: 400px) {
+
+  .perfume-section {
+    margin-top: 65px;
+  }
+
+  .catalog-toolbar {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    gap: 4px;
+  }
+
+  .catalog-search-group {
+    gap: 3px;
+  }
+
+  .catalog-search {
+    height: 29px;
+
+    padding: 0 7px;
+
+    border-radius: 15px;
+
+    gap: 3px;
+  }
+
+  .catalog-search svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .catalog-search input {
+    font-size: 8px;
+  }
+
+  .catalog-filter-btn {
+    width: 29px;
+    height: 29px;
+    min-width: 29px;
+
+    border-radius: 7px;
+  }
+
+  .catalog-filter-btn svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .catalog-sort {
+    gap: 2px;
+    font-size: 8px;
+  }
+
+  .catalog-sort__btn {
+    font-size: 8px;
+    gap: 2px;
+  }
+
+  .catalog-sort__btn svg {
+    width: 9px;
+    height: 9px;
+  }
+
+  .catalog-tabs {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+    gap: 3px;
+  }
+
+  .catalog-tab {
+    padding: 5px 8px;
+    font-size: 8px;
+  }
+
+  .catalog-badge {
+    top: 6px;
+    right: 6px;
+    font-size: 7px;
+    padding: 2px 5px;
+  }
+
+  .star {
+    width: 9px;
+    height: 9px;
+  }
+
+  .catalog-pagination {
+    gap: 3px;
+    padding-top: 20px;
+  }
+
+  .catalog-page-nav,
+  .catalog-page-num {
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+  }
+
+  .catalog-page-nav svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .catalog-page-num {
+    font-size: 9px;
+  }
+
+  .filter-drawer {
+    width: 92%;
+    padding: 12px;
+  }
+
+  .filter-title h2 {
+    font-size: 16px;
+  }
+
+  .filter-title span {
+    font-size: 8px;
+  }
+
+  .filter-close {
+    width: 27px;
+    height: 27px;
+    min-width: 27px;
+    font-size: 19px;
+  }
+
+  .filter-option {
+    font-size: 10px;
+  }
+
+  .filter-count {
+    font-size: 8px;
+  }
+
+  .filter-option input {
+    width: 12px;
+    height: 12px;
+  }
+
+  .apply-filter,
+  .clear-filter {
+    height: 38px;
+    font-size: 11px;
+  }
+}
+
+
+/* =========================
+   340px
+========================= */
+
+@media (max-width: 340px) {
+
+  .perfume-section {
+    margin-top: 60px;
+  }
+
+  .catalog-toolbar {
+    padding-left: 7px;
+    padding-right: 7px;
+    gap: 3px;
+  }
+
+  .catalog-search {
+    height: 26px;
+    padding: 0 6px;
+  }
+
+  .catalog-search svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .catalog-search input {
+    font-size: 7px;
+  }
+
+  .catalog-filter-btn {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    border-radius: 6px;
+  }
+
+  .catalog-filter-btn svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .catalog-sort {
+    font-size: 7px;
+  }
+
+  .catalog-sort__btn {
+    font-size: 7px;
+  }
+
+  .catalog-sort__btn svg {
+    width: 8px;
+    height: 8px;
+  }
+
+  .catalog-tabs {
+    padding-left: 7px;
+    padding-right: 7px;
+    gap: 2px;
+  }
+
+  .catalog-tab {
+    padding: 4px 6px;
+    font-size: 7px;
+  }
+
+  .star {
+    width: 8px;
+    height: 8px;
+  }
+
+  .catalog-pagination {
+    gap: 2px;
+  }
+
+  .catalog-page-nav,
+  .catalog-page-num {
+    width: 23px;
+    height: 23px;
+    min-width: 23px;
+  }
+
+  .catalog-page-nav svg {
+    width: 9px;
+    height: 9px;
+  }
+
+  .catalog-page-num {
+    font-size: 8px;
+  }
+
+  .filter-drawer {
+    width: 94%;
+    padding: 10px;
+  }
+
+  .filter-title h2 {
+    font-size: 14px;
+  }
+
+  .filter-option {
+    font-size: 9px;
+  }
+
+  .filter-count {
+    font-size: 7px;
+  }
+
+  .apply-filter,
+  .clear-filter {
+    height: 35px;
+    font-size: 10px;
+  }
+}
