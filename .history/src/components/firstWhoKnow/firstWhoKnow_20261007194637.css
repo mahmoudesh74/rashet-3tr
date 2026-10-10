@@ -1,0 +1,422 @@
+.firstWhoKnow {
+  width: 100%;
+  height: 340px;
+
+  display: flex;
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    90deg,
+    rgba(144, 91, 48, 0) 0%,
+    #905B30 79.6%
+  );
+
+  margin-bottom: 30px;
+}
+
+
+/* ================= Content ================= */
+
+.firstWhoKnowContent {
+  width: 60%;
+  height: 100%;
+
+  padding-right: 40px;
+  padding-left: 30px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  position: relative;
+  z-index: 2;
+
+  background: linear-gradient(
+    90deg,
+    #56371D 0%,
+    rgba(86, 55, 29, 0) 70.85%
+  );
+}
+
+.firstWhoKnowContent h2 {
+  margin: 0;
+
+  font-size: 32px;
+  font-weight: 600;
+
+  font-family: "Cairo";
+  color: #FFFFFF;
+}
+
+.firstWhoKnowContentText {
+  width: min(750px, 100%);
+  margin-bottom: 30px;
+}
+
+.firstWhoKnowContentText p {
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 500;
+
+  font-family: "Cairo";
+  color: #FFFFFF;
+
+  line-height: 1.6;
+}
+
+
+/* ================= Image ================= */
+
+.firstWhoKnowImg {
+  width: 40%;
+  height: 100%;
+
+  position: relative;
+  overflow: hidden;
+
+  margin-right: -1px;
+}
+
+.firstWhoKnowImg__img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+}
+
+.firstWhoKnowImg::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    270deg,
+    #56371d 0%,
+    rgba(86, 55, 29, 0) 28.85%
+  );
+
+  pointer-events: none;
+}
+
+
+
+/* ================= Newsletter ================= */
+
+.newsletter-section__form {
+  width: 100%;
+  max-width: 515px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.newsletter-section__input-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.mailIcon {
+  position: absolute;
+
+  top: 50%;
+  right: 16px;
+
+  transform: translateY(-50%);
+
+  width: 18px;
+  height: 18px;
+
+  pointer-events: none;
+}
+
+.newsletter-section__input {
+  width: 100%;
+  height: 48px;
+
+  box-sizing: border-box;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #fdf6ec;
+
+  font-family: "Cairo", sans-serif;
+  font-size: 14px;
+
+  outline: none;
+
+  padding: 0 44px 0 16px;
+}
+
+.newsletter-section__input::placeholder {
+  color: #d8c4ab;
+}
+
+.newsletter-section__btn {
+  width: 100px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  border-radius: 16px;
+  border: none;
+
+  background: #905B30;
+  color: #fdf6ec;
+
+  font-family: "Cairo", sans-serif;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.newsletter-section__btn:hover {
+  background: #a86f3f;
+}
+
+
+/* ================================================= */
+/*                    LAPTOP                         */
+/* ================================================= */
+
+@media (max-width: 1200px) {
+  .firstWhoKnow {
+    height: 300px;
+  }
+
+  .firstWhoKnowContent {
+    padding-right: 30px;
+    padding-left: 20px;
+  }
+
+  .firstWhoKnowContent h2 {
+    font-size: 28px;
+  }
+
+  .firstWhoKnowContentText {
+    margin-bottom: 20px;
+  }
+
+  .firstWhoKnowContentText p {
+    font-size: 20px;
+  }
+
+  .newsletter-section__form {
+    max-width: 450px;
+  }
+}
+
+
+/* ================================================= */
+/*                    TABLET                         */
+/* ================================================= */
+
+@media (max-width: 900px) {
+  .firstWhoKnow {
+    height: 240px;
+  }
+
+  .firstWhoKnowContent {
+    width: 62%;
+
+    padding-right: 22px;
+    padding-left: 12px;
+  }
+
+  .firstWhoKnowImg {
+    width: 38%;
+  }
+
+  .firstWhoKnowContent h2 {
+    font-size: 22px;
+  }
+
+  .firstWhoKnowContentText {
+    margin-bottom: 14px;
+  }
+
+  .firstWhoKnowContentText p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .newsletter-section__form {
+    max-width: 360px;
+    gap: 7px;
+  }
+
+  .newsletter-section__input {
+    height: 40px;
+    padding: 0 35px 0 10px;
+    border-radius: 10px;
+    font-size: 11px;
+  }
+
+  .newsletter-section__btn {
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 11px;
+  }
+
+  .mailIcon {
+    right: 10px;
+    width: 15px;
+    height: 15px;
+  }
+}
+
+
+/* ================================================= */
+/*                    MOBILE                         */
+/* ================================================= */
+
+@media (max-width: 600px) {
+  .firstWhoKnow {
+    height: 160px;
+    margin-bottom: 20px;
+  }
+
+  .firstWhoKnowContent {
+    width: 67%;
+
+    padding-right: 12px;
+    padding-left: 5px;
+  }
+
+  .firstWhoKnowImg {
+    width: 33%;
+  }
+
+  .firstWhoKnowContent h2 {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .firstWhoKnowContentText {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .firstWhoKnowContentText p {
+    font-size: 8px;
+    line-height: 1.5;
+  }
+
+  .newsletter-section__form {
+    width: 100%;
+    max-width: 270px;
+    gap: 4px;
+  }
+
+  .newsletter-section__input {
+    height: 28px;
+
+    padding: 0 25px 0 6px;
+
+    border-radius: 7px;
+
+    font-size: 7px;
+  }
+
+  .newsletter-section__btn {
+    width: 50px;
+    height: 28px;
+
+    border-radius: 7px;
+
+    font-size: 7px;
+  }
+
+  .mailIcon {
+    right: 7px;
+
+    width: 10px;
+    height: 10px;
+  }
+}
+
+
+/* ================================================= */
+/*                VERY SMALL PHONES                  */
+/* ================================================= */
+
+@media (max-width: 380px) {
+  .firstWhoKnow {
+    height: 140px;
+  }
+
+  .firstWhoKnowContent {
+    width: 68%;
+
+    padding-right: 9px;
+  }
+
+  .firstWhoKnowImg {
+    width: 32%;
+  }
+
+  .firstWhoKnowContent h2 {
+    font-size: 12px;
+  }
+
+  .firstWhoKnowContentText {
+    margin-bottom: 6px;
+  }
+
+  .firstWhoKnowContentText p {
+    font-size: 7px;
+    line-height: 1.4;
+  }
+
+  .newsletter-section__form {
+    max-width: 230px;
+  }
+
+  .newsletter-section__input {
+    height: 25px;
+
+    padding-right: 22px;
+
+    font-size: 6px;
+
+    border-radius: 6px;
+  }
+
+  .newsletter-section__btn {
+    width: 45px;
+    height: 25px;
+
+    font-size: 6px;
+
+    border-radius: 6px;
+  }
+
+  .mailIcon {
+    right: 6px;
+
+    width: 9px;
+    height: 9px;
+  }
+}

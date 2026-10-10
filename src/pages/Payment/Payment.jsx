@@ -1,8 +1,8 @@
+
 import { useState, useEffect } from "react";
+
 import "./Payment.css";
 
-import productImage1 from "../../assets/groupp1.png";
-import productImage2 from "../../assets/groupp3.png";
 import ArrowRight from "../../assets/arrow-right-02.svg";
 import lock2 from "../../assets/lock2.svg";
 import visa from "../../assets/visa-logo.svg";
@@ -11,68 +11,165 @@ import mada from "../../assets/Mada_Logo.svg";
 import creditCard from "../../assets/credit-card.svg";
 import truck from "../../assets/shipping-truck-02.svg";
 import successIcon from "../../assets/successIcon.svg";
-import { useNavigate } from "react-router-dom";
 
-const ITEMS = [
-  {
-    id: "tom-ford",
-    name: "Tom Ford | عطر توم فورد",
-    image: productImage1,
-    price: 450,
-    qty: 1,
-  },
-  {
-    id: "baccarat-1",
-    name: "Baccarat | عطر بكرات روج",
-    image: productImage2,
-    price: 450,
-    qty: 1,
-  },
-];
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+import {
+  getShippingMethods,
+  setSelectedShipping,
+} from "../../Redux/shippingSlice";
+
+import { selectPaymentMethod } from "../../Redux/paymentSlice";
 
 const STEPS = ["البيانات", "الدفع", "المراجعة"];
 const ACTIVE_STEP = 1;
-const FREE_SHIPPING_MIN = 1000;
-const STANDARD_FEE = 25;
-const DISCOUNT = 95;
-const MAX_VISIBLE = 2; // أقصى عدد دواير بتظهر، الباقي بيتعد في البادج +N
+const MAX_VISIBLE = 2;
 
 export default function Payment() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  // =========================
+  // Payment State
+  // =========================
+
   const [method, setMethod] = useState("card");
+
   const [card, setCard] = useState({
     number: "",
     expiry: "",
     cvv: "",
     save: true,
   });
+
   const [errors, setErrors] = useState({});
   const [confirmed, setConfirmed] = useState(false);
-  const navigate = useNavigate();
+
+  // =========================
+  // Cart State
+  // =========================
+
+  const {
+    items: cartItems = [],
+    subtotal: cartSubtotal = 0,
+    discount_amount: cartDiscount = 0,
+  } = useSelector((state) => state.cart);
+
+  // =========================
+  // Shipping State
+  // =========================
+
+  const {
+    methods: shippingMethods = [],
+    freeShippingThreshold = 0,
+    isFreeEligible = false,
+    selectedMethodId,
+    loading: shippingLoading,
+    error: shippingError,
+  } = useSelector((state) => state.shipping);
+
+  // =========================
+  // Payment API State
+  // =========================
+
+  const {
+    loading: paymentLoading,
+    error: paymentError,
+  } = useSelector((state) => state.payment);
+
+  // =========================
+  // Get Shipping Methods
+  // =========================
+
+  useEffect(() => {
+    dispatch(getShippingMethods());
+  }, [dispatch]);
+
+  // =========================
+  // Cart Summary
+  // =========================
+
+  const subtotal = Number(cartSubtotal || 0);
+  const discount = Number(cartDiscount || 0);
+
+  // =========================
+  // Selected Shipping Method
+  // =========================
+
+  const selectedShippingMethod =
+    shippingMethods.find(
+      (shippingMethod) =>
+        shippingMethod.id === selectedMethodId
+    );
+
+  const shipping = selectedShippingMethod
+    ? Number(selectedShippingMethod.cost || 0)
+    : 0;
+
+  // =========================
+  // Total
+  // =========================
+
+  const total = Math.max(
+    subtotal - discount + shipping,
+    0
+  );
+
+  // =========================
+  // Visible Products
+  // =========================
+
+  const visibleItems = cartItems.slice(
+    0,
+    MAX_VISIBLE
+  );
+
+  const extraCount =
+    cartItems.length - MAX_VISIBLE;
+
+  // =========================
+  // Confirm Modal
+  // =========================
 
   useEffect(() => {
     if (!confirmed) return;
-    const onKey = (e) => e.key === "Escape" && setConfirmed(false);
+
+    const onKey = (e) => {
+      if (e.key === "Escape") {
+        setConfirmed(false);
+      }
+    };
+
     document.addEventListener("keydown", onKey);
+
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+
     return () => {
-      document.removeEventListener("keydown", onKey);
+      document.removeEventListener(
+        "keydown",
+        onKey
+      );
+
       document.body.style.overflow = prev;
     };
   }, [confirmed]);
 
-  const subtotal = ITEMS.reduce((sum, item) => sum + item.price * item.qty, 0);
-  const freeAvailable = subtotal >= FREE_SHIPPING_MIN;
-  const [delivery, setDelivery] = useState(freeAvailable ? "free" : "standard");
-  const shipping = delivery === "free" && freeAvailable ? 0 : STANDARD_FEE;
-  const total = subtotal - DISCOUNT + shipping;
-
-  const visibleItems = ITEMS.slice(0, MAX_VISIBLE);
-  const extraCount = ITEMS.length - MAX_VISIBLE;
+  // =========================
+  // Card Handler
+  // =========================
 
   const handleCard = (e) => {
-    const { name, value, type, checked } = e.target;
+    const {
+      name,
+      value,
+      type,
+      checked,
+    } = e.target;
+
     let next = value;
+
     if (name === "number") {
       next = value
         .replace(/\D/g, "")
@@ -80,115 +177,318 @@ export default function Payment() {
         .replace(/(.{4})/g, "$1 ")
         .trim();
     } else if (name === "expiry") {
-      const d = value.replace(/\D/g, "").slice(0, 4);
-      next = d.length > 2 ? `${d.slice(0, 2)}/${d.slice(2)}` : d;
+      const digits = value
+        .replace(/\D/g, "")
+        .slice(0, 4);
+
+      next =
+        digits.length > 2
+          ? `${digits.slice(0, 2)}/${digits.slice(2)}`
+          : digits;
     } else if (name === "cvv") {
-      next = value.replace(/\D/g, "").slice(0, 4);
+      next = value
+        .replace(/\D/g, "")
+        .slice(0, 4);
     } else if (type === "checkbox") {
       next = checked;
     }
-    setCard((prev) => ({ ...prev, [name]: next }));
-    setErrors((prev) => ({ ...prev, [name]: "" }));
+
+    setCard((prev) => ({
+      ...prev,
+      [name]: next,
+    }));
+
+    setErrors((prev) => ({
+      ...prev,
+      [name]: "",
+    }));
   };
+
+  // =========================
+  // Validation
+  // =========================
 
   const validate = () => {
     if (method !== "card") return true;
+
     const next = {};
-    if (card.number.replace(/\s/g, "").length !== 16)
+
+    // Card Number
+    if (
+      card.number.replace(/\s/g, "").length !== 16
+    ) {
       next.number = "رقم البطاقة غير صحيح";
-    const m = /^(\d{2})\/(\d{2})$/.exec(card.expiry);
-    if (!m || +m[1] < 1 || +m[1] > 12) next.expiry = "تاريخ الانتهاء غير صحيح";
-    if (card.cvv.length < 3) next.cvv = "رمز التحقق غير صحيح";
+    }
+
+    // Expiry
+    const m =
+      /^(\d{2})\/(\d{2})$/.exec(
+        card.expiry
+      );
+
+    if (
+      !m ||
+      +m[1] < 1 ||
+      +m[1] > 12
+    ) {
+      next.expiry =
+        "تاريخ الانتهاء غير صحيح";
+    }
+
+    // CVV
+    if (card.cvv.length < 3) {
+      next.cvv =
+        "رمز التحقق غير صحيح";
+    }
+
     setErrors(next);
+
     return Object.keys(next).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  // =========================
+  // Submit
+  // =========================
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!validate()) return;
 
-    console.log({ method, delivery, saveCard: card.save });
-    setConfirmed(true);
+    // لازم يكون فيه طريقة شحن
+    if (!selectedMethodId) {
+      console.log(
+        "لم يتم اختيار طريقة شحن"
+      );
+      return;
+    }
+
+    const paymentMethodMap = {
+      apple: "apple_pay",
+      mada: "mada",
+      card: "credit_card",
+      cod: "cash_on_delivery",
+    };
+
+    const paymentMethod =
+      paymentMethodMap[method];
+
+    if (!paymentMethod) {
+      return;
+    }
+
+    try {
+      await dispatch(
+        selectPaymentMethod(paymentMethod)
+      ).unwrap();
+
+      console.log({
+        method: paymentMethod,
+
+        // طريقة الشحن المختارة
+        delivery: selectedMethodId,
+
+        // بيانات طريقة الشحن
+        shippingMethod:
+          selectedShippingMethod,
+
+        subtotal,
+        discount,
+        shipping,
+        total,
+        saveCard: card.save,
+      });
+
+      setConfirmed(true);
+    } catch (error) {
+      console.log(
+        "Failed to select payment method:",
+        error
+      );
+    }
   };
+
+  // =========================
+  // Review
+  // =========================
 
   const goReview = () => {
     navigate("/Review");
   };
+
+  // =========================
+  // Home
+  // =========================
 
   const goHome = () => {
     setConfirmed(false);
     navigate("/");
   };
 
+  // =========================
+  // Loading
+  // =========================
+
+  if (
+    shippingLoading &&
+    !shippingMethods.length
+  ) {
+    return (
+      <section className="checkout-page">
+        <p>جاري تحميل طرق الشحن...</p>
+      </section>
+    );
+  }
+
   return (
     <section className="checkout-page">
+
+      {/* =========================
+          Steps
+      ========================= */}
+
       <div className="checkout-steps">
         {STEPS.map((label, i) => (
-          <div className="checkout-step-wrap" key={label}>
+          <div
+            className="checkout-step-wrap"
+            key={label}
+          >
             <div
-              className={`checkout-step${i <= ACTIVE_STEP ? " is-active" : ""}`}
+              className={`checkout-step${
+                i <= ACTIVE_STEP
+                  ? " is-active"
+                  : ""
+              }`}
             >
-              <span className="checkout-step-dot">{i + 1}</span>
-              <span className="checkout-step-label">{label}</span>
+              <span className="checkout-step-dot">
+                {i + 1}
+              </span>
+
+              <span className="checkout-step-label">
+                {label}
+              </span>
             </div>
-            {i < STEPS.length - 1 && <span className="checkout-step-line" />}
+
+            {i < STEPS.length - 1 && (
+              <span className="checkout-step-line" />
+            )}
           </div>
         ))}
       </div>
 
       <div className="checkout-page-layout">
-        {/* Payment methods */}
-        <form className="payment-methods" onSubmit={handleSubmit} noValidate>
+
+        {/* =========================
+            Payment Methods
+        ========================= */}
+
+        <form
+          className="payment-methods"
+          onSubmit={handleSubmit}
+          noValidate
+        >
+
+          {/* Apple Pay */}
+
           <label
-            className={`payment-method${method === "apple" ? " is-selected" : ""}`}
+            className={`payment-method${
+              method === "apple"
+                ? " is-selected"
+                : ""
+            }`}
           >
             <input
               type="radio"
               name="method"
               checked={method === "apple"}
-              onChange={() => setMethod("apple")}
+              onChange={() =>
+                setMethod("apple")
+              }
             />
-            <span className="payment-method-name">Apple Pay</span>
+
+            <span className="payment-method-name">
+              Apple Pay
+            </span>
+
             <span className="payment-method-logo">
-              <img src={applePay} alt="" />
+              <img
+                src={applePay}
+                alt=""
+              />
             </span>
           </label>
 
+          {/* Mada */}
+
           <label
-            className={`payment-method${method === "mada" ? " is-selected" : ""}`}
+            className={`payment-method${
+              method === "mada"
+                ? " is-selected"
+                : ""
+            }`}
           >
             <input
               type="radio"
               name="method"
               checked={method === "mada"}
-              onChange={() => setMethod("mada")}
+              onChange={() =>
+                setMethod("mada")
+              }
             />
-            <span className="payment-method-name">مدى</span>
+
+            <span className="payment-method-name">
+              مدى
+            </span>
+
             <span className="payment-method-logo">
-              <img src={mada} alt="" />
+              <img
+                src={mada}
+                alt=""
+              />
             </span>
           </label>
 
+          {/* Card */}
+
           <div
-            className={`payment-method payment-method--card${method === "card" ? " is-selected" : ""}`}
+            className={`payment-method payment-method--card${
+              method === "card"
+                ? " is-selected"
+                : ""
+            }`}
           >
             <label className="payment-method-head">
               <input
                 type="radio"
                 name="method"
                 checked={method === "card"}
-                onChange={() => setMethod("card")}
+                onChange={() =>
+                  setMethod("card")
+                }
               />
-              <span className="payment-method-name">البطاقة البنكية</span>
+
+              <span className="payment-method-name">
+                البطاقة البنكية
+              </span>
+
               <span className="payment-method-logo">
-                <img src={visa} alt="" />
+                <img
+                  src={visa}
+                  alt=""
+                />
               </span>
             </label>
 
             {method === "card" && (
               <div className="payment-card-fields">
+
+                {/* Card Number */}
+
                 <div className="checkout-field">
-                  <label htmlFor="number">رقم البطاقة</label>
+                  <label htmlFor="number">
+                    رقم البطاقة
+                  </label>
+
                   <div className="checkout-input-icon payment-icon-left">
                     <input
                       id="number"
@@ -201,18 +501,31 @@ export default function Payment() {
                       value={card.number}
                       onChange={handleCard}
                     />
+
                     <span className="payment-input-icon">
-                      <img src={creditCard} alt="" />
+                      <img
+                        src={creditCard}
+                        alt=""
+                      />
                     </span>
                   </div>
+
                   {errors.number && (
-                    <p className="checkout-error">{errors.number}</p>
+                    <p className="checkout-error">
+                      {errors.number}
+                    </p>
                   )}
                 </div>
 
+                {/* Expiry + CVV */}
+
                 <div className="checkout-row">
+
                   <div className="checkout-field">
-                    <label htmlFor="expiry">تاريخ الانتهاء</label>
+                    <label htmlFor="expiry">
+                      تاريخ الانتهاء
+                    </label>
+
                     <input
                       id="expiry"
                       name="expiry"
@@ -224,12 +537,19 @@ export default function Payment() {
                       value={card.expiry}
                       onChange={handleCard}
                     />
+
                     {errors.expiry && (
-                      <p className="checkout-error">{errors.expiry}</p>
+                      <p className="checkout-error">
+                        {errors.expiry}
+                      </p>
                     )}
                   </div>
+
                   <div className="checkout-field">
-                    <label htmlFor="cvv">رمز التحقق (CVV)</label>
+                    <label htmlFor="cvv">
+                      رمز التحقق (CVV)
+                    </label>
+
                     <input
                       id="cvv"
                       name="cvv"
@@ -241,11 +561,17 @@ export default function Payment() {
                       value={card.cvv}
                       onChange={handleCard}
                     />
+
                     {errors.cvv && (
-                      <p className="checkout-error">{errors.cvv}</p>
+                      <p className="checkout-error">
+                        {errors.cvv}
+                      </p>
                     )}
                   </div>
+
                 </div>
+
+                {/* Save Card */}
 
                 <label className="payment-save">
                   <input
@@ -254,30 +580,62 @@ export default function Payment() {
                     checked={card.save}
                     onChange={handleCard}
                   />
-                  حفظ بيانات البطاقة لعمليات الدفع المستقبلية
+
+                  حفظ بيانات البطاقة لعمليات
+                  الدفع المستقبلية
                 </label>
+
               </div>
             )}
           </div>
 
+          {/* Cash On Delivery */}
+
           <label
-            className={`payment-method${method === "cod" ? " is-selected" : ""}`}
+            className={`payment-method${
+              method === "cod"
+                ? " is-selected"
+                : ""
+            }`}
           >
             <input
               type="radio"
               name="method"
               checked={method === "cod"}
-              onChange={() => setMethod("cod")}
+              onChange={() =>
+                setMethod("cod")
+              }
             />
-            <span className="payment-method-name">الدفع عند الاستلام</span>
+
+            <span className="payment-method-name">
+              الدفع عند الاستلام
+            </span>
+
             <span className="payment-method-logo payment-method-logo--plain">
-              <img src={truck} alt="truck" />
+              <img
+                src={truck}
+                alt="truck"
+              />
             </span>
           </label>
 
-          <button type="submit" className="checkout-submit-btn">
-            تأكيد الطلب <img src={ArrowRight} alt="" />
+          {/* Submit */}
+
+          <button
+            type="submit"
+            className="checkout-submit-btn"
+            disabled={paymentLoading}
+          >
+            {paymentLoading
+              ? "جاري التأكيد..."
+              : "تأكيد الطلب"}
+
+            <img
+              src={ArrowRight}
+              alt=""
+            />
           </button>
+
           <button
             type="button"
             className="payment-secondary-btn"
@@ -287,115 +645,277 @@ export default function Payment() {
           </button>
 
           <p className="checkout-secure-text">
-            <img src={lock2} alt="" /> دفع آمن ومشفر 100%
+            <img
+              src={lock2}
+              alt=""
+            />
+
+            دفع آمن ومشفر 100%
           </p>
+
+          {paymentError && (
+            <p className="checkout-error">
+              {paymentError}
+            </p>
+          )}
         </form>
 
-        {/* Delivery method + order summary */}
+        {/* =========================
+            Delivery + Order Summary
+        ========================= */}
+
         <aside className="checkout-side">
-          <div className="checkout-box">
-            <h2 className="checkout-box-title">طريقة التوصيل</h2>
 
-            <label
-              className={`checkout-delivery${delivery === "standard" ? " is-selected" : ""}`}
-            >
-              <input
-                type="radio"
-                name="delivery"
-                checked={delivery === "standard"}
-                onChange={() => setDelivery("standard")}
-              />
-              <div className="checkout-delivery-info">
-                <strong>توصيل قياسي</strong>
-                <span>يصل خلال 2-5 أيام عمل.</span>
-              </div>
-              <em>{STANDARD_FEE} ر.س</em>
-            </label>
-
-            <label
-              className={`checkout-delivery${delivery === "free" ? " is-selected" : ""}${freeAvailable ? "" : " is-disabled"}`}
-            >
-              <input
-                type="radio"
-                name="delivery"
-                disabled={!freeAvailable}
-                checked={delivery === "free"}
-                onChange={() => setDelivery("free")}
-              />
-              <div className="checkout-delivery-info">
-                <strong>توصيل مجاني</strong>
-                <span>متوفر للطلبات التي تزيد عن {FREE_SHIPPING_MIN} ر.س.</span>
-              </div>
-              <em>مجاناً</em>
-            </label>
-          </div>
+          {/* =========================
+              Delivery Method
+          ========================= */}
 
           <div className="checkout-box">
+
             <h2 className="checkout-box-title">
-              ملخص الطلب
-              <span className="checkout-count">{ITEMS.length} محددة</span>
+              طريقة التوصيل
             </h2>
 
+            {shippingMethods.map(
+              (shippingMethod) => {
+
+                const isSelected =
+                  selectedMethodId ===
+                  shippingMethod.id;
+
+                return (
+                  <label
+                    key={shippingMethod.id}
+                    className={`checkout-delivery${
+                      isSelected
+                        ? " is-selected"
+                        : ""
+                    }`}
+                  >
+
+                    <input
+                      type="radio"
+                      name="delivery"
+                      value={shippingMethod.id}
+                      checked={isSelected}
+                      onChange={() =>
+                        dispatch(
+                          setSelectedShipping(
+                            shippingMethod.id
+                          )
+                        )
+                      }
+                    />
+
+                    <div className="checkout-delivery-info">
+
+                      <strong>
+                        {
+                          shippingMethod.name_ar
+                        }
+                      </strong>
+
+                      <span>
+                        {
+                          shippingMethod.description
+                        }
+                      </span>
+
+                    </div>
+
+                    <em>
+                      {shippingMethod.is_free ||
+                      Number(
+                        shippingMethod.cost
+                      ) === 0
+                        ? "مجاناً"
+                        : `${shippingMethod.cost} ر.س`}
+                    </em>
+
+                  </label>
+                );
+              }
+            )}
+
+            {freeShippingThreshold > 0 &&
+              !isFreeEligible && (
+                <p className="checkout-shipping-note">
+                  الشحن المجاني متاح للطلبات
+                  التي تتجاوز{" "}
+                  {freeShippingThreshold} ر.س
+                </p>
+              )}
+
+            {shippingError && (
+              <p className="checkout-error">
+                {shippingError}
+              </p>
+            )}
+
+          </div>
+
+          {/* =========================
+              Order Summary
+          ========================= */}
+
+          <div className="checkout-box">
+
+            <h2 className="checkout-box-title">
+              ملخص الطلب
+
+              <span className="checkout-count">
+                {cartItems.length} محددة
+              </span>
+            </h2>
+
+            {/* Product Images */}
+
             <div className="checkout-thumbs">
-              {visibleItems.map((item, i) => (
-                <div className="checkout-thumb" key={item.id}>
-                  <img src={item.image} alt={item.name} />
-                  {extraCount > 0 && i === visibleItems.length - 1 && (
-                    <span className="checkout-thumb-more">+{extraCount}</span>
-                  )}
-                </div>
-              ))}
+
+              {visibleItems.map(
+                (item, i) => (
+                  <div
+                    className="checkout-thumb"
+                    key={item.id}
+                  >
+
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                    />
+
+                    {extraCount > 0 &&
+                      i ===
+                        visibleItems.length - 1 && (
+                        <span className="checkout-thumb-more">
+                          +{extraCount}
+                        </span>
+                      )}
+
+                  </div>
+                )
+              )}
+
             </div>
+
+            {/* Summary */}
 
             <div className="checkout-summary-rows">
+
               <div className="checkout-summary-row">
-                <span className="checkout-summary-label">المجموع الفرعي</span>
-                <span className="checkout-summary-value">{subtotal} ر.س</span>
+                <span className="checkout-summary-label">
+                  المجموع الفرعي
+                </span>
+
+                <span className="checkout-summary-value">
+                  {subtotal} ر.س
+                </span>
               </div>
+
               <div className="checkout-summary-row">
-                <span className="checkout-summary-label">كوبون الخصم</span>
-                <span className="checkout-summary-value">-{DISCOUNT} ر.س</span>
+                <span className="checkout-summary-label">
+                  كوبون الخصم
+                </span>
+
+                <span className="checkout-summary-value">
+                  -{discount} ر.س
+                </span>
               </div>
+
               <div className="checkout-summary-row">
-                <span className="checkout-summary-label">الشحن</span>
-                <span className="checkout-summary-value">{shipping} ر.س</span>
+                <span className="checkout-summary-label">
+                  الشحن
+                </span>
+
+                <span className="checkout-summary-value">
+                  {shipping === 0
+                    ? "مجاناً"
+                    : `${shipping} ر.س`}
+                </span>
               </div>
+
             </div>
+
+            {/* Total */}
 
             <div className="checkout-summary-total">
-              <span className="checkout-summary-total-label">الإجمالي</span>
-              <span className="checkout-summary-total-value">{total} ر.س</span>
+
+              <span className="checkout-summary-total-label">
+                الإجمالي
+              </span>
+
+              <span className="checkout-summary-total-value">
+                {total} ر.س
+              </span>
+
             </div>
+
           </div>
+
         </aside>
+
       </div>
 
+      {/* =========================
+          Success Modal
+      ========================= */}
+
       {confirmed && (
-        <div className="review-modal-overlay" onClick={() => setConfirmed(false)}>
+        <div
+          className="review-modal-overlay"
+          onClick={() =>
+            setConfirmed(false)
+          }
+        >
+
           <div
             className="review-modal"
             role="dialog"
             aria-modal="true"
             aria-labelledby="review-modal-title"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) =>
+              e.stopPropagation()
+            }
           >
+
             <button
               type="button"
               className="review-modal-close"
               aria-label="إغلاق"
-              onClick={() => setConfirmed(false)}
+              onClick={() =>
+                setConfirmed(false)
+              }
             >
               ×
             </button>
-            <img src={successIcon} alt="successIcon" />
-            <h2 id="review-modal-title">تم تأكيد طلبك بنجاح</h2>
-            <p>شكراً لتسوقك من رشة عطر</p>
-            <button type="button" className="review-modal-btn" onClick={goHome}>
+
+            <img
+              src={successIcon}
+              alt="successIcon"
+            />
+
+            <h2 id="review-modal-title">
+              تم تأكيد طلبك بنجاح
+            </h2>
+
+            <p>
+              شكراً لتسوقك من رشة عطر
+            </p>
+
+            <button
+              type="button"
+              className="review-modal-btn"
+              onClick={goHome}
+            >
               العودة للرئيسية
             </button>
+
           </div>
+
         </div>
       )}
+
     </section>
   );
 }
+
