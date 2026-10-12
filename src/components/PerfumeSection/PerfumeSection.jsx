@@ -1,19 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo } from "react";
 import "./PerfumeSection.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import arrowLeft from "../../assets/arrowLeft.svg";
-import Rating from "../../assets/rating.svg";
 import shopping from "../../assets/shopping-cart-02.svg";
 import rialsaody from "../../assets/saudi-riyal.svg";
 import rialSale from "../../assets/rialSale.svg";
 
 import AddToCartButton from "../AddToCartButton/AddToCartButton";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import StarRating from "../StarRating/StarRating";
 
 import { getProducts } from "../../Redux/productSlice";
 import { addToCart } from "../../Redux/cartSlice";
+import {
+  getWishlist,
+  addToWishlist,
+  removeFromWishlist,
+} from "../../Redux/wishlistSlice";
+
+function getWishlistProductId(item) {
+  return item?.product_id ?? item?.product?.id;
+}
 
 function getProductCategory(product) {
   return (
@@ -49,7 +58,7 @@ function PerfumeCard({
     <div className="perfume-card">
       <FavoriteButton
         className="fav-btn"
-        isFavorite={product.favorite}
+        isFavorite={Boolean(product.favorite)}
         onClick={() => onToggleFavorite(product.id)}
       />
 
@@ -72,12 +81,7 @@ function PerfumeCard({
           <h3> {product.name_en}|{product.name}</h3>
         </Link>
 
-        {product.rating ? (
-          <div className="perfume-card__rating">
-            <img src={Rating} alt="Rating" />
-            <span>({product.rating})</span>
-          </div>
-        ) : null}
+        <StarRating rating={product.rating} />
       </div>
 
       <p className="perfume-card__category">
@@ -112,14 +116,20 @@ export default function PerfumeSection({
   onAddToCart,
 }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const {
     products: apiProducts,
     loading,
   } = useSelector((state) => state.products);
 
-  const [items, setItems] = useState([]);
+  const wishlistItems = useSelector(
+    (state) => state.wishlist?.items ?? []
+  );
 
+  // =========================
+  // GET PRODUCTS + WISHLIST
+  // =========================
   useEffect(() => {
     if (!apiProducts.length) {
       dispatch(getProducts());
@@ -127,12 +137,32 @@ export default function PerfumeSection({
   }, [dispatch, apiProducts.length]);
 
   useEffect(() => {
-    const sourceProducts =
-      productsProp?.length
-        ? productsProp
-        : apiProducts;
+    if (localStorage.getItem("token")) {
+      dispatch(getWishlist());
+    }
+  }, [dispatch]);
 
-    const formattedProducts = sourceProducts.map((product) => ({
+  // =========================
+  // WISHLIST PRODUCT IDS
+  // =========================
+  const favoriteProductIds = useMemo(() => {
+    return new Set(
+      wishlistItems
+        .map(getWishlistProductId)
+        .filter((id) => id !== undefined && id !== null)
+        .map(Number)
+    );
+  }, [wishlistItems]);
+
+  // =========================
+  // FORMATTED PRODUCTS (مع حالة المفضلة)
+  // =========================
+  const items = useMemo(() => {
+    const sourceProducts = productsProp?.length
+      ? productsProp
+      : apiProducts;
+
+    return sourceProducts.map((product) => ({
       id: product.id,
 
       image: getProductImage(product),
@@ -145,27 +175,39 @@ export default function PerfumeSection({
 
       oldPrice: Number(product.original_price || 0),
 
-      favorite: false,
+      favorite: favoriteProductIds.has(Number(product.id)),
 
       rating: product.rating || null,
     }));
+  }, [productsProp, apiProducts, favoriteProductIds]);
 
-    setItems(formattedProducts);
-  }, [productsProp, apiProducts]);
+  // =========================
+  // TOGGLE FAVORITE
+  // =========================
+  const handleToggleFavorite = async (id) => {
+    const token = localStorage.getItem("token");
 
-  const handleToggleFavorite = (id) => {
-    setItems((prev) =>
-      prev.map((product) =>
-        product.id === id
-          ? {
-              ...product,
-              favorite: !product.favorite,
-            }
-          : product
-      )
-    );
+    if (!token) {
+      navigate("/login");
+      return;
+    }
+
+    const isFavorite = favoriteProductIds.has(Number(id));
+
+    try {
+      if (isFavorite) {
+        await dispatch(removeFromWishlist(id)).unwrap();
+      } else {
+        await dispatch(addToWishlist(id)).unwrap();
+      }
+    } catch (wishlistError) {
+      console.error("Wishlist error:", wishlistError);
+    }
   };
 
+  // =========================
+  // ADD TO CART
+  // =========================
   const handleAddToCart = (id) => {
     if (onAddToCart) {
       onAddToCart(id);

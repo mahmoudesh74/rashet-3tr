@@ -1124,3 +1124,19 @@
     height: 35px;
   }
 }
+.star-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  line-height: 0;
+}
+
+.star-btn .star {
+  transition: transform 0.15s ease;
+}
+
+.star-btn:hover .star {
+  transform: scale(1.15);
+}

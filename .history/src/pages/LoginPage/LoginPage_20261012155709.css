@@ -1,0 +1,827 @@
+/* =========================
+   Global
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================
+   Login Card
+========================= */
+
+.login-card {
+  position: relative;
+
+  width: 100%;
+  max-width: 100%;
+
+  background: #FFFFFF;
+
+  border-radius: 20px;
+
+  padding: 48px 44px;
+
+  overflow: hidden;
+}
+
+/* =========================
+   Close Button
+========================= */
+
+.login-close {
+  position: absolute;
+
+  top: 16px;
+  left: 16px;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: #f3ede1;
+  color: #6b6258;
+
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.15s ease;
+}
+
+.login-close:hover {
+  background: #e4dccb;
+}
+
+/* =========================
+   Title
+========================= */
+
+.login-title {
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 700;
+
+  font-family: "Cairo", sans-serif;
+
+  color: #3a2413;
+
+  text-align: center;
+}
+
+.login-subtitle {
+  margin-top: 8px;
+  margin-bottom: 32px;
+
+  text-align: center;
+
+  color: #717182;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  font-family: "SF Pro", sans-serif;
+
+  line-height: 1.6;
+}
+
+/* =========================
+   Google Button
+========================= */
+
+.google-btn {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 14px;
+
+  border: 2px solid #1a71f6;
+  border-radius: 12px;
+
+  background: #FFFFFF;
+  color: #1a71f6;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: background 0.15s ease;
+
+  white-space: nowrap;
+}
+
+.google-btn:hover {
+  background: #f7faff;
+}
+
+.google-btn img,
+.google-btn svg {
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+}
+
+/* =========================
+   Divider
+========================= */
+
+.divider {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin: 28px 0;
+
+  color: #323130;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.divider-line {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 0.5px;
+
+  background: #1a71f6;
+}
+
+/* =========================
+   Field
+========================= */
+
+.field {
+  width: 100%;
+
+  margin-bottom: 20px;
+
+  min-width: 0;
+}
+
+.field-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #323130;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* =========================
+   Input
+========================= */
+
+.text-input {
+  width: 100%;
+  min-width: 0;
+
+  padding: 14px 16px;
+
+  border: 1.6px solid #d1d1d1;
+  border-radius: 16px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  color: #333333;
+
+  background: #FFFFFF;
+
+  outline: none;
+
+  transition: border-color 0.15s ease;
+}
+
+.text-input:focus {
+  border-color: #a8642f;
+}
+
+.text-input::placeholder {
+  color: #737373;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* =========================
+   Password
+========================= */
+
+.password-wrap {
+  position: relative;
+
+  width: 100%;
+}
+
+.password-wrap .text-input {
+  padding-left: 44px;
+}
+
+.toggle-eye {
+  position: absolute;
+
+  left: 14px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background: none;
+  border: none;
+
+  cursor: pointer;
+
+  color: #6b6258;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+}
+
+.toggle-eye svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* =========================
+   Remember / Forgot
+========================= */
+
+.form-row {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 28px;
+
+  font-size: 14px;
+}
+
+.remember-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #333333;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  cursor: pointer;
+
+  min-width: 0;
+}
+
+.remember-checkbox {
+  width: 17px;
+  height: 17px;
+
+  flex-shrink: 0;
+
+  accent-color: #905B30;
+
+  cursor: pointer;
+}
+
+.forgot-link {
+  color: #1a71f6;
+
+  font-size: 14px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Submit Button
+========================= */
+
+.submit-btn {
+  width: 100%;
+  min-width: 0;
+
+  padding: 15px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #905B30;
+
+  color: #FFFFFF;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: background 0.15s ease;
+
+  white-space: nowrap;
+}
+
+.submit-btn:hover {
+  background: #8b5024;
+}
+
+/* =========================
+   Footer Text
+========================= */
+
+.footer-text {
+  text-align: center;
+
+  margin-top: 22px;
+
+  font-size: 14px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-weight: 400;
+
+  color: #323130;
+
+  line-height: 1.6;
+}
+.footer-link{
+  color: #905B30;
+
+  font-weight: 700;
+background: none;
+border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* =========================================================
+   Tablet
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .login-card {
+    padding: 38px 32px;
+
+    border-radius: 18px;
+  }
+
+  .login-title {
+    font-size: 22px;
+  }
+
+  .login-subtitle {
+    font-size: 14px;
+
+    margin-bottom: 26px;
+  }
+
+  .google-btn {
+    padding: 12px;
+
+    font-size: 13px;
+  }
+
+  .divider {
+    margin: 23px 0;
+
+    font-size: 11px;
+  }
+
+  .field-label {
+    font-size: 13px;
+  }
+
+  .text-input {
+    padding: 12px 14px;
+
+    font-size: 13px;
+  }
+
+  .text-input::placeholder {
+    font-size: 13px;
+  }
+
+  .password-wrap .text-input {
+    padding-left: 40px;
+  }
+
+  .toggle-eye {
+    left: 12px;
+  }
+
+  .toggle-eye svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .form-row {
+    font-size: 13px;
+
+    margin-bottom: 24px;
+  }
+
+  .remember-label {
+    font-size: 13px;
+  }
+
+  .forgot-link {
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    padding: 13px;
+
+    font-size: 13px;
+  }
+
+  .footer-text {
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   Mobile
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .login-card {
+    width: 100%;
+
+    padding: 30px 22px;
+
+    border-radius: 16px;
+  }
+
+  /* Close */
+
+  .login-close {
+    top: 12px;
+    left: 12px;
+
+    width: 28px;
+    height: 28px;
+
+    font-size: 18px;
+  }
+
+  /* Title */
+
+  .login-title {
+    font-size: 20px;
+
+    padding: 0 25px;
+  }
+
+  .login-subtitle {
+    font-size: 12px;
+
+    margin-top: 6px;
+    margin-bottom: 22px;
+
+    line-height: 1.6;
+  }
+
+  /* Google */
+
+  .google-btn {
+    padding: 11px;
+
+    gap: 7px;
+
+    font-size: 12px;
+
+    border-radius: 10px;
+  }
+
+  .google-btn img,
+  .google-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Divider */
+
+  .divider {
+    gap: 9px;
+
+    margin: 21px 0;
+
+    font-size: 10px;
+  }
+
+  /* Fields */
+
+  .field {
+    margin-bottom: 16px;
+  }
+
+  .field-label {
+    margin-bottom: 6px;
+
+    font-size: 11px;
+  }
+
+  .text-input {
+    padding: 10px 12px;
+
+    font-size: 11px;
+
+    border-radius: 12px;
+  }
+
+  .text-input::placeholder {
+    font-size: 11px;
+  }
+
+  .password-wrap .text-input {
+    padding-left: 36px;
+  }
+
+  .toggle-eye {
+    left: 11px;
+  }
+
+  .toggle-eye svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Remember / Forgot */
+
+  .form-row {
+    gap: 8px;
+
+    margin-bottom: 20px;
+
+    font-size: 11px;
+  }
+
+  .remember-label {
+    gap: 5px;
+
+    font-size: 11px;
+  }
+
+  .remember-checkbox {
+    width: 14px;
+    height: 14px;
+  }
+
+  .forgot-link {
+    font-size: 11px;
+  }
+
+  /* Submit */
+
+  .submit-btn {
+    padding: 11px;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+  }
+
+  /* Footer */
+
+  .footer-text {
+    margin-top: 17px;
+
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   Small Mobile
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .login-card {
+    padding: 25px 17px;
+
+    border-radius: 14px;
+  }
+
+  .login-close {
+    top: 10px;
+    left: 10px;
+
+    width: 25px;
+    height: 25px;
+
+    font-size: 16px;
+  }
+
+  .login-title {
+    font-size: 18px;
+
+    padding: 0 20px;
+  }
+
+  .login-subtitle {
+    font-size: 10px;
+
+    margin-bottom: 18px;
+  }
+
+  .google-btn {
+    padding: 9px;
+
+    font-size: 10px;
+
+    border-radius: 8px;
+  }
+
+  .google-btn img,
+  .google-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .divider {
+    margin: 18px 0;
+
+    font-size: 9px;
+  }
+
+  .field {
+    margin-bottom: 13px;
+  }
+
+  .field-label {
+    font-size: 10px;
+
+    margin-bottom: 5px;
+  }
+
+  .text-input {
+    padding: 9px 10px;
+
+    font-size: 10px;
+
+    border-radius: 10px;
+  }
+
+  .text-input::placeholder {
+    font-size: 10px;
+  }
+
+  .password-wrap .text-input {
+    padding-left: 32px;
+  }
+
+  .toggle-eye {
+    left: 9px;
+  }
+
+  .toggle-eye svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .form-row {
+    gap: 6px;
+
+    margin-bottom: 17px;
+  }
+
+  .remember-label {
+    font-size: 9px;
+  }
+
+  .remember-checkbox {
+    width: 12px;
+    height: 12px;
+  }
+
+  .forgot-link {
+    font-size: 9px;
+  }
+
+  .submit-btn {
+    padding: 10px;
+
+    font-size: 10px;
+
+    border-radius: 8px;
+  }
+
+  .footer-text {
+    margin-top: 14px;
+
+    font-size: 9px;
+  }
+}
+
+/* =========================================================
+   Very Small Mobile
+========================================================= */
+
+@media (max-width: 320px) {
+
+  .login-card {
+    padding: 22px 13px;
+  }
+
+  .login-title {
+    font-size: 16px;
+  }
+
+  .login-subtitle {
+    font-size: 9px;
+  }
+
+  .google-btn {
+    font-size: 9px;
+
+    padding: 8px;
+  }
+
+  .field-label {
+    font-size: 9px;
+  }
+
+  .text-input {
+    padding: 8px 9px;
+
+    font-size: 9px;
+  }
+
+  .text-input::placeholder {
+    font-size: 9px;
+  }
+
+  .form-row {
+    font-size: 8px;
+  }
+
+  .remember-label {
+    font-size: 8px;
+  }
+
+  .forgot-link {
+    font-size: 8px;
+  }
+
+  .submit-btn {
+    padding: 9px;
+
+    font-size: 9px;
+  }
+
+  .footer-text {
+    font-size: 8px;
+  }
+}

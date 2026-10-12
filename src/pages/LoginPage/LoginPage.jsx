@@ -3,14 +3,15 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useDispatch, useSelector } from "react-redux";
+import { useGoogleLogin } from "@react-oauth/google";
 
 import "./LoginPage.css";
 import { getCart } from "../../Redux/cartSlice";
 import GoogleIcon from "../../assets/Icon-google.svg";
 import IconPassword from "../../assets/Icon-password.svg";
 
-import { loginUser } from "../../Redux/authSlice";
-
+import { loginUser, googleLogin } from "../../Redux/authSlice";
+import RegisterForm from "../../pages/registerForm/Registerform";
 const loginSchema = z.object({
   email: z
     .string()
@@ -28,6 +29,8 @@ const loginSchema = z.object({
 
 export default function LoginForm({ onClose = () => {} }) {
   const [showPassword, setShowPassword] = useState(false);
+  const [googleError, setGoogleError] = useState("");
+  const [isRegister, setIsRegister] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -46,20 +49,25 @@ export default function LoginForm({ onClose = () => {} }) {
     },
   });
 
+  // =========================
+  // EMAIL + PASSWORD LOGIN
+  // =========================
   const onSubmit = async (data) => {
+    setGoogleError("");
+
     try {
       const result = await dispatch(
-  loginUser({
-    email: data.email,
-    password: data.password,
-  })
-).unwrap();
+        loginUser({
+          email: data.email,
+          password: data.password,
+        })
+      ).unwrap();
 
-   dispatch(getCart());
+      dispatch(getCart());
 
-console.log("Login successful:", result);
+      console.log("Login successful:", result);
 
-onClose();
+      onClose();
 
       // لو عايز توديه لصفحة معينة بعدين:
       // navigate("/");
@@ -67,6 +75,46 @@ onClose();
       console.log("Login error:", error);
     }
   };
+
+  // =========================
+  // GOOGLE LOGIN
+  // =========================
+  const handleGoogleLogin = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      try {
+        const result = await dispatch(
+          googleLogin(tokenResponse.access_token)
+        ).unwrap();
+
+        dispatch(getCart());
+
+        console.log("Google login successful:", result);
+
+        onClose();
+      } catch (err) {
+        console.log("Google login error:", err);
+      }
+    },
+
+    onError: () => {
+      setGoogleError("فشل تسجيل الدخول بواسطة جوجل، حاول مرة أخرى");
+    },
+
+    // لو المستخدم قفل نافذة جوجل بدون ما يكمل
+    onNonOAuthError: () => {
+      setGoogleError("");
+    },
+  });
+
+  // صفحة التسجيل (بعد كل الـ hooks)
+  if (isRegister) {
+    return (
+      <RegisterForm
+        onClose={onClose}
+        onSwitchToLogin={() => setIsRegister(false)}
+      />
+    );
+  }
 
   return (
     <div dir="rtl" className="login-card">
@@ -88,11 +136,21 @@ onClose();
       <button
         type="button"
         className="google-btn"
-        onClick={() => alert("تسجيل الدخول باستخدام جوجل")}
+        onClick={() => {
+          setGoogleError("");
+          handleGoogleLogin();
+        }}
+        disabled={loading}
       >
         تسجيل الدخول باستخدام جوجل
         <img src={GoogleIcon} alt="" />
       </button>
+
+      {googleError && (
+        <p className="field-error login-api-error" role="alert">
+          {googleError}
+        </p>
+      )}
 
       <div className="divider">
         <div className="divider-line" />
@@ -210,7 +268,14 @@ onClose();
       </form>
 
       <p className="footer-text">
-        ليس لديك حساب؟ سجل الآن
+        ليس لديك حساب؟{" "}
+        <button
+          type="button"
+          className="footer-link"
+          onClick={() => setIsRegister(true)}
+        >
+          سجل الآن
+        </button>
       </p>
     </div>
   );

@@ -32,7 +32,7 @@ export const getCart = createAsyncThunk(
         brand: item.brand,
         size: item.size,
 
-        // API -> UI
+       
         price: item.unit_price,
         qty: item.quantity,
 

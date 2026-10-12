@@ -1,5 +1,7 @@
 import "./AboutSection.css";
+import { useNavigate } from "react-router-dom";
 export default function AboutSection() {
+  const navigate = useNavigate();
   return (
     <div className="AboutSection">
       <div className="AboutSectionContent">
@@ -12,7 +14,7 @@ export default function AboutSection() {
           شخصيتك. نسعى لتقديم عطور فاخرة تترك أثرًا يدوم، وجمالًا يعكس ذوقك
           وتميزك، لنمنحك تجربة عطرية استثنائية تناسب كل لحظة.
         </p>
-        <button className="AboutSectionButton">
+        <button className="AboutSectionButton" onClick={()=>navigate("/AboutRashetEtr")}>
             اقرأ المزيد
 
         </button>

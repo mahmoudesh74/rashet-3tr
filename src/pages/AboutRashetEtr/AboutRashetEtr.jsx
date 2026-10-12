@@ -13,6 +13,7 @@ import truckIcon from "../../assets/shipping-truck-01.svg";
 import layersIcon from "../../assets/kindChose.svg";
 import badgeCheckIcon from "../../assets/award-04.svg";
 import FirstWhoKnow from "../../components/firstWhoKnow/firstWhoKnow"
+import { useNavigate } from "react-router-dom";
 
 const categories = [
   { id: 1, icon: summerIcon, label: "الصيفية" },
@@ -53,6 +54,7 @@ const whyUsItems = [
 ];
 
 export default function AboutRashetEtr() {
+  const navigate = useNavigate();
   return (
     <div className="aboutPage">
      
@@ -71,7 +73,7 @@ export default function AboutRashetEtr() {
             نؤمن أن العطر ليس مجرد رائحة،<br /> بل هو بصمة شخصية تسبقك وتبقى بعد
             رحيلك.
           </p>
-          <button className="aboutHeroBtn">
+          <button className="aboutHeroBtn" onClick={() => navigate("/GroupPage")}>
             <span>اكتشف عطورنا</span>
             <img src={arrowLeft} alt="" />
           </button>
@@ -119,7 +121,7 @@ export default function AboutRashetEtr() {
             ))}
           </div>
 
-          <button className="categoryBannerBtn">
+          <button className="categoryBannerBtn" onClick={() => navigate("/GroupPage")}>
             <span>تسوق الآن</span>
             <img src={arrowLeft} alt="" />
           </button>

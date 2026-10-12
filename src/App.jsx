@@ -1,6 +1,6 @@
 import "./App.css";
 import HomePage from "./pages/HomePage/homePag";
-import NavBar from "./components/NavBar/NavBar";
+import NavBar from "./components/NavBar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 
@@ -16,6 +16,7 @@ import ShoppingBasket from "./pages/ShoppingBasket/ShoppingBasket";
 import Checkout from "./pages/CheckoutPage/Checkout";
 import Payment from "./pages/Payment/Payment";
 import Review from "./pages/Review/Review";
+
 
 function App() {
   return (
@@ -82,6 +83,7 @@ function App() {
           path="/Review"
           element={<Review />}
         />
+        
       </Routes>
 
       <Footer />

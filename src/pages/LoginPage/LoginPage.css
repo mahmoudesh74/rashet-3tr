@@ -234,6 +234,12 @@
   font-weight: 400;
   font-size: 14px;
 }
+.field-error{
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: 4px;
+  font-family: "Cairo";
+}
 
 /* =========================
    Password
@@ -393,6 +399,15 @@
   color: #323130;
 
   line-height: 1.6;
+}
+.footer-link{
+  color: #905B30;
+
+  font-weight: 700;
+background: none;
+border: none;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* =========================================================

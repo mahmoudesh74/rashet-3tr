@@ -4,7 +4,9 @@ import truckDelivery from "../../assets/truck-delivery.svg";
 import securityCheck from "../../assets/security-check.svg";
 import Gift from "../../assets/gift.svg";
 import arrowRight from "../../assets/arrow-right-02.svg";
+import { useNavigate } from "react-router-dom";
 export default function Header() {
+  const navigate = useNavigate();
   return (
     <div className="HeaderSection">
       <div className="HeaderContent">
@@ -12,7 +14,7 @@ export default function Header() {
         <h2>ستترك أثرًا لا يُنسى</h2>
         <p>اكتشف عالمًا من العطور الفاخرة المصممة خصيصًا لك</p>
         <button 
-        >اكتشف المجموعات
+        onClick={()=>navigate("./GroupPage")}>اكتشف المجموعات
        < img src={arrowRight} alt="starIcon" />
 
         </button>

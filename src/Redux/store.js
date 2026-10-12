@@ -10,6 +10,7 @@ import paymentReducer from "./paymentSlice";
 import orderReducer from "./orderSlice";
 import contactReducer from "./contactSlice";
 import newsletterReducer from "./newsletterSlice";
+import wishlistReducer from "./wishlistSlice";
 export const store = configureStore({
   reducer: {
     categories: categoryReducer,
@@ -23,5 +24,6 @@ export const store = configureStore({
            order: orderReducer,
            contact: contactReducer,
                newsletter: newsletterReducer,
+               wishlist: wishlistReducer,
   },
 });
