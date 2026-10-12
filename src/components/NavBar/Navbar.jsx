@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./NavBar.module.css";
@@ -19,11 +18,7 @@ import { clearWishlist, removeFromWishlist } from "../../Redux/wishlistSlice";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { logout } from "../../Redux/authSlice";
 
-import {
-  getCart,
-  updateCartItem,
-  deleteCartItem,
-} from "../../Redux/cartSlice";
+import { getCart, updateCartItem, deleteCartItem } from "../../Redux/cartSlice";
 
 const links = [
   { label: "الرئيسية", to: "/" },
@@ -50,9 +45,7 @@ export default function Navbar() {
   const dispatch = useDispatch();
 
   // AUTH
-  const { isAuthenticated, user } = useSelector(
-    (state) => state.auth
-  );
+  const { isAuthenticated, user } = useSelector((state) => state.auth);
 
   // CART
   const {
@@ -63,12 +56,10 @@ export default function Navbar() {
   } = useSelector((state) => state.cart);
 
   // WISHLIST
-  const wishlistItems = useSelector(
-    (state) => state.wishlist?.items ?? []
-  );
+  const wishlistItems = useSelector((state) => state.wishlist?.items ?? []);
 
   const wishlistLoading = useSelector(
-    (state) => state.wishlist?.loading ?? false
+    (state) => state.wishlist?.loading ?? false,
   );
 
   const wishlistCount = wishlistItems.length;
@@ -108,9 +99,7 @@ export default function Navbar() {
 
     if (!query) return;
 
-    navigate(
-      `/?search=${encodeURIComponent(query)}#perfumes`
-    );
+    navigate(`/?search=${encodeURIComponent(query)}#perfumes`);
 
     setIsSearchOpen(false);
   };
@@ -139,13 +128,7 @@ export default function Navbar() {
     setIsWishlistOpen(false);
   };
 
-  const handleAccountClick = () => {
-    setIsProfileOpen(false);
-  };
 
-  const handleOrdersClick = () => {
-    setIsProfileOpen(false);
-  };
 
   // CART QUANTITY
   const handleIncrease = (id) => {
@@ -157,7 +140,7 @@ export default function Navbar() {
       updateCartItem({
         id: item.id,
         quantity: item.qty + 1,
-      })
+      }),
     );
   };
 
@@ -175,7 +158,7 @@ export default function Navbar() {
       updateCartItem({
         id: item.id,
         quantity: item.qty - 1,
-      })
+      }),
     );
   };
 
@@ -190,11 +173,7 @@ export default function Navbar() {
         <div className={styles.container}>
           {/* Logo */}
           <Link to="/" aria-label="الصفحة الرئيسية">
-            <img
-              src={LogoImage}
-              alt="رشة عطر"
-              className={styles.logoImage}
-            />
+            <img src={LogoImage} alt="رشة عطر" className={styles.logoImage} />
           </Link>
 
           {/* Links */}
@@ -204,18 +183,13 @@ export default function Navbar() {
                 {link.section ? (
                   <Link
                     to={`/#${link.section}`}
-                    onClick={(e) =>
-                      handleSectionClick(e, link.section)
-                    }
+                    onClick={(e) => handleSectionClick(e, link.section)}
                     className={styles.link}
                   >
                     {link.label}
                   </Link>
                 ) : (
-                  <Link
-                    to={link.to}
-                    className={styles.link}
-                  >
+                  <Link to={link.to} className={styles.link}>
                     {link.label}
                   </Link>
                 )}
@@ -230,9 +204,7 @@ export default function Navbar() {
               <button
                 type="button"
                 className={styles.search}
-                onClick={() =>
-                  setIsSearchOpen((prev) => !prev)
-                }
+                onClick={() => setIsSearchOpen((prev) => !prev)}
                 aria-label="فتح البحث"
                 aria-expanded={isSearchOpen}
               >
@@ -240,24 +212,17 @@ export default function Navbar() {
               </button>
 
               {isSearchOpen && (
-                <form
-                  className={styles.searchForm}
-                  onSubmit={handleSearch}
-                >
+                <form className={styles.searchForm} onSubmit={handleSearch}>
                   <input
                     type="search"
                     value={searchValue}
-                    onChange={(e) =>
-                      setSearchValue(e.target.value)
-                    }
+                    onChange={(e) => setSearchValue(e.target.value)}
                     placeholder="ابحث عن عطر..."
                     aria-label="ابحث عن عطر"
                     autoFocus
                   />
 
-                  <button type="submit">
-                    بحث
-                  </button>
+                  <button type="submit">بحث</button>
 
                   <button
                     type="button"
@@ -279,10 +244,7 @@ export default function Navbar() {
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
-                  if (
-                    e.key === "Enter" ||
-                    e.key === " "
-                  ) {
+                  if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
                     handleProfileClick();
                   }
@@ -290,11 +252,7 @@ export default function Navbar() {
                 style={{ cursor: "pointer" }}
               >
                 <img
-                  src={
-                    isAuthenticated
-                      ? profileLoggedIcon
-                      : profileIcon
-                  }
+                  src={isAuthenticated ? profileLoggedIcon : profileIcon}
                   alt="مستخدم"
                 />
               </div>
@@ -307,23 +265,7 @@ export default function Navbar() {
                     <p>{user?.email || ""}</p>
                   </div>
 
-                  <div className={styles.dropdownDivider} />
-
-                  <button
-                    type="button"
-                    onClick={handleAccountClick}
-                    className={styles.dropdownItem}
-                  >
-                    حسابي
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={handleOrdersClick}
-                    className={styles.dropdownItem}
-                  >
-                    طلباتي
-                  </button>
+                 
 
                   <div className={styles.dropdownDivider} />
 
@@ -346,10 +288,7 @@ export default function Navbar() {
               tabIndex={0}
               aria-label={`سلة المشتريات، ${cartItemsCount || 0} منتجات`}
               onKeyDown={(e) => {
-                if (
-                  e.key === "Enter" ||
-                  e.key === " "
-                ) {
+                if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault();
                   setIsCartOpen(true);
                 }
@@ -358,9 +297,7 @@ export default function Navbar() {
             >
               <img src={cartIcon} alt="سلة المشتريات" />
 
-              <span className={styles.cartCount}>
-                {cartItemsCount || 0}
-              </span>
+              <span className={styles.cartCount}>{cartItemsCount || 0}</span>
             </div>
 
             {/* Wishlist */}
@@ -371,10 +308,7 @@ export default function Navbar() {
               tabIndex={0}
               aria-label={`المفضلة، ${wishlistCount} منتجات`}
               onKeyDown={(e) => {
-                if (
-                  e.key === "Enter" ||
-                  e.key === " "
-                ) {
+                if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault();
                   setIsWishlistOpen(true);
                 }
@@ -384,9 +318,7 @@ export default function Navbar() {
               <img src={favoriteIcon} alt="المفضلة" />
 
               {wishlistCount > 0 && (
-                <span className={styles.wishlistCount}>
-                  {wishlistCount}
-                </span>
+                <span className={styles.wishlistCount}>{wishlistCount}</span>
               )}
             </div>
           </div>
@@ -394,13 +326,8 @@ export default function Navbar() {
       </nav>
 
       {/* Login Modal */}
-      <Modal
-        isOpen={isLoginOpen}
-        onClose={() => setIsLoginOpen(false)}
-      >
-        <LoginForm
-          onClose={() => setIsLoginOpen(false)}
-        />
+      <Modal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)}>
+        <LoginForm onClose={() => setIsLoginOpen(false)} />
       </Modal>
 
       {/* Cart Drawer */}

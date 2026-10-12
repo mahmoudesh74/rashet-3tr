@@ -69,8 +69,6 @@ export default function LoginForm({ onClose = () => {} }) {
 
       onClose();
 
-      // لو عايز توديه لصفحة معينة بعدين:
-      // navigate("/");
     } catch (error) {
       console.log("Login error:", error);
     }
@@ -100,13 +98,12 @@ export default function LoginForm({ onClose = () => {} }) {
       setGoogleError("فشل تسجيل الدخول بواسطة جوجل، حاول مرة أخرى");
     },
 
-    // لو المستخدم قفل نافذة جوجل بدون ما يكمل
     onNonOAuthError: () => {
       setGoogleError("");
     },
   });
 
-  // صفحة التسجيل (بعد كل الـ hooks)
+
   if (isRegister) {
     return (
       <RegisterForm

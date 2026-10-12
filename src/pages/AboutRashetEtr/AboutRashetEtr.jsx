@@ -7,12 +7,12 @@ import summerIcon from "../../assets/sun-03.svg";
 import luxuryIcon from "../../assets/crown-03.svg";
 import menIcon from "../../assets/user-02.svg";
 import womanIcon from "../../assets/user-circle-02.svg";
-import bannerImg from "../../assets/bannerImg.png"
+import bannerImg from "../../assets/bannerImg.png";
 import headsetIcon from "../../assets/customer-support.svg";
 import truckIcon from "../../assets/shipping-truck-01.svg";
 import layersIcon from "../../assets/kindChose.svg";
 import badgeCheckIcon from "../../assets/award-04.svg";
-import FirstWhoKnow from "../../components/firstWhoKnow/firstWhoKnow"
+import FirstWhoKnow from "../../components/firstWhoKnow/firstWhoKnow";
 import { useNavigate } from "react-router-dom";
 
 const categories = [
@@ -23,46 +23,37 @@ const categories = [
 ];
 
 const whyUsItems = [
-
-
- 
   {
     id: 1,
     icon: badgeCheckIcon,
     title: "جودة نثق بها",
     desc: "منتجات أصلية 100% مختارة بعناية.",
   },
-   {
+  {
     id: 2,
     icon: layersIcon,
     title: "اختيارات متنوعة",
     desc: "مئات العطور العالمية تحت سقف واحد.",
   },
-   {
+  {
     id: 3,
     icon: truckIcon,
     title: "شحن موثوق",
     desc: "توصيل سريع وآمن إلى جميع مناطق المملكة.",
   },
-    {
+  {
     id: 4,
     icon: headsetIcon,
     title: "خدمة تهتم بتجربتك",
     desc: "فريق دعم جاهز للإجابة ومساعدتك دائمًا.",
   },
-   
 ];
 
 export default function AboutRashetEtr() {
   const navigate = useNavigate();
   return (
     <div className="aboutPage">
-     
-      <div
-        className="aboutHero"
-        
-      >
-       
+      <div className="aboutHero">
         <div className="aboutHeroContent">
           <h1>
             رشة عطر...
@@ -70,19 +61,21 @@ export default function AboutRashetEtr() {
             تفاصيل صغيرة تصنع حضورًا لا يُنسى
           </h1>
           <p>
-            نؤمن أن العطر ليس مجرد رائحة،<br /> بل هو بصمة شخصية تسبقك وتبقى بعد
-            رحيلك.
+            نؤمن أن العطر ليس مجرد رائحة،
+            <br /> بل هو بصمة شخصية تسبقك وتبقى بعد رحيلك.
           </p>
-          <button className="aboutHeroBtn" onClick={() => navigate("/GroupPage")}>
+          <button
+            className="aboutHeroBtn"
+            onClick={() => navigate("/GroupPage")}
+          >
             <span>اكتشف عطورنا</span>
             <img src={arrowLeft} alt="" />
           </button>
         </div>
       </div>
 
-      
       <div className="storySection">
-         <div className="storyText">
+        <div className="storyText">
           <div className="storyLabel">
             <span className="storyLine" />
             قصتنا
@@ -91,8 +84,8 @@ export default function AboutRashetEtr() {
           <h2>رحلة شغف بدأت من حب العطور</h2>
           <p>
             بدأت رشة عطر من شغفنا الحقيقي بعالم العطور، ومن رغبتنا في تقديم
-            تجربة مختلفة تجمع بين الجودة والأصالة، واختيار الواسع الذي يلبي
-            جميع الأذواق. نحتار كل عطر بعناية ليصبح جزءًا من ذكرياتك اليومية.
+            تجربة مختلفة تجمع بين الجودة والأصالة، واختيار الواسع الذي يلبي جميع
+            الأذواق. نحتار كل عطر بعناية ليصبح جزءًا من ذكرياتك اليومية.
           </p>
         </div>
         <div className="storyImages">
@@ -100,8 +93,6 @@ export default function AboutRashetEtr() {
           <img src={storyImgBottom} alt="" className="storyImgBottom" />
           <img src={storyImgAccent} alt="" className="storyImgAccent" />
         </div>
-
-       
       </div>
 
       {/* لكل شخص عطر يشبهه */}
@@ -113,15 +104,18 @@ export default function AboutRashetEtr() {
           <div className="categoryIcons">
             {categories.map((item) => (
               <div className="categoryIconItem" key={item.id}>
-               <div className="categoryIconItemImg">
-                 <img src={item.icon} alt="" />
-               </div>
+                <div className="categoryIconItemImg">
+                  <img src={item.icon} alt="" />
+                </div>
                 <span>{item.label}</span>
               </div>
             ))}
           </div>
 
-          <button className="categoryBannerBtn" onClick={() => navigate("/GroupPage")}>
+          <button
+            className="categoryBannerBtn"
+            onClick={() => navigate("/GroupPage")}
+          >
             <span>تسوق الآن</span>
             <img src={arrowLeft} alt="" />
           </button>
@@ -150,7 +144,7 @@ export default function AboutRashetEtr() {
           ))}
         </div>
       </div>
-      <FirstWhoKnow/>
+      <FirstWhoKnow />
     </div>
   );
 }
