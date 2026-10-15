@@ -97,7 +97,6 @@ function PerfumeCard({ product, onToggleFavorite, onAddToCart }) {
 
         {product.originalPrice && (
           <span className="price-old">
-            <span>{product.originalPrice}</span>
 
             <img src={rialSale} alt="" />
           </span>
