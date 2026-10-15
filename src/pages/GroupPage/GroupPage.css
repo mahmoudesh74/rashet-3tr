@@ -9,45 +9,6 @@
   box-sizing: border-box;
 }
 
-/* =========================
-   Ovals
-========================= */
-
-.group-page-ovals {
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  width: 220px;
-  height: 220px;
-
-  z-index: 0;
-  pointer-events: none;
-}
-
-.group-page-ovals img {
-  position: absolute;
-
-  width: 180px;
-  height: 180px;
-
-  object-fit: contain;
-}
-
-.group-page-ovals img:nth-child(1) {
-  top: 0;
-  right: 0;
-}
-
-.group-page-ovals img:nth-child(2) {
-  top: 35px;
-  right: 35px;
-}
-
-.group-page-ovals img:nth-child(3) {
-  top: 70px;
-  right: 70px;
-}
 
 /* =========================
    Title

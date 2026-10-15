@@ -12,9 +12,7 @@ import groupImg4 from "../../assets/groupImg4.png";
 import groupImg5 from "../../assets/groupImg5.png";
 import groupImg6 from "../../assets/groupImg6.png";
 
-import oval1 from "../../assets/Oval.png";
-import oval2 from "../../assets/Oval Copy.png";
-import oval3 from "../../assets/Oval Copy 2.png";
+
 
 import { getCategories } from "../../Redux/categorySlice";
 
@@ -41,11 +39,7 @@ export default function GroupPage() {
   return (
     <div className="GroupPage">
 
-      <div className="group-page-ovals">
-        <img src={oval1} alt="" />
-        <img src={oval2} alt="" />
-        <img src={oval3} alt="" />
-      </div>
+     
 
       <div className="GroupPageTitle">
         <p>الرئيسية / المجموعات</p>
